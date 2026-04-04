@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marilou – Mes univers 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    /* ─── VARIABLES ────────────────────────────── */
+    :root {
+      --rose:    #f2a7c3;
+      --lavande: #c9b8f0;
+      --peche:   #ffd4b3;
+      --menthe:  #aaecdc;
+      --jaune:   #fce8a0;
+      --bg:      #fef6f9;
+      --bg2:     #f9eef5;
+      --text:    #3d2c3e;
+      --muted:   #9b7da8;
+      --surface: #ffffff;
+      --border:  #f0daf0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── MAGIC BACKGROUND ──────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 20%, rgba(242,167,195,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 85% 10%, rgba(201,184,240,.2) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 70% 80%, rgba(252,232,160,.2) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(170,236,220,.15) 0%, transparent 60%);
+    }
+
+    /* floating blobs */
+    .blob {
+      position: fixed; border-radius: 50%; filter: blur(60px);
+      pointer-events: none; z-index: 0; opacity: .3;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .blob1 { width: 400px; height: 400px; background: var(--rose); top: -100px; left: -100px; animation-delay: 0s; }
+    .blob2 { width: 300px; height: 300px; background: var(--lavande); top: 20%; right: -80px; animation-delay: -5s; }
+    .blob3 { width: 350px; height: 350px; background: var(--peche); bottom: 10%; left: 20%; animation-delay: -10s; }
+    @keyframes drift {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(30px, 20px) scale(1.05); }
+    }
+
+    /* ─── SPARKLES ──────────────────────────────── */
+    .sparkles {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .sparkle {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle var(--d) var(--delay) ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: .8; transform: scale(1); }
+    }
+
+    /* ─── NAV ────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw;
+      height: 68px;
+      background: rgba(254,246,249,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.4rem;
+      color: var(--rose);
+      text-decoration: none;
+      filter: drop-shadow(0 1px 6px rgba(242,167,195,.5));
+    }
+
+    .back-btn {
+      display: flex; align-items: center; gap: .5rem;
+      background: white;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      padding: .45rem 1rem;
+      border-radius: 99px;
+      font-size: .78rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color .2s, color .2s, box-shadow .2s;
+    }
+    .back-btn:hover {
+      border-color: var(--rose);
+      color: var(--text);
+      box-shadow: 0 4px 14px rgba(242,167,195,.25);
+    }
+
+    /* ─── HERO ───────────────────────────────────── */
+    .page-hero {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 80px 6vw 60px;
+    }
+    .page-hero .eyebrow {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .8rem;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #d87aab, #a07fd6, #f0a060);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .hero-deco {
+      margin: 1.5rem 0;
+      display: flex; justify-content: center; gap: 1.2rem;
+      font-size: 1.8rem;
+    }
+    .hero-deco span { animation: float 3s ease-in-out infinite; }
+    .hero-deco span:nth-child(2) { animation-delay: .5s; }
+    .hero-deco span:nth-child(3) { animation-delay: 1s; }
+    .hero-deco span:nth-child(4) { animation-delay: 1.5s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ─── SECTION TITLES ─────────────────────────── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .section-header p { color: var(--muted); font-size: .85rem; }
+    .divider {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--lavande));
+      border-radius: 2px;
+      margin: .8rem auto 0;
+    }
+
+    /* ─── CROCHET GALLERY ────────────────────────── */
+    #crochet {
+      position: relative; z-index: 1;
+      padding: 70px 6vw;
+    }
+
+    .gallery-masonry {
+      columns: 3;
+      column-gap: 1.2rem;
+    }
+    @media (max-width: 900px) { .gallery-masonry { columns: 2; } }
+    @media (max-width: 520px) { .gallery-masonry { columns: 1; } }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1.2rem;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      cursor: pointer;
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 4px 20px rgba(200,150,200,.12);
+    }
+    .gallery-item:hover {
+      transform: translateY(-6px) rotate(.5deg);
+      box-shadow: 0 16px 40px rgba(200,150,200,.25);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform .4s;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(61,44,62,.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity .3s;
+      display: flex; align-items: flex-end;
+      padding: 1.2rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-label {
+      color: white;
+      font-size: .8rem;
+      font-weight: 500;
+    }
+
+    /* placeholder for when real imgs load */
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--lavande) 50%, var(--peche) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      opacity: .6;
+    }
+    .gallery-item:nth-child(2) .img-placeholder { aspect-ratio: 1/1; background: linear-gradient(135deg, var(--lavande), var(--menthe)); }
+    .gallery-item:nth-child(3) .img-placeholder { aspect-ratio: 4/5; background: linear-gradient(135deg, var(--peche), var(--jaune)); }
+    .gallery-item:nth-child(4) .img-placeholder { aspect-ratio: 3/4; background: linear-gradient(135deg, var(--menthe), var(--lavande)); }
+    .gallery-item:nth-child(5) .img-placeholder { aspect-ratio: 1/1; background: linear-gradient(135deg, var(--jaune), var(--rose)); }
+
+    /* ─── INTEREST CARDS ─────────────────────────── */
+    #interets {
+      position: relative; z-index: 1;
+      padding: 70px 6vw;
+      background: rgba(254,246,249,.6);
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .interest-card {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+      cursor: default;
+    }
+    .interest-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(200,150,200,.18);
+      border-color: var(--rose);
+    }
+    .interest-card .ic-emoji { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    .interest-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: .6rem;
+      color: var(--text);
+    }
+    .interest-card p {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .card-rose  { border-color: rgba(242,167,195,.4); }
+    .card-rose:hover  { border-color: var(--rose); box-shadow: 0 20px 50px rgba(242,167,195,.22); }
+    .card-lavande { border-color: rgba(201,184,240,.4); }
+    .card-lavande:hover { border-color: var(--lavande); box-shadow: 0 20px 50px rgba(201,184,240,.22); }
+    .card-peche  { border-color: rgba(255,212,179,.4); }
+    .card-peche:hover  { border-color: var(--peche); box-shadow: 0 20px 50px rgba(255,212,179,.25); }
+    .card-menthe { border-color: rgba(170,236,220,.4); }
+    .card-menthe:hover { border-color: var(--menthe); box-shadow: 0 20px 50px rgba(170,236,220,.22); }
+    .card-jaune  { border-color: rgba(252,232,160,.4); }
+    .card-jaune:hover  { border-color: var(--jaune); box-shadow: 0 20px 50px rgba(252,232,160,.22); }
+
+    /* ─── QUOTE ──────────────────────────────────── */
+    .quote-section {
+      position: relative; z-index: 1;
+      padding: 60px 8vw;
+      text-align: center;
+    }
+    .quote-box {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem 4rem;
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .quote-box::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 7rem;
+      color: var(--rose);
+      opacity: .25;
+      position: absolute; top: -20px; left: 30px;
+      line-height: 1;
+    }
+    .quote-box p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .quote-box cite {
+      font-size: .75rem;
+      color: var(--muted);
+      letter-spacing: .1em;
+    }
+
+    /* ─── BACK TO PORTFOLIO ──────────────────────── */
+    .back-section {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 60px 6vw 80px;
+    }
+    .back-section p { color: var(--muted); font-size: .85rem; margin-bottom: 1.5rem; }
+    .btn-back-cyber {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: linear-gradient(135deg, #0a0c10, #161b26);
+      color: #00ffe0;
+      border: 1.5px solid #00ffe0;
+      padding: .85rem 2rem;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .btn-back-cyber:hover { box-shadow: 0 0 30px rgba(0,255,224,.3); transform: translateY(-2px); }
+
+    /* ─── LIGHTBOX ───────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(61,44,62,.85);
+      backdrop-filter: blur(10px);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 24px;
+      background: white; border: none;
+      width: 40px; height: 40px; border-radius: 50%;
+      font-size: 1.2rem; cursor: pointer;
+      display: grid; place-items: center;
+      color: var(--text);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      font-size: .7rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── SCROLL FADE ────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Blobs & Sparkles -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="sparkles" id="sparkles"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">Marilou ✨</a>
+    <a href="index.html" class="back-btn">← Retour au cyberfolio</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <p class="eyebrow">Ma vie en dehors du terminal</p>
+    <h1>Mes univers & créations</h1>
+    <div class="hero-deco">
+      <span>🧶</span><span>🎮</span><span>✈️</span><span>🌸</span>
+    </div>
+    <p>La cybersécurité c'est ma passion professionnelle, mais j'ai aussi une vie pleine de couleurs, de laine et d'aventures !</p>
+  </div>
+
+  <!-- CROCHET GALLERY -->
+  <section id="crochet">
+    <div class="section-header reveal">
+      <h2>🧶 Mes créations au crochet</h2>
+      <p>Chaque pièce est faite à la main avec amour ♡</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="gallery-masonry reveal">
+
+      <div class="gallery-item" onclick="openLightbox('img1.jpg')">
+        <img src="img1.jpg" alt="Création crochet 1"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none">🧶</div>
+        <div class="gallery-overlay"><span class="gallery-label">Création n°1 ✨</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="img2.jpg" alt="Création crochet 2"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none">🌸</div>
+        <div class="gallery-overlay"><span class="gallery-label">Création n°2 ✨</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('img3.jpg')">
+        <img src="img3.jpg" alt="Création crochet 3"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none">💜</div>
+        <div class="gallery-overlay"><span class="gallery-label">Création n°3 ✨</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('img4.jpg')">
+        <img src="img4.jpg" alt="Création crochet 4"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none">🌙</div>
+        <div class="gallery-overlay"><span class="gallery-label">Création n°4 ✨</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox('img5.jpg')">
+        <img src="img5.jpg" alt="Création crochet 5"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none">🌺</div>
+        <div class="gallery-overlay"><span class="gallery-label">Création n°5 ✨</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CENTRES D'INTÉRÊTS -->
+  <section id="interets">
+    <div class="section-header reveal">
+      <h2>Ce qui me fait vibrer 💫</h2>
+      <p>Mes passions au quotidien</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="interests-grid">
+      <div class="interest-card card-lavande reveal">
+        <span class="ic-emoji">🎮</span>
+        <h3>Jeux vidéos</h3>
+        <p>Des heures à explorer des mondes virtuels — RPG, aventure, et parfois des petits défis de hacking ! La logique des jeux me rappelle celle de la cybersécurité.</p>
+      </div>
+      <div class="interest-card card-rose reveal">
+        <span class="ic-emoji">🧶</span>
+        <h3>Crochet & Tricot</h3>
+        <p>Créer quelque chose de concret avec ses mains, choisir les couleurs et les points… un vrai moment de zen après une journée de cours intense !</p>
+      </div>
+      <div class="interest-card card-peche reveal">
+        <span class="ic-emoji">✈️</span>
+        <h3>Voyage</h3>
+        <p>Découvrir de nouvelles cultures, langues et paysages. Chaque voyage est une leçon d'adaptation — une compétence clé aussi en cybersécurité !</p>
+      </div>
+      <div class="interest-card card-menthe reveal">
+        <span class="ic-emoji">🔐</span>
+        <h3>Cybersécurité</h3>
+        <p>Pas que le travail — c'est aussi une vraie passion. Les CTF, la veille techno, les nouvelles vulnérabilités… ce monde n'arrête jamais de me surprendre.</p>
+      </div>
+      <div class="interest-card card-jaune reveal">
+        <span class="ic-emoji">🤖</span>
+        <h3>Robotique</h3>
+        <p>Programmer des systèmes qui interagissent avec le monde physique, jouer avec Arduino… où le hardware rencontre le software !</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="quote-section reveal">
+    <div class="quote-box">
+      <p>Le crochet, c'est comme le code : un point à la fois, une ligne à la fois, et soudain tu as créé quelque chose de magique.</p>
+      <cite>— Marilou Sionneau</cite>
+    </div>
+  </div>
+
+  <!-- BACK TO PORTFOLIO -->
+  <div class="back-section">
+    <p>Intéressé·e par mon profil professionnel ?</p>
+    <a href="index.html" class="btn-back-cyber">
+      💻 Retour au cyberfolio
+    </a>
+  </div>
+
+  <footer>
+    <p>✨ Fait avec beaucoup d'amour, de laine et de curiosité · Marilou Sionneau 2025 ✨</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="Photo crochet agrandie">
+  </div>
+
+  <script>
+    // Sparkles
+    const container = document.getElementById('sparkles');
+    for (let i = 0; i < 60; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.cssText = `
+        left:${Math.random()*100}%;
+        top:${Math.random()*100}%;
+        --d:${2+Math.random()*4}s;
+        --delay:-${Math.random()*6}s;
+        width:${2+Math.random()*4}px;
+        height:${2+Math.random()*4}px;
+        background:${['#f2a7c3','#c9b8f0','#ffd4b3','#aaecdc','#fce8a0'][Math.floor(Math.random()*5)]};
+      `;
+      container.appendChild(s);
+    }
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
