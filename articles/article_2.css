@@ -96,29 +96,68 @@
     }
 
     /* ── TOP BAR ── */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 32px;
-      background: rgba(10,22,40,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .topbar-serie { color: var(--hook-gold); }
-    .topbar-num { color: rgba(179,229,252,0.5); }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  background: rgba(10,22,40,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-    .topbar-nav-btns {
-      display: flex;
-      gap: 8px;
-    }
+.topbar-serie { 
+  color: var(--hook-gold); 
+}
+
+.topbar-num { 
+  color: rgba(179,229,252,0.5); 
+}
+
+.topbar-nav-btns {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── NAV BUTTONS ── */
+.topbar-btn {
+  text-decoration: none;
+  color: var(--text-bright);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all 0.25s ease;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* Hover */
+.topbar-btn:hover {
+  background: rgba(21,101,192,0.25);
+  border-color: rgba(38,198,218,0.4);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Bouton principal (Cyberfolio) */
+.topbar-btn--home {
+  background: linear-gradient(135deg, var(--ocean-bright), var(--sea-teal));
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.topbar-btn--home:hover {
+  background: linear-gradient(135deg, var(--sea-light), var(--ocean-bright));
+}
 
 
     /* ── HERO ── */
