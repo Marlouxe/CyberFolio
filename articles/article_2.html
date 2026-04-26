@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Phishing — Cybersécurité pour tous</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="article_2.css" />
+
+</head>
+<body>
+
+  <!-- BUBBLES -->
+  <div class="bubbles">
+    <div class="bubble" style="width:8px;height:8px;left:10%;animation-duration:12s;animation-delay:0s;"></div>
+    <div class="bubble" style="width:14px;height:14px;left:22%;animation-duration:18s;animation-delay:3s;"></div>
+    <div class="bubble" style="width:6px;height:6px;left:38%;animation-duration:14s;animation-delay:7s;"></div>
+    <div class="bubble" style="width:20px;height:20px;left:54%;animation-duration:22s;animation-delay:1s;"></div>
+    <div class="bubble" style="width:10px;height:10px;left:68%;animation-duration:16s;animation-delay:5s;"></div>
+    <div class="bubble" style="width:16px;height:16px;left:80%;animation-duration:20s;animation-delay:9s;"></div>
+    <div class="bubble" style="width:5px;height:5px;left:91%;animation-duration:11s;animation-delay:2s;"></div>
+    <div class="bubble" style="width:12px;height:12px;left:45%;animation-duration:17s;animation-delay:11s;"></div>
+    <div class="bubble" style="width:9px;height:9px;left:75%;animation-duration:13s;animation-delay:6s;"></div>
+  </div>
+
+  <!-- FISH -->
+  <div class="fish-container">
+    <div class="fish" style="top:18%;animation-duration:28s;animation-delay:0s;">
+      <svg width="80" height="40" viewBox="0 0 80 40" fill="none">
+        <ellipse cx="36" cy="20" rx="28" ry="14" fill="#26C6DA"/>
+        <polygon points="64,20 80,8 80,32" fill="#00897B"/>
+        <circle cx="20" cy="16" r="3" fill="#0A1628"/>
+        <path d="M36 6 Q50 20 36 34" stroke="#0097A7" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+    <div class="fish reverse" style="top:62%;animation-duration:35s;animation-delay:8s;">
+      <svg width="60" height="30" viewBox="0 0 80 40" fill="none">
+        <ellipse cx="36" cy="20" rx="28" ry="14" fill="#1565C0"/>
+        <polygon points="64,20 80,8 80,32" fill="#0D47A1"/>
+        <circle cx="20" cy="16" r="3" fill="#E3F2FD"/>
+      </svg>
+    </div>
+    <div class="fish" style="top:82%;animation-duration:42s;animation-delay:15s;">
+      <svg width="44" height="22" viewBox="0 0 80 40" fill="none">
+        <ellipse cx="36" cy="20" rx="28" ry="14" fill="#0E3D6E"/>
+        <polygon points="64,20 80,8 80,32" fill="#0A2D52"/>
+        <circle cx="20" cy="16" r="3" fill="#B3E5FC"/>
+      </svg>
+    </div>
+    <div class="fish reverse" style="top:38%;animation-duration:50s;animation-delay:22s;opacity:0.1;">
+      <svg width="100" height="50" viewBox="0 0 80 40" fill="none">
+        <ellipse cx="36" cy="20" rx="28" ry="14" fill="#006064"/>
+        <polygon points="64,20 80,8 80,32" fill="#004D40"/>
+        <circle cx="20" cy="16" r="3" fill="#E0F7FA"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <span class="topbar-serie">Cybersécurité pour tous</span>
+    <span class="topbar-num">Article 2 / 4</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hook-hero" width="220" height="400" viewBox="0 0 220 400">
+      <line x1="110" y1="0" x2="110" y2="180" stroke="#FFB300" stroke-width="3"/>
+      <path d="M110 180 Q110 260 160 280 Q210 300 210 340 Q210 390 160 395 Q130 398 120 370" stroke="#FFB300" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M120 370 L108 385 M120 370 L132 380" stroke="#FFB300" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <div class="hero-inner">
+      <div class="hero-kicker">
+        <span class="kicker-fish">🐟</span>
+        Phishing &amp; Hameçonnage
+        <span class="kicker-fish" style="animation-delay:0.5s">🎣</span>
+      </div>
+      <h1 class="hero-title">
+        Ne mordez pas<br/>
+        <em>à l'hameçon.</em>
+      </h1>
+      <p class="hero-desc">
+        Comme un pêcheur qui lance son appât, l'escroc vous envoie un faux message pour vous piéger. 
+        Voici comment repérer les hameçons avant qu'il ne soit trop tard.
+      </p>
+      <div class="hero-stat-row">
+        <div class="hstat-pill">
+          <div class="hstat-pill-num">3,4Md</div>
+          <div class="hstat-pill-label">d'e-mails de phishing envoyés chaque jour</div>
+        </div>
+        <div class="hstat-pill">
+          <div class="hstat-pill-num">#1</div>
+          <div class="hstat-pill-label">technique de cyberattaque la plus utilisée</div>
+        </div>
+        <div class="hstat-pill">
+          <div class="hstat-pill-num">3s</div>
+          <div class="hstat-pill-label">suffisent à compromettre un compte naïf</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+
+    <!-- HOW IT WORKS -->
+    <section class="block">
+      <h2 class="section-title">Comment fonctionne <span class="accent">l'hameçon</span> ?</h2>
+      <p class="section-sub">La mécanique est simple — et redoutablement efficace.</p>
+
+      <div class="how-block">
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="how-step-num">1</div>
+            <div class="how-step-content">
+              <h3>L'appât est jeté</h3>
+              <p>Un message imite parfaitement une organisation de confiance : votre banque, La Poste, les impôts, Amazon… Logo, couleurs, mise en page : tout est copié à l'identique pour vous tromper.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">2</div>
+            <div class="how-step-content">
+              <h3>L'urgence vous fait agir vite</h3>
+              <p>Le message joue sur la peur ou l'urgence : "Votre compte sera bloqué", "Remboursement en attente", "Action requise". Vous cliquez sans réfléchir. C'est exactement ce qu'ils veulent.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">3</div>
+            <div class="how-step-content">
+              <h3>Le faux site vous capture</h3>
+              <p>Le lien mène à une copie parfaite du vrai site. Vous entrez vos identifiants… qui vont directement dans les mains de l'escroc. Le poisson est ferré.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-card-icon">🎯</div>
+        <p>Le <strong>spear phishing</strong> est encore plus dangereux : les attaquants se renseignent sur vous via LinkedIn ou les réseaux sociaux pour personnaliser le message. Votre nom, votre entreprise, votre poste — tout y est pour paraître crédible.</p>
+      </div>
+    </section>
+
+    <!-- FORMS OF PHISHING -->
+    <section class="block">
+      <h2 class="section-title">L'hameçon se jette <span class="accent">partout</span></h2>
+      <p class="section-sub">Pas seulement par e-mail. Les escrocs s'adaptent à tous les canaux.</p>
+
+      <div class="forms-grid">
+        <div class="form-card">
+          <span class="form-badge">Classique</span>
+          <span class="form-card-icon">📧</span>
+          <h3>E-mail</h3>
+          <p>Le plus courant. Imite banques, administrations, services en ligne. Souvent en masse.</p>
+        </div>
+        <div class="form-card">
+          <span class="form-badge">Smishing</span>
+          <span class="form-card-icon">📱</span>
+          <h3>SMS</h3>
+          <p>Faux messages de La Poste, Ameli, impôts. Le lien mène à un faux formulaire.</p>
+        </div>
+        <div class="form-card">
+          <span class="form-badge">Vishing</span>
+          <span class="form-card-icon">📞</span>
+          <h3>Téléphone</h3>
+          <p>Quelqu'un se fait passer pour votre banque ou le support Microsoft. Très convaincant.</p>
+        </div>
+        <div class="form-card danger">
+          <span class="form-badge">Ciblé</span>
+          <span class="form-card-icon">🔍</span>
+          <h3>Réseaux sociaux</h3>
+          <p>Faux messages privés, fausses offres, concours frauduleux sur Facebook, WhatsApp…</p>
+        </div>
+        <div class="form-card danger">
+          <span class="form-badge">Nouveau</span>
+          <span class="form-card-icon">📷</span>
+          <h3>QR codes</h3>
+          <p>De plus en plus répandus. Le QR code redirige vers un faux site au lieu du vrai.</p>
+        </div>
+        <div class="form-card danger">
+          <span class="form-badge">Avancé</span>
+          <span class="form-card-icon">🎯</span>
+          <h3>Spear phishing</h3>
+          <p>Message personnalisé avec vos vraies informations. Le plus difficile à détecter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 SIGNS - INTERACTIVE -->
+    <section class="block signs-block">
+      <h2 class="section-title">Les <span class="accent">7 signaux</span> d'alarme</h2>
+      <p class="section-sub">Cliquez sur chaque signe pour voir comment le repérer.</p>
+
+      <div class="sign-list" id="signList">
+        <div class="sign-item" onclick="toggleSign(this)">
+          <div class="sign-num">01</div>
+          <div class="sign-main">
+            <div class="sign-title">L'urgence artificielle</div>
+            <div class="sign-body">
+              Les formules "Votre compte sera suspendu dans 24h", "Action requise immédiatement" cherchent à vous faire agir sans réfléchir. Une vraie organisation ne vous mettra jamais sous pression de cette façon.
+              <div class="sign-example">⚠️ "URGENT : Votre compte Amazon sera désactivé dans 48h. Vérifiez maintenant."</div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-item" onclick="toggleSign(this)">
+          <div class="sign-num">02</div>
+          <div class="sign-main">
+            <div class="sign-title">L'adresse e-mail suspecte</div>
+            <div class="sign-body">
+              Le nom affiché peut être "Votre Banque", mais regardez l'adresse réelle. Les vraies entreprises utilisent leur propre domaine. Un domaine bizarre est un piège assuré.
+              <div class="sign-example">✉️ De : "Crédit Agricole" &lt;contact@credit-agricole-securite.xyz&gt;</div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-item" onclick="toggleSign(this)">
+          <div class="sign-num">03</div>
+          <div class="sign-main">
+            <div class="sign-title">Les fautes d'orthographe</div>
+            <div class="sign-body">
+              Beaucoup de phishings viennent de l'étranger et sont mal traduits. Les fautes sont un signe d'alarme classique — mais attention, les messages deviennent de plus en plus soignés avec l'IA.
+              <div class="sign-example">❌ "Chèr(e) client, votre compte à ete compromit. Clicquez ici."</div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-item" onclick="toggleSign(this)">
+          <div class="sign-num">04</div>
+          <div class="sign-main">
+            <div class="sign-title">Les liens suspects</div>
+            <div class="sign-body">
+              Avant de cliquer, survolez le lien avec votre souris. L'URL réelle s'affiche en bas de l'écran. Si elle ne correspond pas au site officiel, c'est un piège. Un seul caractère différent suffit.
+              <div class="sign-example">🔗 https://www.credit-agricoIe.fr (le "l" est en réalité un "I" majuscule)</div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-item" onclick="toggleSign(this)">
+          <div class="sign-num">05</div>
+          <div class="sign-main">
+            <div class="sign-title">Les demandes d'informations sensibles</div>
+            <div class="sign-body">
+              Votre banque ne vous demandera JAMAIS votre mot de passe, code PIN ou numéro de carte par e-mail ou téléphone. Jamais. Si quelqu'un le fait, c'est une arnaque, sans exception.
+            </div>
+          </div>
+        </div>
+        <div class="sign-item" onclick="toggleSign(this)">
+          <div class="sign-num">06</div>
+          <div class="sign-main">
+            <div class="sign-title">Les pièces jointes inattendues</div>
+            <div class="sign-body">
+              Un fichier joint que vous n'attendiez pas — même en .pdf — peut contenir un virus. N'ouvrez jamais les pièces jointes de messages inattendus, surtout les .exe, .zip, .doc avec macros.
+              <div class="sign-example">📎 "Facture_impayée_0291.exe" — 847 Ko</div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-item" onclick="toggleSign(this)">
+          <div class="sign-num">07</div>
+          <div class="sign-main">
+            <div class="sign-title">C'est trop beau pour être vrai</div>
+            <div class="sign-body">
+              "Vous avez gagné un iPhone", "Un remboursement de 380€ vous attend"… Si vous n'avez rien demandé et rien gagné, méfiez-vous. L'appât brille toujours un peu trop.
+              <div class="sign-example">🎁 "Félicitations ! Vous êtes notre 1 000 000e visiteur. Réclamez votre prix !"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE EMAIL DETECTOR -->
+    <section class="block detector-block">
+      <div class="detector-title">🎣 Trouvez les hameçons dans cet e-mail</div>
+      <p class="detector-sub">Passez votre souris sur les éléments surlignés pour découvrir pourquoi ils sont suspects.</p>
+
+      <div class="email-preview">
+        <div class="email-header">
+          <div class="email-row">
+            <span class="label">De :</span>
+            <span>
+              "La Poste" &lt;<span class="sus" data-tip="Ce domaine n'est pas celui de La Poste officielle (laposte.fr). 'laposte-livraison.net' est un domaine frauduleux." id="sus1" onclick="revealSus(this)">contact@laposte-livraison.net</span>&gt;
+            </span>
+          </div>
+          <div class="email-row">
+            <span class="label">Objet :</span>
+            <span><span class="sus" data-tip="L'urgence artificielle est le signe #1 du phishing. Une vraie organisation ne crée pas cette pression." id="sus2" onclick="revealSus(this)">⚠️ ACTION REQUISE : Votre colis sera retourné dans 24h</span></span>
+          </div>
+          <div class="email-row">
+            <span class="label">À :</span>
+            <span><span class="sus" data-tip="Les envois en masse utilisent souvent 'undisclosed-recipients' car le même mail est envoyé à des milliers de personnes." id="sus3" onclick="revealSus(this)">undisclosed-recipients</span></span>
+          </div>
+        </div>
+        <div class="email-body-wrap">
+          <p>Bonjour,</p>
+          <br/>
+          <p>Votre colis <strong>#FR749201847</strong> n'a pas pu être livré en raison de <span class="sus" data-tip="Faute de grammaire. Un e-mail officiel de La Poste ne contient pas ce type d'erreur." id="sus4" onclick="revealSus(this)">frais de douane impayés</span>. Vous devez régler <strong>2,99€</strong> pour débloquer la livraison.</p>
+          <br/>
+          <p>Sans action de votre part dans les <span class="sus" data-tip="Urgence artificielle pour vous faire agir sans réfléchir. Technique classique de manipulation." id="sus5" onclick="revealSus(this)">24 prochaines heures</span>, votre colis sera automatiquement retourné à l'expéditeur.</p>
+          <br/>
+          <p>
+            <span class="sus" data-tip="L'URL réelle (visible au survol) ne correspond pas à laposte.fr. Il s'agit d'un site frauduleux." id="sus6" onclick="revealSus(this)">
+              <a>› Régler mes frais de livraison maintenant</a>
+            </span>
+          </p>
+          <br/>
+          <p style="font-size:12px;color:#999;">La Poste — Service client — <span class="sus" data-tip="Ce numéro de téléphone n'est pas le 3631, le vrai numéro de La Poste. Méfiance." id="sus7" onclick="revealSus(this)">09 80 98 76 54</span></p>
+        </div>
+      </div>
+
+      <div class="detector-score">
+        <span class="score-label">Pièges découverts :</span>
+        <span class="score-found" id="scoreCount">0</span>
+        <span class="score-label">sur 7</span>
+        <span id="scoreMsg" style="font-size:13px;color:var(--text-muted);margin-left:auto;"></span>
+      </div>
+      <p class="detector-hint">Cliquez sur chaque zone dorée pour révéler le piège</p>
+    </section>
+
+    <!-- WHAT TO DO -->
+    <section class="block">
+      <h2 class="section-title">Que faire si <span class="accent">vous suspectez un phishing ?</span></h2>
+      <div class="react-block">
+        <div class="react-card safe">
+          <div class="react-card-label">
+            <span style="font-size:16px;">✓</span> Bons réflexes
+          </div>
+          <div class="react-list">
+            <div class="react-item">
+              <div class="react-bullet">1</div>
+              <div><strong>Ne cliquez sur rien.</strong> Ni lien, ni pièce jointe, ni image.</div>
+            </div>
+            <div class="react-item">
+              <div class="react-bullet">2</div>
+              <div><strong>Signalez comme spam</strong> dans votre messagerie.</div>
+            </div>
+            <div class="react-item">
+              <div class="react-bullet">3</div>
+              <div>Rendez-vous sur <strong>signal.spam.fr</strong> pour signaler le phishing en France.</div>
+            </div>
+            <div class="react-item">
+              <div class="react-bullet">4</div>
+              <div>Si vous avez un doute sur votre banque, <strong>appelez le numéro officiel</strong> — celui sur votre carte, pas celui du mail.</div>
+            </div>
+          </div>
+        </div>
+        <div class="react-card warn">
+          <div class="react-card-label">
+            <span style="font-size:16px;">!</span> Si vous avez cliqué…
+          </div>
+          <div class="react-list">
+            <div class="react-item">
+              <div class="react-bullet">!</div>
+              <div><strong>Changez immédiatement</strong> votre mot de passe sur le vrai site.</div>
+            </div>
+            <div class="react-item">
+              <div class="react-bullet">!</div>
+              <div><strong>Contactez votre banque</strong> si des données bancaires ont été saisies.</div>
+            </div>
+            <div class="react-item">
+              <div class="react-bullet">!</div>
+              <div><strong>Activez la double authentification</strong> sur tous vos comptes importants.</div>
+            </div>
+            <div class="react-item">
+              <div class="react-bullet">!</div>
+              <div>Faites un signalement sur <strong>cybermalveillance.gouv.fr</strong> pour être accompagné.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SITES TO KNOW -->
+    <section class="block">
+      <h2 class="section-title">Les sites <span class="accent">officiels</span> à connaître</h2>
+      <div class="sites-block">
+        <div class="site-row">
+          <div class="site-badge">🚨</div>
+          <div class="site-content">
+            <div class="site-url">signal.spam.fr</div>
+            <div class="site-desc">Signaler un e-mail de phishing ou de spam aux autorités françaises</div>
+          </div>
+          <span class="site-tag">France</span>
+        </div>
+        <div class="site-row">
+          <div class="site-badge">🛡️</div>
+          <div class="site-content">
+            <div class="site-url">cybermalveillance.gouv.fr</div>
+            <div class="site-desc">Accompagnement officiel si vous avez été victime d'une cyberattaque</div>
+          </div>
+          <span class="site-tag">Officiel</span>
+        </div>
+        <div class="site-row">
+          <div class="site-badge">🔍</div>
+          <div class="site-content">
+            <div class="site-url">pharos.interieur.gouv.fr</div>
+            <div class="site-desc">Signaler tout contenu illicite sur Internet auprès de la Police nationale</div>
+          </div>
+          <span class="site-tag">Police</span>
+        </div>
+        <div class="site-row">
+          <div class="site-badge">💧</div>
+          <div class="site-content">
+            <div class="site-url">haveibeenpwned.com</div>
+            <div class="site-desc">Vérifier si votre e-mail a été compromis dans une fuite de données</div>
+          </div>
+          <span class="site-tag">Vérif</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOLDEN RULE -->
+    <section class="block rule-banner">
+      <div class="rule-hook-icon">🎣</div>
+      <div class="rule-text">
+        <h3>La règle d'or du pêcheur averti</h3>
+        <p>Avant de cliquer sur un lien dans un message, posez-vous cette question simple : <strong>"Est-ce que j'attendais ce message ?"</strong> Si la réponse est non — ou si vous n'êtes pas sûr — ne cliquez pas. Contactez directement l'organisation via son site officiel. Le poisson malin ne mord jamais à n'importe quel appât.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span>Cybersécurité pour tous — Article 2/4 : Le phishing</span>
+    <span>Prochain article : Les mises à jour — pourquoi c'est crucial →</span>
+  </footer>
+
+  <script>
+    function toggleSign(el) {
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.sign-item.open').forEach(s => s.classList.remove('open'));
+      if (!isOpen) el.classList.add('open');
+    }
+
+    let found = 0;
+    function revealSus(el) {
+      if (!el.classList.contains('revealed')) {
+        el.classList.add('revealed');
+        found++;
+        document.getElementById('scoreCount').textContent = found;
+        const msgs = ['','','','Bien vu !','Continue !','Tu chauffes 🔥','Presque !','Bravo, expert(e) en phishing ! 🐟'];
+        document.getElementById('scoreMsg').textContent = msgs[found] || '';
+      }
+    }
+  </script>
+
+</body>
+</html>
