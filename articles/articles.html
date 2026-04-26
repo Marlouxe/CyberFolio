@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Articles — Cybersécurité pour tous · Marilou Sionneau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="articles.css" />
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="../index.html">MS<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#skills">Compétences</a></li>
+      <li><a href="../index.html#projects">Projets</a></li>
+      <li><a href="../index.html#about">Profil</a></li>
+      <li><a href="#" class="active">Articles</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeToggle" title="Changer le thème" aria-label="Toggle theme">☀️</button>
+      <a class="btn-back" href="../index.html">← Retour</a>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div class="section-tag">// articles</div>
+      <h1 class="page-title">Cybersécurité<br><span>pour tous</span></h1>
+      <p class="page-desc">
+        Une série de 4 articles pour comprendre les bases de la cybersécurité — sans jargon, sans prise de tête. Écrits par <a href="../index.html">Marilou Sionneau</a>, étudiante à Guardia Cybersecurity School.
+      </p>
+
+      <div class="serie-info">
+        <span class="serie-label">Progression de la série</span>
+        <div class="serie-progress">
+          <div class="serie-dot done" title="Article 1 : Mots de passe"></div>
+          <div class="serie-dot pending" title="Article 2 : À venir"></div>
+          <div class="serie-dot pending" title="Article 3 : À venir"></div>
+          <div class="serie-dot pending" title="Article 4 : À venir"></div>
+        </div>
+        <span style="font-size:.65rem; color:var(--muted); margin-left:auto;">1 / 4 publié</span>
+      </div>
+    </div>
+
+    <!-- Articles grid -->
+    <div class="articles-grid">
+
+      <!-- ── ARTICLE 1 — DISPO ── -->
+      <a href="article_1.html" class="article-card">
+        <div class="card-banner card-banner-1">
+          <div class="card-banner-bg">🔑</div>
+          <span class="card-status-badge status-live">Disponible</span>
+          <span class="card-num">01 / 04</span>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Mots de passe</div>
+          <div class="card-title">
+            Pourquoi <span class="highlight">"123456"</span> c'est une très mauvaise idée
+          </div>
+          <div class="card-desc">
+            Chaque année, des millions de comptes se font pirater à cause d'un seul problème : des mots de passe trop faibles. Ce guide explique tout — attaques, bonnes pratiques, gestionnaires, double authentification.
+          </div>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="ctag">Mots de passe</span>
+              <span class="ctag">2FA</span>
+              <span class="ctag">Débutant</span>
+            </div>
+            <span class="card-cta">Lire →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── ARTICLE 2 — À VENIR ── -->
+      <div class="article-card coming-soon">
+        <div class="card-banner card-banner-2">
+          <div class="card-banner-bg">🎣</div>
+          <span class="card-status-badge status-soon">À venir</span>
+          <span class="card-num">02 / 04</span>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Arnaques en ligne</div>
+          <div class="card-title">Le phishing — reconnaître les arnaques par e-mail</div>
+          <div class="card-desc">
+            Un e-mail qui semble venir de votre banque, un lien qui ressemble à l'original... Comment repérer une tentative de phishing avant de cliquer ? Techniques et réflexes à adopter.
+          </div>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="ctag">Phishing</span>
+              <span class="ctag">E-mail</span>
+              <span class="ctag">Arnaques</span>
+            </div>
+            <span class="card-cta">Bientôt —</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ARTICLE 3 — À VENIR ── -->
+      <div class="article-card coming-soon">
+        <div class="card-banner card-banner-3">
+          <div class="card-banner-bg">📡</div>
+          <span class="card-status-badge status-soon">À venir</span>
+          <span class="card-num">03 / 04</span>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Vie privée</div>
+          <div class="card-title">Wi-Fi public, VPN et navigation — protéger votre connexion</div>
+          <div class="card-desc">
+            Se connecter depuis un café ou un aéroport expose vos données. Qu'est-ce qu'un VPN ? Quand en avoir besoin ? Comment naviguer sans laisser de traces inutiles ?
+          </div>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="ctag">VPN</span>
+              <span class="ctag">Wi-Fi</span>
+              <span class="ctag">Vie privée</span>
+            </div>
+            <span class="card-cta">Bientôt —</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ARTICLE 4 — À VENIR ── -->
+      <div class="article-card coming-soon">
+        <div class="card-banner card-banner-4">
+          <div class="card-banner-bg">🛡️</div>
+          <span class="card-status-badge status-soon">À venir</span>
+          <span class="card-num">04 / 04</span>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Bonnes pratiques</div>
+          <div class="card-title">Les 10 réflexes cyber à adopter dès aujourd'hui</div>
+          <div class="card-desc">
+            Mises à jour, sauvegardes, permissions des applis, réseaux sociaux... Un récap pratique et actionnable des habitudes qui font vraiment la différence au quotidien.
+          </div>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="ctag">Hygième</span>
+              <span class="ctag">Quotidien</span>
+              <span class="ctag">Pratique</span>
+            </div>
+            <span class="card-cta">Bientôt —</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Marilou Sionneau · Guardia Cybersecurity School · Série "Cybersécurité pour tous"</p>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', next);
+    });
+  </script>
+</body>
+</html>
