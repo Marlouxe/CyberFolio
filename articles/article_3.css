@@ -137,13 +137,13 @@ body {
   background: var(--black-soft);
 }
 .topbar-btn--home {
-  color: var(--green);
-  border-color: rgba(0,255,133,0.25);
+  color: var(--amber);
+  border-color: rgba(255,179,0,0.35);
 }
 .topbar-btn--home:hover {
-  background: rgba(0,255,133,0.07);
-  border-color: var(--green-dim);
-  color: var(--green);
+  background: rgba(255,179,0,0.08);
+  border-color: var(--amber);
+  color: var(--amber);
 }
 
 .topbar-signal {
