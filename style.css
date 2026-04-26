@@ -671,7 +671,7 @@ footer {
   #menuToggle { display: grid; }
 
   .nav-links {
-    display: none;
+    display: none !important;
     flex-direction: column;
     position: fixed;
     top: 64px;
@@ -684,7 +684,9 @@ footer {
     z-index: 99;
   }
 
-  .nav-links.open { display: flex; }
+  .nav-links.open {
+    display: flex !important;
+  }
 
   .nav-links li { border-bottom: 1px solid var(--border); }
 
