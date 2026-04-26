@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les mots de passe — Cybersécurité pour tous</title>
+  <link rel="stylesheet" href="article_1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ HEADER BAR ░░ -->
+  <header class="topbar">
+    <span class="topbar-serie">Cybersécurité pour tous</span>
+    <span class="topbar-num">Article 1 / 4</span>
+  </header>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero">
+    <div class="hero-bg-text">?</div>
+    <div class="hero-inner">
+      <div class="hero-kicker">
+        <span class="kicker-dot"></span>
+        Mots de passe
+      </div>
+      <h1 class="hero-title">
+        Pourquoi <span class="hero-highlight">"123456"</span><br />
+        c'est une très<br />
+        mauvaise idée
+      </h1>
+      <p class="hero-desc">
+        Chaque année, des millions de comptes se font pirater à cause d'un seul problème : 
+        des mots de passe trop faibles. Ce guide vous explique tout — sans jargon, sans prise de tête.
+      </p>
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-num">80%</span>
+          <span class="hstat-label">des piratages impliquent un mot de passe faible ou volé</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-num">#1</span>
+          <span class="hstat-label">mot de passe le plus utilisé au monde depuis des années</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-num">3s</span>
+          <span class="hstat-label">suffisent à cracker "123456" avec un logiciel automatique</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+
+    <!-- ░░ INTRO ░░ -->
+    <section class="block intro-block">
+      <div class="intro-text">
+        <h2 class="section-title">On commence par un constat simple</h2>
+        <p>Vous pensez peut-être que ça n'arrive qu'aux autres. Mais si votre mot de passe ressemble à <strong>"motdepasse"</strong>, <strong>"azerty"</strong>, votre prénom suivi de votre année de naissance... vous êtes une cible facile. Pas parce que des hackers vous visent personnellement, mais parce que des programmes automatiques testent des millions de combinaisons par seconde, en permanence, sur tous les comptes accessibles.</p>
+        <p>Ce n'est pas une question de malchance. C'est une question d'habitudes. Et les bonnes habitudes, ça s'apprend en 5 minutes.</p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-icon">!</div>
+        <p class="intro-card-text">Un seul mot de passe faible peut compromettre <strong>tous vos comptes</strong> si vous le réutilisez partout.</p>
+      </div>
+    </section>
+
+    <!-- ░░ HOW ATTACKS WORK ░░ -->
+    <section class="block attack-block">
+      <div class="attack-header">
+        <h2 class="section-title white">Comment fonctionne une attaque sur un mot de passe ?</h2>
+        <p class="attack-sub">Pas besoin d'être un génie de l'informatique. Voici comment ça marche vraiment.</p>
+      </div>
+      <div class="attack-steps">
+        <div class="astep">
+          <div class="astep-num">01</div>
+          <div class="astep-body">
+            <h3>Attaque par force brute</h3>
+            <p>Un programme essaie toutes les combinaisons possibles, des milliers par seconde. Un mot de passe de 6 chiffres est cracké en quelques secondes. 8 caractères mixtes : quelques heures. 14 caractères ? Des milliards d'années.</p>
+          </div>
+        </div>
+        <div class="astep">
+          <div class="astep-num">02</div>
+          <div class="astep-body">
+            <h3>Attaque par dictionnaire</h3>
+            <p>Le "dictionnaire", c'est une liste de millions de mots de passe connus, récupérés lors de précédentes fuites de données. "Soleil2024", "Football75"... tout ce qui ressemble à un vrai mot est dedans.</p>
+          </div>
+        </div>
+        <div class="astep">
+          <div class="astep-num">03</div>
+          <div class="astep-body">
+            <h3>Fuites de données massives</h3>
+            <p>Quand un site se fait pirater, les mots de passe de ses utilisateurs se retrouvent en vente sur le dark web. Si vous réutilisez votre mot de passe partout, une seule fuite suffit à compromettre tous vos comptes en cascade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ GOOD VS BAD ░░ -->
+    <section class="block compare-block">
+      <h2 class="section-title">Faible ou solide : faites la différence</h2>
+      <div class="compare-grid">
+        <div class="compare-card bad">
+          <div class="compare-badge">✕ Dangereux</div>
+          <div class="compare-examples">
+            <div class="compare-ex"><span class="pass-text">123456</span><span class="crack-time">< 1 seconde</span></div>
+            <div class="compare-ex"><span class="pass-text">motdepasse</span><span class="crack-time">< 1 seconde</span></div>
+            <div class="compare-ex"><span class="pass-text">Thomas75</span><span class="crack-time">~3 minutes</span></div>
+            <div class="compare-ex"><span class="pass-text">Soleil2024!</span><span class="crack-time">~2 heures</span></div>
+          </div>
+          <ul class="compare-why">
+            <li>Basé sur des mots du dictionnaire</li>
+            <li>Infos personnelles faciles à deviner</li>
+            <li>Trop court (moins de 10 caractères)</li>
+            <li>Schéma prévisible (mot + chiffre + !)</li>
+          </ul>
+        </div>
+        <div class="compare-card good">
+          <div class="compare-badge">✓ Solide</div>
+          <div class="compare-examples">
+            <div class="compare-ex"><span class="pass-text">!Tk9#mPz@3xQ</span><span class="crack-time good-time">~34 000 ans</span></div>
+            <div class="compare-ex"><span class="pass-text">Jamdplvs!4Kw</span><span class="crack-time good-time">~8 000 ans</span></div>
+            <div class="compare-ex"><span class="pass-text">zR7$vQn#2mX!pL</span><span class="crack-time good-time">> 1 milliard d'ans</span></div>
+            <div class="compare-ex"><span class="pass-text">kB3@wL9!xM2#qP</span><span class="crack-time good-time">> 1 milliard d'ans</span></div>
+          </div>
+          <ul class="compare-why">
+            <li>12 caractères minimum</li>
+            <li>Mélange de tous les types de caractères</li>
+            <li>Aucune info personnelle</li>
+            <li>Générés aléatoirement ou par phrase</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip-phrase">
+        <div class="tip-phrase-label">💡 L'astuce de la phrase secrète</div>
+        <p>Prenez une phrase facile à retenir et gardez la première lettre de chaque mot, en ajoutant des symboles :</p>
+        <div class="phrase-demo">
+          <div class="phrase-step">
+            <span class="phrase-step-num">1</span>
+            <span>"<em>J'adore manger des pizzas le vendredi soir !</em>"</span>
+          </div>
+          <div class="phrase-arrow">→</div>
+          <div class="phrase-step">
+            <span class="phrase-step-num">2</span>
+            <span>Première lettre de chaque mot</span>
+          </div>
+          <div class="phrase-arrow">→</div>
+          <div class="phrase-result">Jamdplvs!</div>
+        </div>
+        <p class="tip-sub">Simple à mémoriser pour vous. Quasi impossible à deviner pour un programme.</p>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <!-- ░░   TEST INTERACTIF          ░░ -->
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="block tester-block">
+      <div class="tester-header">
+        <div class="tester-icon">🔍</div>
+        <div>
+          <h2 class="tester-title">Testez votre mot de passe</h2>
+          <p class="tester-sub">Entrez n'importe quel mot de passe ci-dessous pour voir s'il tient la route. <em>Rien n'est envoyé nulle part — tout se passe dans votre navigateur.</em></p>
+        </div>
+      </div>
+
+      <div class="tester-input-wrap">
+        <input type="password" id="pwInput" class="pw-input" placeholder="Tapez un mot de passe ici..." autocomplete="off" spellcheck="false" />
+        <button class="pw-toggle" id="pwToggle" aria-label="Afficher/masquer">
+          <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Barre de force -->
+      <div class="strength-bar-wrap">
+        <div class="strength-bar-track">
+          <div class="strength-bar-fill" id="strengthBar"></div>
+        </div>
+        <span class="strength-label" id="strengthLabel">En attente...</span>
+      </div>
+
+      <!-- Critères -->
+      <div class="criteria-grid">
+        <div class="criterion" id="c-length">
+          <div class="criterion-icon" id="ci-length">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Longueur suffisante</span>
+            <span class="criterion-desc">Au moins 12 caractères</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-upper">
+          <div class="criterion-icon" id="ci-upper">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Majuscule(s)</span>
+            <span class="criterion-desc">Au moins 1 lettre majuscule</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-lower">
+          <div class="criterion-icon" id="ci-lower">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Minuscule(s)</span>
+            <span class="criterion-desc">Au moins 1 lettre minuscule</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-number">
+          <div class="criterion-icon" id="ci-number">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Chiffre(s)</span>
+            <span class="criterion-desc">Au moins 1 chiffre (0–9)</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-special">
+          <div class="criterion-icon" id="ci-special">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Caractère spécial</span>
+            <span class="criterion-desc">!, @, #, $, %, &amp;, *...</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-unique">
+          <div class="criterion-icon" id="ci-unique">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Pas de répétition évidente</span>
+            <span class="criterion-desc">Aucun caractère répété 3 fois+</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-nocommon">
+          <div class="criterion-icon" id="ci-nocommon">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Pas un mot courant</span>
+            <span class="criterion-desc">Évite les mots simples ou suites connues</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-long">
+          <div class="criterion-icon" id="ci-long">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Excellente longueur</span>
+            <span class="criterion-desc">16 caractères ou plus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Résultat -->
+      <div class="tester-result" id="testerResult" style="display:none;">
+        <div class="result-icon" id="resultIcon"></div>
+        <div class="result-body">
+          <div class="result-verdict" id="resultVerdict"></div>
+          <div class="result-advice" id="resultAdvice"></div>
+        </div>
+      </div>
+
+      <!-- Temps de crack estimé -->
+      <div class="crack-time-block" id="crackTimeBlock" style="display:none;">
+        <span class="crack-time-label">Temps estimé pour le cracker :</span>
+        <span class="crack-time-value" id="crackTimeValue"></span>
+      </div>
+
+    </section>
+
+
+    <!-- ░░ RÈGLES ░░ -->
+    <section class="block rules-block">
+      <h2 class="section-title white">Les 4 règles d'or d'un bon mot de passe</h2>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-number">01</div>
+          <h3>Long</h3>
+          <p>Au moins 12 caractères, idéalement 16 ou plus. Chaque caractère supplémentaire multiplie exponentiellement le temps de crackage. La longueur est votre meilleure défense.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">02</div>
+          <h3>Mixte</h3>
+          <p>Majuscules, minuscules, chiffres et symboles (!@#$%...). Un mot de passe qui combine les 4 types est bien plus difficile à cracker que n'importe quelle combinaison qui n'en utilise que 2.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">03</div>
+          <h3>Unique</h3>
+          <p>Un mot de passe différent pour chaque site et application. Si l'un est compromis lors d'une fuite de données, les autres restent protégés. Un seul mot de passe pour tout = une bombe à retardement.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">04</div>
+          <h3>Anonyme</h3>
+          <p>Zéro information personnelle : pas de nom, prénom, date de naissance, ville, surnom, équipe de foot préférée. Ces infos sont souvent disponibles sur vos réseaux sociaux et faciles à deviner.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ GESTIONNAIRES ░░ -->
+    <section class="block managers-block">
+      <h2 class="section-title">La solution : les gestionnaires de mots de passe</h2>
+      <p class="managers-intro">Retenir des dizaines de mots de passe longs et complexes, c'est humainement impossible. C'est pour ça qu'existent les gestionnaires de mots de passe : des applications qui retiennent tout à votre place, chiffrent vos données, et les remplissent automatiquement. Vous n'avez plus qu'<strong>un seul mot de passe maître</strong> à retenir.</p>
+
+      <div class="mgr-grid">
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">Bitwarden</span>
+            <span class="mgr-tag free">Gratuit</span>
+          </div>
+          <p class="mgr-desc">Open source et audité publiquement. Le plus transparent du marché. Idéal pour commencer, avec une version gratuite très complète. Disponible sur tous les appareils.</p>
+          <div class="mgr-pros">
+            <span>✓ Open source</span>
+            <span>✓ Multiplateforme</span>
+            <span>✓ Version gratuite</span>
+          </div>
+        </div>
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">1Password</span>
+            <span class="mgr-tag paid">Payant</span>
+          </div>
+          <p class="mgr-desc">Considéré comme l'un des plus sécurisés. Interface très soignée, idéal pour les familles (partage de mots de passe entre membres). Environ 3€/mois.</p>
+          <div class="mgr-pros">
+            <span>✓ Interface soignée</span>
+            <span>✓ Partage famille</span>
+            <span>✓ Très sécurisé</span>
+          </div>
+        </div>
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">Dashlane</span>
+            <span class="mgr-tag both">Free + Pro</span>
+          </div>
+          <p class="mgr-desc">Version gratuite fonctionnelle pour débuter. Inclut un moniteur du dark web dans la version payante qui vous alerte si vos données ont fuitées quelque part.</p>
+          <div class="mgr-pros">
+            <span>✓ Moniteur dark web</span>
+            <span>✓ Facile d'accès</span>
+            <span>✓ Version gratuite</span>
+          </div>
+        </div>
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">KeePass</span>
+            <span class="mgr-tag free">Gratuit</span>
+          </div>
+          <p class="mgr-desc">Vos mots de passe sont stockés localement sur votre appareil, pas dans un cloud. Idéal si vous ne faites confiance à aucun service en ligne. Plus technique mais très robuste.</p>
+          <div class="mgr-pros">
+            <span>✓ 100% local</span>
+            <span>✓ Aucun cloud</span>
+            <span>✓ Gratuit et open source</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="navigator-tip">
+        <span class="navigator-tip-icon">🌐</span>
+        <p><strong>Les navigateurs proposent aussi un gestionnaire intégré</strong> (Chrome, Firefox, Safari). C'est mieux que rien, mais un gestionnaire dédié reste plus sûr : il fonctionne sur tous les navigateurs et applications, pas seulement sur le web.</p>
+      </div>
+    </section>
+
+    <!-- ░░ 2FA ░░ -->
+    <section class="block twofa-block">
+      <div class="twofa-left">
+        <div class="twofa-icon-big">🔐</div>
+        <h2 class="section-title white">La double authentification (2FA)</h2>
+        <p class="twofa-desc">Même avec un mot de passe parfait, activez toujours la double authentification. C'est une couche de sécurité supplémentaire : même si votre mot de passe est volé, personne ne peut accéder à votre compte sans le second facteur.</p>
+        <p class="twofa-desc">Activez-la en priorité sur : votre messagerie, vos réseaux sociaux, votre espace bancaire, et tout site où sont stockées des informations importantes.</p>
+      </div>
+      <div class="twofa-right">
+        <div class="twofa-flow">
+          <div class="twofa-step">
+            <div class="twofa-step-circle">1</div>
+            <div class="twofa-step-text">
+              <strong>Vous entrez votre mot de passe</strong>
+              <span>Comme d'habitude</span>
+            </div>
+          </div>
+          <div class="twofa-arrow">↓</div>
+          <div class="twofa-step">
+            <div class="twofa-step-circle">2</div>
+            <div class="twofa-step-text">
+              <strong>Un second code vous est demandé</strong>
+              <span>Par SMS, application (Authy, Google Authenticator) ou clé physique</span>
+            </div>
+          </div>
+          <div class="twofa-arrow">↓</div>
+          <div class="twofa-step twofa-step-success">
+            <div class="twofa-step-circle success">✓</div>
+            <div class="twofa-step-text">
+              <strong>Accès accordé !</strong>
+              <span>Même si votre mot de passe est volé, l'attaquant est bloqué à cette étape</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ DONT DO ░░ -->
+    <section class="block donts-block">
+      <h2 class="section-title">Les erreurs à ne plus jamais faire</h2>
+      <div class="donts-list">
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Utiliser le même mot de passe partout</strong>
+            <p>Si un seul site est piraté, tous vos comptes sont exposés. C'est la règle la plus importante à respecter.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Stocker vos mots de passe dans un fichier texte, un e-mail ou un post-it</strong>
+            <p>Ces supports ne sont pas sécurisés. Utilisez un gestionnaire de mots de passe dédié.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Choisir des informations personnelles comme mot de passe</strong>
+            <p>Votre nom, date de naissance, ville, équipe sportive... tout ça est facile à deviner, surtout si vous êtes actif sur les réseaux sociaux.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Communiquer votre mot de passe par téléphone ou e-mail</strong>
+            <p>Aucun service légitime ne vous demandera jamais votre mot de passe. Si quelqu'un le fait, c'est une tentative d'arnaque.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Rester connecté sur un ordinateur public ou partagé</strong>
+            <p>Déconnectez-vous toujours après usage dans une bibliothèque, un cybercafé, ou chez quelqu'un d'autre.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Ignorer les alertes de fuite de données</strong>
+            <p>Si un service vous avertit d'une fuite, changez immédiatement votre mot de passe sur ce site ET sur tous les autres où vous l'utilisez (encore une bonne raison d'avoir des mots de passe uniques).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ CHECKLIST ACTION ░░ -->
+    <section class="block checklist-block">
+      <h2 class="section-title white">Votre plan d'action — à faire aujourd'hui</h2>
+      <p class="checklist-intro">Vous avez 30 minutes ? C'est tout ce qu'il faut pour passer de "vulnérable" à "bien protégé".</p>
+      <div class="checklist">
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Téléchargez Bitwarden</strong> (gratuit) — installez l'extension sur votre navigateur et l'application sur votre téléphone</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Créez un mot de passe maître fort</strong> — utilisez la technique de la phrase secrète pour en créer un que vous n'oublierez jamais</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Changez les mots de passe de vos 3 comptes les plus importants</strong> — messagerie, banque, réseau social principal</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Activez la double authentification</strong> sur votre messagerie en priorité — c'est souvent la clé de récupération de tous vos autres comptes</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Vérifiez si vos données ont fuité</strong> sur <em>haveibeenpwned.com</em> — entrez votre e-mail et le site vous dit si vous avez été compromis</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- ░░ FOOTER BANNER ░░ -->
+    <section class="block final-block">
+      <div class="final-star">★</div>
+      <div class="final-text">
+        <h3>À retenir en une phrase</h3>
+        <p>Un gestionnaire de mots de passe + la double authentification = la combinaison gagnante pour protéger tous vos comptes. Prenez 30 minutes maintenant, dormez tranquille pour toujours.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span>Cybersécurité pour tous — Article 1/4 : Mots de passe</span>
+    <span>Prochain article : Le phishing — reconnaître les arnaques par e-mail →</span>
+  </footer>
+
+  <script>
+    // ── Password tester logic ──────────────────────────────────────
+    const COMMON = ['123456','password','motdepasse','azerty','qwerty','abc123','111111','iloveyou','admin','letmein','welcome','monkey','dragon','master','sunshine','princess','football','superman','batman','shadow','baseball','michael','solo','passw0rd','pass','login','hello','test','bonjour'];
+
+    function estimateCrackTime(pw) {
+      const chars = {lower:26, upper:26, digit:10, special:32};
+      let pool = 0;
+      if (/[a-z]/.test(pw)) pool += chars.lower;
+      if (/[A-Z]/.test(pw)) pool += chars.upper;
+      if (/[0-9]/.test(pw)) pool += chars.digit;
+      if (/[^a-zA-Z0-9]/.test(pw)) pool += chars.special;
+      if (pool === 0) return '< 1 seconde';
+      const combinations = Math.pow(pool, pw.length);
+      const guessPerSec = 1e10;
+      const seconds = combinations / guessPerSec;
+      if (seconds < 1) return '< 1 seconde';
+      if (seconds < 60) return `~${Math.round(seconds)} secondes`;
+      if (seconds < 3600) return `~${Math.round(seconds/60)} minutes`;
+      if (seconds < 86400) return `~${Math.round(seconds/3600)} heures`;
+      if (seconds < 86400*365) return `~${Math.round(seconds/86400)} jours`;
+      if (seconds < 86400*365*1000) return `~${Math.round(seconds/(86400*365))} ans`;
+      if (seconds < 86400*365*1e9) return `~${Math.round(seconds/(86400*365*1000))} milliers d'années`;
+      return '> 1 milliard d\'années 🔒';
+    }
+
+    function checkPassword(pw) {
+      if (!pw) return;
+      const checks = {
+        length:   pw.length >= 12,
+        upper:    /[A-Z]/.test(pw),
+        lower:    /[a-z]/.test(pw),
+        number:   /[0-9]/.test(pw),
+        special:  /[^a-zA-Z0-9]/.test(pw),
+        unique:   !(/(.)\1{2,}/.test(pw)),
+        nocommon: !COMMON.some(c => pw.toLowerCase().includes(c)),
+        long:     pw.length >= 16
+      };
+
+      const keys = Object.keys(checks);
+      keys.forEach(k => {
+        const icon = document.getElementById('ci-' + k);
+        const card = document.getElementById('c-' + k);
+        if (checks[k]) {
+          icon.textContent = '✓';
+          card.classList.add('pass');
+          card.classList.remove('fail');
+        } else {
+          icon.textContent = pw.length > 0 ? '✕' : '○';
+          card.classList.remove('pass');
+          if (pw.length > 0) card.classList.add('fail');
+          else card.classList.remove('fail');
+        }
+      });
+
+      const score = keys.filter(k => checks[k]).length;
+      const pct = Math.round((score / keys.length) * 100);
+
+      const bar = document.getElementById('strengthBar');
+      const label = document.getElementById('strengthLabel');
+      bar.style.width = pct + '%';
+      bar.className = 'strength-bar-fill';
+
+      let verdict = '', advice = '', barClass = '';
+      if (pw.length === 0) {
+        bar.style.width = '0%';
+        label.textContent = 'En attente...';
+        document.getElementById('testerResult').style.display = 'none';
+        document.getElementById('crackTimeBlock').style.display = 'none';
+        return;
+      } else if (score <= 2) {
+        barClass = 'bar-weak'; verdict = '🚨 Très faible'; advice = 'Ce mot de passe serait cracké en quelques secondes. Allongez-le et ajoutez des majuscules, chiffres et symboles.';
+        label.textContent = 'Très faible';
+      } else if (score <= 4) {
+        barClass = 'bar-medium'; verdict = '⚠️ Moyen'; advice = 'Quelques bonnes pratiques manquent encore. Ajoutez les types de caractères manquants et visez au moins 12 caractères.';
+        label.textContent = 'Moyen';
+      } else if (score <= 6) {
+        barClass = 'bar-good'; verdict = '👍 Bon'; advice = 'Votre mot de passe est solide. Pour aller encore plus loin, passez à 16 caractères ou plus.';
+        label.textContent = 'Bon';
+      } else {
+        barClass = 'bar-strong'; verdict = '✅ Excellent !'; advice = 'Félicitations ! Ce mot de passe est très difficile à cracker. Pensez à le stocker dans un gestionnaire de mots de passe.';
+        label.textContent = 'Excellent !';
+      }
+
+      bar.classList.add(barClass);
+      document.getElementById('resultVerdict').textContent = verdict;
+      document.getElementById('resultAdvice').textContent = advice;
+      document.getElementById('testerResult').style.display = 'flex';
+
+      document.getElementById('crackTimeValue').textContent = estimateCrackTime(pw);
+      document.getElementById('crackTimeBlock').style.display = 'flex';
+    }
+
+    document.getElementById('pwInput').addEventListener('input', function() {
+      checkPassword(this.value);
+    });
+
+    let shown = false;
+    document.getElementById('pwToggle').addEventListener('click', function() {
+      const inp = document.getElementById('pwInput');
+      shown = !shown;
+      inp.type = shown ? 'text' : 'password';
+      this.classList.toggle('active', shown);
+    });
+
+    // Checklist
+    document.querySelectorAll('.check-item input').forEach(cb => {
+      cb.addEventListener('change', function() {
+        this.closest('.check-item').classList.toggle('checked', this.checked);
+      });
+    });
+  </script>
+</body>
+</html>
