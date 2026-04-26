@@ -115,6 +115,12 @@
     .topbar-serie { color: var(--hook-gold); }
     .topbar-num { color: rgba(179,229,252,0.5); }
 
+    .topbar-nav-btns {
+      display: flex;
+      gap: 8px;
+    }
+
+
     /* ── HERO ── */
     .hero {
       min-height: 92vh;
@@ -664,3 +670,5 @@
       .hstat-pill { width: 100%; }
       .topbar { padding: 10px 16px; }
     }
+
+    

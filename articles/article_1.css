@@ -69,6 +69,11 @@ body {
 .topbar-serie { color: var(--yellow); }
 .topbar-num   { color: rgba(255,255,255,0.5); }
 
+.topbar-nav-btns {
+  display: flex;
+  gap: 8px;
+}
+
 /* ── Hero ────────────────────────────────── */
 .hero {
   background: var(--pink);
