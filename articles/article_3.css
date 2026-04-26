@@ -71,11 +71,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 32px;
+  padding: 0 32px;
+  height: 42px;
   background: var(--black);
   border-bottom: 1px solid var(--border-bright);
   font-family: var(--font-mono);
   font-size: 11px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .topbar-left {
@@ -87,6 +91,60 @@ body {
 .topbar-series { color: var(--green); }
 .topbar-sep { color: var(--gray-dim); }
 .topbar-num { color: var(--gray-mid); }
+
+.topbar-home {
+  color: var(--gray-mid);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s;
+}
+.topbar-home:hover { color: var(--green); }
+
+.topbar-articles-link {
+  color: var(--gray-mid);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.topbar-articles-link:hover { color: var(--off-white); }
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-nav-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border-bright);
+  color: var(--gray-mid);
+  background: transparent;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.topbar-btn:hover {
+  color: var(--off-white);
+  border-color: var(--gray-mid);
+  background: var(--black-soft);
+}
+.topbar-btn--home {
+  color: var(--green);
+  border-color: rgba(0,255,133,0.25);
+}
+.topbar-btn--home:hover {
+  background: rgba(0,255,133,0.07);
+  border-color: var(--green-dim);
+  color: var(--green);
+}
 
 .topbar-signal {
   display: flex;
@@ -723,6 +781,25 @@ body {
   width: 16px;
 }
 .recap-line.mt { margin-top: 8px; }
+
+/* ── Disclaimer ──────────────────────────── */
+.disclaimer {
+  max-width: var(--content-width);
+  margin: 48px auto 0;
+  padding: 14px 40px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gray-dim);
+  border-top: 1px solid var(--border);
+  line-height: 1.6;
+}
+.disclaimer-icon {
+  flex-shrink: 0;
+  color: var(--gray-dim);
+}
 
 /* ── Footer ──────────────────────────────── */
 .page-footer {
