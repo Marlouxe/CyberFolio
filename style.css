@@ -663,3 +663,38 @@ footer {
   .nav-links { display: none; }
   .about-grid { grid-template-columns: 1fr; }
 }
+
+/* Hamburger — caché sur desktop */
+#menuToggle { display: none; }
+
+@media (max-width: 900px) {
+  #menuToggle { display: grid; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0; right: 0;
+    background: rgba(7,9,15,.97);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 5vw 2rem;
+    gap: 0;
+    z-index: 99;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links li { border-bottom: 1px solid var(--border); }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+    font-size: .85rem;
+  }
+}
+
+[data-theme="light"] .nav-links {
+  background: rgba(242,244,251,.97);
+}
