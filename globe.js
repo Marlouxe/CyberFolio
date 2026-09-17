@@ -31,13 +31,24 @@
   function resize() {
     const rect = wrap.getBoundingClientRect();
     const dpr = window.devicePixelRatio || 1;
-    W = rect.width; H = rect.height;
+    // Guard against a 0/garbage measurement happening before layout settles
+    W = rect.width || 300;
+    H = rect.height || 300;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     cx = W / 2; cy = H / 2; R = Math.min(W, H) * 0.42;
   }
-  window.addEventListener('resize', resize);
+
+  // Re-measure whenever the wrapper's actual rendered size changes
+  // (covers late web-font loads, responsive breakpoints, etc.),
+  // not just the browser window resizing.
+  if (window.ResizeObserver) {
+    new ResizeObserver(resize).observe(wrap);
+  } else {
+    window.addEventListener('resize', resize);
+  }
   resize();
+  window.addEventListener('load', resize);
 
   function project(lat, lon) {
     const phi = (90 - lat) * Math.PI / 180;
