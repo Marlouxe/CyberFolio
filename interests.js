@@ -1,20 +1,3 @@
-// ─── SPARKLES ──────────────────────────────────
-const container = document.getElementById('sparkles');
-const colors = ['#f2a7c3', '#c9b8f0', '#ffd4b3', '#aaecdc', '#fce8a0'];
-
-for (let i = 0; i < 60; i++) {
-  const s = document.createElement('div');
-  s.className = 'sparkle';
-  s.style.left    = Math.random() * 100 + '%';
-  s.style.top     = Math.random() * 100 + '%';
-  s.style.setProperty('--d', (2 + Math.random() * 4) + 's');
-  s.style.setProperty('--delay', '-' + (Math.random() * 6) + 's');
-  s.style.width   = (2 + Math.random() * 4) + 'px';
-  s.style.height  = s.style.width;
-  s.style.background = colors[Math.floor(Math.random() * colors.length)];
-  container.appendChild(s);
-}
-
 // ─── LIGHTBOX ──────────────────────────────────
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;

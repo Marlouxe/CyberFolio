@@ -14,58 +14,48 @@
  
   <!-- NAV -->
   <nav>
-  <a class="nav-logo" href="#">MS<span>.</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#skills">Compétences</a></li>
-    <li><a href="#projects">Projets</a></li>
-    <li><a href="#about">Profil</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="articles/articles.html">Articles</a></li>
-  </ul>
-  <div class="nav-actions">
-    <button class="btn-icon" id="themeToggle" title="Changer le thème" aria-label="Toggle theme">☀️</button>
-    <a class="btn-dl" href="images/Cv_MarilouSIONNEAU.pdf" download>⬇ CV</a>
-    <button class="btn-icon" id="menuToggle" aria-label="Menu">☰</button> <!-- ← AJOUTE ÇA -->
-  </div>
-</nav>
- 
-  <!-- Articles -->
-  <div class="news-ticker">
-  <span class="ticker-label">// NEW</span>
-  <div class="ticker-track">
-    <div class="ticker-content">
-      <span>✍️ J'ai rédigé mes premiers articles · Pentest, SOC, veille cyber</span>
-      <span>📰 Retrouve mes articles dans la section dédiée</span>
-      <span>🔐 Sécurité offensive · Défensive · Outils</span>
-      <span>✍️ J'ai rédigé mes premiers articles · Pentest, SOC, veille cyber</span>
-      <span>📰 Retrouve mes articles dans la section dédiée</span>
-      <span>🔐 Sécurité offensive · Défensive · Outils</span>
+    <a class="nav-logo" href="#">MS<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#goals">Objectifs</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#about">Profil</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="articles/articles.html">Articles</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeToggle" title="Changer le thème" aria-label="Toggle theme">☀️</button>
+      <a class="btn-dl" href="images/Cv_MarilouSIONNEAU.pdf" download>⬇ CV</a>
+      <button class="btn-icon" id="menuToggle" aria-label="Menu">☰</button>
     </div>
+  </nav>
+ 
+  <!-- NEWS -->
+  <div class="news-strip">
+    <span>✍️ Nouveaux articles disponibles · Pentest, SOC, veille cyber</span>
+    <a href="articles/articles.html">Lire →</a>
   </div>
-  <a href="articles/articles.html" class="ticker-cta">Lire →</a>
-</div>
  
   <!-- HERO -->
   <section id="hero">
     <div class="hero-content">
-      <div class="hero-badge fade-in">Disponible · Stage &amp; Alternance · Mi-mai 2027</div>
-      <h1 class="hero-name fade-in">
+      <div class="hero-badge">Disponible · Stage &amp; Alternance · Mi-mai 2027</div>
+      <h1 class="hero-name">
         Marilou<br>
         <span class="accent">Sionneau</span>
       </h1>
-      <p class="hero-title fade-in">Étudiante en Cybersécurité · Guardia Lyon</p>
+      <p class="hero-title">Étudiante en Cybersécurité · Guardia Lyon</p>
  
-      <div class="hero-seeking fade-in">
-        <div class="label">🔍 Je cherche activement</div>
-        <p>Un <strong>stage à partir de mi-mai 2027</strong> ainsi qu'une <strong>alternance</strong> dans le domaine de la cybersécurité – pentest, SOC, DevSecOps ou réseau.</p>
-      </div>
+      <p class="hero-pitch">
+        Je me forme par la pratique — <strong>réseau, DevSecOps, gestion de crise, reverse engineering</strong> — et je cherche un stage à partir de mi-mai 2027 ainsi qu'une alternance en cybersécurité.
+      </p>
  
-      <div class="hero-cta fade-in">
+      <div class="hero-cta">
         <a href="#contact" class="btn-primary">Me contacter</a>
         <a href="#projects" class="btn-secondary">Voir mes projets</a>
       </div>
  
-      <div class="hero-stats fade-in">
+      <div class="hero-stats">
         <div class="stat">
           <div class="num">4</div>
           <div class="lbl">Projets école</div>
@@ -81,7 +71,7 @@
       </div>
     </div>
  
-    <div class="hero-terminal fade-in">
+    <div class="hero-terminal">
       <div class="term-bar">
         <div class="term-dot"></div>
         <div class="term-dot"></div>
@@ -93,14 +83,13 @@
           <span class="term-prompt">❯</span>
           <span class="term-cmd">whoami</span>
         </div>
-        <div class="term-out hi">marilou_sionneau</div>
+        <div class="term-out">marilou_sionneau</div>
         <div class="term-line">
           <span class="term-prompt">❯</span>
           <span class="term-cmd">cat status.txt</span>
         </div>
         <div class="term-out ok">✓ Étudiante Guardia Cybersecurity School</div>
         <div class="term-out ok">✓ Recherche stage · mi-mai 2027</div>
-        <div class="term-out ok">✓ Recherche alternance · dispo now</div>
         <div class="term-line">
           <span class="term-prompt">❯</span>
           <span class="term-cmd">ls skills/</span>
@@ -108,13 +97,34 @@
         <div class="term-out">réseau/  devsecops/  reverse/  gestion-crise/</div>
         <div class="term-line">
           <span class="term-prompt">❯</span>
-          <span class="term-cmd">ping sionneaumarilou@gmail.com</span>
-        </div>
-        <div class="term-out ok">PONG – réponse rapide garantie 🚀</div>
-        <div class="term-line">
-          <span class="term-prompt">❯</span>
           <span class="term-cursor"></span>
         </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- OBJECTIFS ACTUELS -->
+  <section id="goals">
+    <div class="section-tag">// en ce moment</div>
+    <h2 class="section-title">Mes <span>objectifs actuels</span></h2>
+    <div class="goals-grid">
+      <div class="goal-card priority">
+        <span class="goal-icon">🗣️</span>
+        <h3>Passer le TOEIC</h3>
+        <p>Valider mon niveau d'anglais avec un score TOEIC, pour appuyer mes candidatures à l'international.</p>
+        <span class="goal-deadline">Objectif : novembre 2026</span>
+      </div>
+      <div class="goal-card priority">
+        <span class="goal-icon">🇺🇸</span>
+        <h3>Stage aux États-Unis</h3>
+        <p>Décrocher mon stage de mi-mai 2027 aux États-Unis — Seattle ou New York en priorité — pour vivre une expérience professionnelle à l'international.</p>
+        <span class="goal-deadline">Cible : Seattle · New York</span>
+      </div>
+      <div class="goal-card">
+        <span class="goal-icon">🔍</span>
+        <h3>Alternance cybersécurité</h3>
+        <p>En parallèle, je reste ouverte à une alternance en pentest, SOC, DevSecOps ou réseau, disponible dès maintenant.</p>
+        <span class="goal-deadline">Disponible maintenant</span>
       </div>
     </div>
   </section>
@@ -178,16 +188,19 @@
     </div>
   </section>
  
-  <!-- PROJETS -->
+  <!-- PROJETS (accordéon) -->
   <section id="projects">
     <div class="section-tag">// projects</div>
     <h2 class="section-title">Mes <span>projets</span></h2>
     <div class="projects-list">
  
-      <div class="project-card">
-        <div class="project-num">01</div>
-        <div class="project-body">
+      <details class="project-item" open>
+        <summary>
           <h3>🌐 Réseau</h3>
+          <span class="project-badge">Réseau · Infra</span>
+          <span class="chev">›</span>
+        </summary>
+        <div class="project-body">
           <div class="project-meta">2025–2026 · Équipe de 4 · Guardia Cybersecurity School</div>
           <ul>
             <li>Configuration d'un réseau local (VLAN, routage, DHCP…)</li>
@@ -196,13 +209,15 @@
             <li>Installation d'un serveur DNS, web et FTP</li>
           </ul>
         </div>
-        <div class="project-badge">Réseau · Infra</div>
-      </div>
+      </details>
  
-      <div class="project-card">
-        <div class="project-num">02</div>
-        <div class="project-body">
+      <details class="project-item">
+        <summary>
           <h3>🔁 DevSecOps</h3>
+          <span class="project-badge">DevSecOps</span>
+          <span class="chev">›</span>
+        </summary>
+        <div class="project-body">
           <div class="project-meta">2025–2026 · Équipe de 4 · Guardia Cybersecurity School</div>
           <ul>
             <li>Pipeline CI/CD avec GitLab et GitHub Actions</li>
@@ -211,13 +226,15 @@
             <li>Automatisation via scripts et Ansible</li>
           </ul>
         </div>
-        <div class="project-badge">DevSecOps</div>
-      </div>
+      </details>
  
-      <div class="project-card">
-        <div class="project-num">03</div>
-        <div class="project-body">
+      <details class="project-item">
+        <summary>
           <h3>🚨 Gestion de crise</h3>
+          <span class="project-badge">SOC · Crisis</span>
+          <span class="chev">›</span>
+        </summary>
+        <div class="project-body">
           <div class="project-meta">2025–2026 · Équipe de 5 · Guardia Cybersecurity School</div>
           <ul>
             <li>Détection et analyse d'incidents de sécurité</li>
@@ -226,13 +243,15 @@
             <li>REX post-incident et amélioration continue</li>
           </ul>
         </div>
-        <div class="project-badge">SOC · Crisis</div>
-      </div>
+      </details>
  
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <div class="project-body">
+      <details class="project-item">
+        <summary>
           <h3>🔍 Reverse Engineering</h3>
+          <span class="project-badge">RE · CTF</span>
+          <span class="chev">›</span>
+        </summary>
+        <div class="project-body">
           <div class="project-meta">2025–2026 · Équipe de 4 · Guardia Cybersecurity School</div>
           <ul>
             <li>Analyse de binaires et compréhension du code machine</li>
@@ -241,8 +260,7 @@
             <li>Résolution de challenges CTF</li>
           </ul>
         </div>
-        <div class="project-badge">RE · CTF</div>
-      </div>
+      </details>
  
     </div>
   </section>
@@ -286,7 +304,31 @@
         <h3 class="about-subtitle">Divers</h3>
         <div class="misc-pills">
           <span class="pill">🚗 Permis B</span>
-          <span class="pill">📍 Lyon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- MOBILITÉ -->
+  <section id="mobility">
+    <div class="section-tag">// mobilité</div>
+    <h2 class="section-title">Je n'ai pas peur de <span>voyager</span></h2>
+    <div class="mobility-grid">
+      <div class="mobility-text">
+        <p>
+          Neuf pays visités jusqu'ici, et un vrai goût pour l'international. La prochaine étape : décrocher mon stage aux États-Unis, idéalement à Seattle ou New York. Survole un point du globe pour voir le pays.
+        </p>
+        <div class="mobility-legend">
+          <div class="legend-row"><span class="legend-dot visited"></span> Pays déjà visités</div>
+          <div class="legend-row"><span class="legend-dot target"></span> Prochaines destinations visées</div>
+        </div>
+      </div>
+      <div class="globe-wrap">
+        <canvas id="globeCanvas"></canvas>
+        <div class="globe-card" id="globeCard">
+          <div class="card-media"></div>
+          <div class="name"></div>
+          <div class="tag-line"></div>
         </div>
       </div>
     </div>
@@ -295,10 +337,10 @@
   <!-- CTA CENTRES D'INTÉRÊTS -->
   <section id="interests-cta">
     <div class="cta-card">
-      <div class="cta-emoji">🧶✨</div>
-      <h2>Pas que la cyber !</h2>
-      <p>Jeux vidéos, crochet, tricot, voyages… découvrez l'autre facette de Marilou dans un espace un peu plus coloré 🌸</p>
-      <a href="interests.html" class="btn-magic">✨ Voir mes créations &amp; centres d'intérêts</a>
+      <div class="cta-emoji">🧶✈️</div>
+      <h2>Pas que la cyber</h2>
+      <p>Jeux vidéo, crochet, voyages… découvrez l'autre facette de Marilou.</p>
+      <a href="interests.html" class="btn-magic">Voir mes créations &amp; centres d'intérêt</a>
     </div>
   </section>
  
@@ -322,6 +364,7 @@
   </footer>
  
   <script src="main.js"></script>
+  <script src="globe.js"></script>
  
 </body>
 </html>
