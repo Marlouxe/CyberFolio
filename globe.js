@@ -1,193 +1,216 @@
-// ─── GLOBE — wireframe sphere, rotating, hoverable markers ──────
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+
+// ─── DATA: fill in your own photos under images/travel/ ──────────
+// Countries: shown when hovering a green (visited) area on the globe.
+const COUNTRIES = [
+  { key: 'germany',   label: 'Allemagne',  lat: 51.2, lon: 10.4,  date: "Enfance — quelques souvenirs seulement", photos: ['images/travel/allemagne.jpg'] },
+  { key: 'spain',     label: 'Espagne',    lat: 40.0, lon: -4.0,  date: 'Été 2026',      photos: ['images/travel/espagne.jpg'] },
+  { key: 'france',    label: 'France',     lat: 46.6, lon: 2.2,   date: "J'y vis 🇫🇷",  photos: ['images/travel/village.jpg', 'images/travel/paris.jpg'] },
+  { key: 'corsica',   label: 'Corse',      lat: 42.1, lon: 9.1,   date: 'Été 2022',      photos: ['images/travel/corse.jpg'],
+    bbox: { latMin: 41.2, latMax: 43.1, lonMin: 8.4, lonMax: 9.7 } },
+  { key: 'sardinia',  label: 'Sardaigne',  lat: 40.0, lon: 9.1,   date: 'Été 2022',      photos: ['images/travel/sardaigne.jpg'],
+    bbox: { latMin: 38.8, latMax: 41.3, lonMin: 8.0, lonMax: 9.9 } },
+  { key: 'greece',    label: 'Grèce',      lat: 39.0, lon: 22.0,  date: 'Avril 2023',    photos: ['images/travel/grece.jpg'] },
+  { key: 'norway',    label: 'Norvège',    lat: 60.5, lon: 8.5,   date: 'Été 2023',      photos: ['images/travel/norvege.jpg'] },
+  { key: 'estonia',   label: 'Estonie',    lat: 58.9, lon: 25.5,  date: 'Été 2024',      photos: ['images/travel/estonie.jpg'] },
+  { key: 'latvia',    label: 'Lettonie',   lat: 56.9, lon: 24.6,  date: 'Été 2024',      photos: ['images/travel/lettonie.jpg'] },
+  { key: 'lithuania', label: 'Lituanie',   lat: 55.0, lon: 23.9,  date: 'Été 2024',      photos: ['images/travel/lituanie.jpg'] },
+];
+
+// Pins: shown when hovering the 3D pin markers themselves.
+const PINS = {
+  Pin_Seattle: {
+    label: 'Seattle',
+    text: "Seattle, c'est le berceau de géants tech comme Microsoft et Amazon, avec une vraie scène cybersécurité. Après une formation où j'apprends à défendre des systèmes, j'ai envie d'aller voir comment ça se joue à l'échelle d'un des plus gros hubs tech au monde.",
+  },
+  Pin_NewYork: {
+    label: 'New York',
+    text: "New York, c'est l'énergie brute, le rythme qui ne s'arrête jamais, et une concentration incroyable d'entreprises tech et financières à sécuriser. Un vrai défi de s'adapter à une ville pareille — exactement le genre de challenge qui me donne envie d'avancer.",
+  },
+  Pin_Tokyo: {
+    label: 'Tokyo',
+    text: "Le Japon, c'est un dépaysement total : une culture, une langue et une façon de penser la technologie très différentes de ce que je connais. Après avoir voyagé en Europe, j'ai envie de me confronter à un vrai choc culturel, et Tokyo est réputée pour son excellence en tech et cybersécurité.",
+  },
+};
+
 (function () {
   const canvas = document.getElementById('globeCanvas');
   if (!canvas) return;
   const wrap = canvas.parentElement;
   const card = document.getElementById('globeCard');
-  const ctx = canvas.getContext('2d');
 
-  // Locations: [name, lat, lon, type, photo]
-  // type: 'visited' or 'target'. Drop a matching photo in images/travel/
-  // and point to it here to replace the placeholder card.
-  const LOCATIONS = [
-    { name: 'Allemagne',  lat: 51.2, lon: 10.4,  type: 'visited', photo: 'images/travel/allemagne.jpg' },
-    { name: 'Espagne',    lat: 40.0, lon: -4.0,  type: 'visited', photo: 'images/travel/espagne.jpg' },
-    { name: 'Grèce',      lat: 39.0, lon: 22.0,  type: 'visited', photo: 'images/travel/grece.jpg' },
-    { name: 'Lettonie',   lat: 56.9, lon: 24.6,  type: 'visited', photo: 'images/travel/lettonie.jpg' },
-    { name: 'Lituanie',   lat: 55.0, lon: 23.9,  type: 'visited', photo: 'images/travel/lituanie.jpg' },
-    { name: 'Estonie',    lat: 58.9, lon: 25.5,  type: 'visited', photo: 'images/travel/estonie.jpg' },
-    { name: 'Norvège',    lat: 60.5, lon: 8.5,   type: 'visited', photo: 'images/travel/norvege.jpg' },
-    { name: 'Sardaigne',  lat: 40.0, lon: 9.4,   type: 'visited', photo: 'images/travel/sardaigne.jpg' },
-    { name: 'Corse',      lat: 42.3, lon: 9.0,   type: 'visited', photo: 'images/travel/corse.jpg' },
-    { name: 'Seattle',    lat: 47.6, lon: -122.3, type: 'target', photo: 'images/travel/seattle.jpg' },
-    { name: 'New York',   lat: 40.7, lon: -74.0,  type: 'target', photo: 'images/travel/newyork.jpg' },
-  ];
+  // ── renderer / scene / camera ──
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
-  let W, H, R, cx, cy;
-  let angle = 0.4;
-  let dragging = false, lastX = 0, autoRotate = true;
-  const focal = 3.2;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+  camera.position.set(0, 0, 4.4);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 1.1));
+  const key = new THREE.DirectionalLight(0xffffff, 0.9);
+  key.position.set(3, 2, 4);
+  scene.add(key);
+
+  let globeNode = null;
+  const pinNodes = {};
+  let maskCanvas = null, maskCtx = null;
 
   function resize() {
     const rect = wrap.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
-    // Guard against a 0/garbage measurement happening before layout settles
-    W = rect.width || 300;
-    H = rect.height || 300;
-    canvas.width = W * dpr; canvas.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cx = W / 2; cy = H / 2; R = Math.min(W, H) * 0.42;
+    const w = rect.width || 300, h = rect.height || 300;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
   }
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
+  else window.addEventListener('resize', resize);
 
-  // Re-measure whenever the wrapper's actual rendered size changes
-  // (covers late web-font loads, responsive breakpoints, etc.),
-  // not just the browser window resizing.
-  if (window.ResizeObserver) {
-    new ResizeObserver(resize).observe(wrap);
-  } else {
-    window.addEventListener('resize', resize);
-  }
-  resize();
-  window.addEventListener('load', resize);
-
-  function project(lat, lon) {
-    const phi = (90 - lat) * Math.PI / 180;
-    const theta = (lon * Math.PI / 180) + angle;
-    let x = Math.sin(phi) * Math.sin(theta);
-    let y = Math.cos(phi);
-    let z = Math.sin(phi) * Math.cos(theta);
-    const scale = focal / (focal - z);
-    return {
-      x: cx + x * R * scale * 0.62,
-      y: cy - y * R * scale * 0.62,
-      z, scale
-    };
-  }
-
-  function getAccent(name) {
-    return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#4fd1c5';
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    const border = getAccent('--border');
-    const accent = getAccent('--accent');
-    const target = getAccent('--accent3');
-
-    // graticule (latitude/longitude wire lines)
-    ctx.lineWidth = 1;
-    for (let lat = -60; lat <= 60; lat += 30) {
-      ctx.beginPath();
-      for (let lon = -180; lon <= 180; lon += 6) {
-        const p = project(lat, lon);
-        const op = Math.max(0, (p.z + 1) / 2) * 0.35;
-        ctx.strokeStyle = hexA(border, op);
-        if (lon === -180) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
-      }
-      ctx.stroke();
-    }
-    for (let lon = -180; lon < 180; lon += 30) {
-      ctx.beginPath();
-      for (let lat = -90; lat <= 90; lat += 6) {
-        const p = project(lat, lon);
-        const op = Math.max(0, (p.z + 1) / 2) * 0.35;
-        ctx.strokeStyle = hexA(border, op);
-        if (lat === -90) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
-      }
-      ctx.stroke();
-    }
-
-    // outer rim
-    ctx.beginPath();
-    ctx.arc(cx, cy, R * 0.62, 0, Math.PI * 2);
-    ctx.strokeStyle = hexA(border, .5);
-    ctx.stroke();
-
-    // markers, sorted so back ones draw first
-    const pts = LOCATIONS.map(loc => ({ loc, p: project(loc.lat, loc.lon) }));
-    pts.sort((a, b) => a.p.z - b.p.z);
-    pts.forEach(({ loc, p }) => {
-      if (p.z < -0.15) return; // hidden on far side
-      const col = loc.type === 'target' ? target : accent;
-      const r = loc.type === 'target' ? 5 : 4;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-      ctx.fillStyle = col;
-      ctx.fill();
-      if (loc.type === 'target') {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, r + 4, 0, Math.PI * 2);
-        ctx.strokeStyle = hexA(col, .5);
-        ctx.stroke();
-      }
+  new GLTFLoader().load('assets/globe.glb', (gltf) => {
+    scene.add(gltf.scene);
+    globeNode = gltf.scene.getObjectByName('Globe');
+    ['Pin_Seattle', 'Pin_NewYork', 'Pin_Tokyo'].forEach((n) => {
+      const obj = gltf.scene.getObjectByName(n);
+      if (obj) pinNodes[n] = obj;
     });
 
-    loc_points = pts;
-  }
+    // grab the baked texture so we can sample it on hover (is this pixel a visited/green country?)
+    const mat = globeNode && globeNode.material;
+    const tex = mat && mat.map;
+    if (tex && tex.image) {
+      maskCanvas = document.createElement('canvas');
+      maskCanvas.width = tex.image.width;
+      maskCanvas.height = tex.image.height;
+      maskCtx = maskCanvas.getContext('2d');
+      maskCtx.drawImage(tex.image, 0, 0);
+    }
 
-  let loc_points = [];
+    resize();
+    tick();
+  });
 
-  function hexA(hex, a) {
-    hex = hex.replace('#', '');
-    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
-    const r = parseInt(hex.slice(0, 2), 16) || 90;
-    const g = parseInt(hex.slice(2, 4), 16) || 100;
-    const b = parseInt(hex.slice(4, 6), 16) || 110;
-    return `rgba(${r},${g},${b},${a})`;
-  }
+  let dragging = false, lastX = 0, autoRotate = true;
+  canvas.addEventListener('mousedown', (e) => { dragging = true; lastX = e.clientX; });
+  window.addEventListener('mouseup', () => (dragging = false));
+  window.addEventListener('mousemove', (e) => {
+    if (dragging && globeNode) {
+      globeNode.rotation.y += (e.clientX - lastX) * 0.008;
+      lastX = e.clientX;
+    }
+  });
+  canvas.addEventListener('mouseenter', () => (autoRotate = false));
+  canvas.addEventListener('mouseleave', () => { autoRotate = true; hideCard(); });
 
   function tick() {
-    if (autoRotate && !dragging) angle += 0.0025;
-    draw();
+    if (autoRotate && !dragging && globeNode) globeNode.rotation.y += 0.0025;
+    renderer.render(scene, camera);
     requestAnimationFrame(tick);
   }
 
-  // ── interaction ──
-  canvas.addEventListener('mousedown', e => { dragging = true; lastX = e.clientX; });
-  window.addEventListener('mouseup', () => dragging = false);
-  window.addEventListener('mousemove', e => {
-    if (dragging) { angle += (e.clientX - lastX) * 0.005; lastX = e.clientX; }
-  });
+  // ── hover raycasting ──
+  const raycaster = new THREE.Raycaster();
+  const mouseNDC = new THREE.Vector2();
+  let lastClientX = 0, lastClientY = 0;
 
-  canvas.addEventListener('mouseenter', () => autoRotate = false);
-  canvas.addEventListener('mouseleave', () => { autoRotate = true; hideCard(); });
-
-  canvas.addEventListener('mousemove', e => {
+  canvas.addEventListener('mousemove', (e) => {
+    lastClientX = e.clientX; lastClientY = e.clientY;
     const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left, my = e.clientY - rect.top;
-    let closest = null, dist = 16;
-    loc_points.forEach(({ loc, p }) => {
-      if (p.z < -0.15) return;
-      const d = Math.hypot(p.x - mx, p.y - my);
-      if (d < dist) { dist = d; closest = { loc, p }; }
-    });
-    if (closest) showCard(closest.loc, closest.p);
-    else hideCard();
+    mouseNDC.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouseNDC.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+    if (!globeNode) return;
+    raycaster.setFromCamera(mouseNDC, camera);
+
+    const pinList = Object.values(pinNodes);
+    const pinHits = raycaster.intersectObjects(pinList, true);
+    if (pinHits.length) {
+      let obj = pinHits[0].object;
+      while (obj && !PINS[obj.name]) obj = obj.parent;
+      if (obj) { showPinCard(PINS[obj.name]); return; }
+    }
+
+    const hits = raycaster.intersectObject(globeNode, true);
+    if (hits.length && hits[0].uv && maskCtx) {
+      const uv = hits[0].uv;
+      const country = matchCountry(uv);
+      if (country) { showCountryCard(country); return; }
+    }
+    hideCard();
   });
 
-  function showCard(loc, p) {
-    card.style.left = p.x + 'px';
-    card.style.top = p.y + 'px';
-    const img = card.querySelector('.card-media');
-    img.innerHTML = '';
-    const el = document.createElement('img');
-    el.alt = loc.name;
-    el.src = loc.photo;
-    el.onerror = () => {
-      el.remove();
-      const ph = document.createElement('div');
-      ph.className = 'ph';
-      ph.textContent = loc.type === 'target' ? '🎯' : '📍';
-      img.appendChild(ph);
-    };
-    img.appendChild(el);
-    card.querySelector('.name').textContent = loc.name;
+  function isGreen(u, v) {
+    const x = Math.min(maskCanvas.width - 1, Math.max(0, Math.floor(u * maskCanvas.width)));
+    const y = Math.min(maskCanvas.height - 1, Math.max(0, Math.floor((1 - v) * maskCanvas.height)));
+    const [r, g, b] = maskCtx.getImageData(x, y, 1, 1).data;
+    return g > r + 15 && g > 150; // our apple-green is clearly G-dominant vs the orange land / white ocean
+  }
+
+  function matchCountry(uv) {
+    if (!isGreen(uv.x, uv.y)) return null;
+    const lon = uv.x * 360 - 180;
+    const lat = uv.y * 180 - 90;
+
+    // small island regions first (tight bounding boxes beat nearest-centroid)
+    for (const c of COUNTRIES) {
+      if (c.bbox && lat >= c.bbox.latMin && lat <= c.bbox.latMax && lon >= c.bbox.lonMin && lon <= c.bbox.lonMax) {
+        return c;
+      }
+    }
+    // otherwise nearest centroid among the non-bbox countries
+    let best = null, bestD = Infinity;
+    for (const c of COUNTRIES) {
+      if (c.bbox) continue;
+      const d = (c.lat - lat) ** 2 + (c.lon - lon) ** 2;
+      if (d < bestD) { bestD = d; best = c; }
+    }
+    return best;
+  }
+
+  function positionCard() {
+    const rect = wrap.getBoundingClientRect();
+    card.style.left = (lastClientX - rect.left) + 'px';
+    card.style.top = (lastClientY - rect.top) + 'px';
+  }
+
+  function showCountryCard(c) {
+    positionCard();
+    card.classList.remove('text-only');
+    const media = card.querySelector('.card-media');
+    media.innerHTML = '';
+    if (c.photos && c.photos.length) {
+      media.classList.toggle('multi', c.photos.length > 1);
+      c.photos.slice(0, 2).forEach((src) => {
+        const img = document.createElement('img');
+        img.src = src; img.alt = c.label;
+        img.onerror = () => {
+          img.remove();
+          const ph = document.createElement('div');
+          ph.className = 'ph'; ph.textContent = '📍';
+          media.appendChild(ph);
+        };
+        media.appendChild(img);
+      });
+    }
+    card.querySelector('.name').textContent = c.label;
     const tagline = card.querySelector('.tag-line');
-    tagline.textContent = loc.type === 'target' ? 'Prochaine destination visée' : '';
-    tagline.style.display = loc.type === 'target' ? 'block' : 'none';
+    tagline.textContent = c.date;
+    tagline.style.display = 'block';
+    tagline.style.color = '';
     card.classList.add('show');
   }
-  function hideCard() { card.classList.remove('show'); }
 
-  tick();
+  function showPinCard(pin) {
+    positionCard();
+    card.classList.add('text-only');
+    card.querySelector('.card-media').innerHTML = '';
+    card.querySelector('.name').textContent = pin.label;
+    const tagline = card.querySelector('.tag-line');
+    tagline.textContent = pin.text;
+    tagline.style.display = 'block';
+    tagline.style.color = 'var(--muted)';
+    card.classList.add('show');
+  }
+
+  function hideCard() { card.classList.remove('show'); }
 })();
