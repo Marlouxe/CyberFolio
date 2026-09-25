@@ -495,7 +495,7 @@ section { position: relative; z-index: 1; padding: 84px 8vw; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
 }
 .mobility-text p { color: var(--muted); font-size: .85rem; line-height: 1.85; margin-bottom: 1.4rem; }
 .mobility-legend { display: flex; flex-direction: column; gap: .7rem; }
