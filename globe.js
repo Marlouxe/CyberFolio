@@ -1,5 +1,5 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // ─── DATA: fill in your own photos under images/travel/ ──────────
 // Countries: shown when hovering a green (visited) area on the globe.
@@ -40,8 +40,29 @@ const PINS = {
   const wrap = canvas.parentElement;
   const card = document.getElementById('globeCard');
 
+  let fallbackTimer = setTimeout(showFallback, 6000); // never leave a blank box
+
+  function showFallback() {
+    if (wrap.querySelector('.globe-fallback')) return;
+    const msg = document.createElement('div');
+    msg.className = 'globe-fallback';
+    msg.textContent = "🌍 Neuf pays visités · objectif : Seattle, New York ou Tokyo";
+    wrap.appendChild(msg);
+  }
+  function clearFallback() {
+    clearTimeout(fallbackTimer);
+    const el = wrap.querySelector('.globe-fallback');
+    if (el) el.remove();
+  }
+
   // ── renderer / scene / camera ──
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  } catch (e) {
+    showFallback();
+    return;
+  }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
   const scene = new THREE.Scene();
@@ -67,28 +88,34 @@ const PINS = {
   if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
   else window.addEventListener('resize', resize);
 
-  new GLTFLoader().load('assets/globe.glb', (gltf) => {
-    scene.add(gltf.scene);
-    globeNode = gltf.scene.getObjectByName('Globe');
-    ['Pin_Seattle', 'Pin_NewYork', 'Pin_Tokyo'].forEach((n) => {
-      const obj = gltf.scene.getObjectByName(n);
-      if (obj) pinNodes[n] = obj;
-    });
+  new GLTFLoader().load(
+    'assets/globe.glb',
+    (gltf) => {
+      clearFallback();
+      scene.add(gltf.scene);
+      globeNode = gltf.scene.getObjectByName('Globe');
+      ['Pin_Seattle', 'Pin_NewYork', 'Pin_Tokyo'].forEach((n) => {
+        const obj = gltf.scene.getObjectByName(n);
+        if (obj) pinNodes[n] = obj;
+      });
 
-    // grab the baked texture so we can sample it on hover (is this pixel a visited/green country?)
-    const mat = globeNode && globeNode.material;
-    const tex = mat && mat.map;
-    if (tex && tex.image) {
-      maskCanvas = document.createElement('canvas');
-      maskCanvas.width = tex.image.width;
-      maskCanvas.height = tex.image.height;
-      maskCtx = maskCanvas.getContext('2d');
-      maskCtx.drawImage(tex.image, 0, 0);
-    }
+      // grab the baked texture so we can sample it on hover (is this pixel a visited/green country?)
+      const mat = globeNode && globeNode.material;
+      const tex = mat && mat.map;
+      if (tex && tex.image) {
+        maskCanvas = document.createElement('canvas');
+        maskCanvas.width = tex.image.width;
+        maskCanvas.height = tex.image.height;
+        maskCtx = maskCanvas.getContext('2d');
+        maskCtx.drawImage(tex.image, 0, 0);
+      }
 
-    resize();
-    tick();
-  });
+      resize();
+      tick();
+    },
+    undefined,
+    () => showFallback() // model failed to load (blocked CDN, network issue, etc.)
+  );
 
   let dragging = false, lastX = 0, autoRotate = true;
   canvas.addEventListener('mousedown', (e) => { dragging = true; lastX = e.clientX; });
