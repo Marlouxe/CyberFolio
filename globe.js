@@ -93,6 +93,7 @@ const PINS = {
     (gltf) => {
       clearFallback();
       scene.add(gltf.scene);
+      gltf.scene.position.y -= 1; // the model's "Globe" node ships offset +1 on Y vs the origin the camera looks at — recenter it
       globeNode = gltf.scene.getObjectByName('Globe');
       ['Pin_Seattle', 'Pin_NewYork', 'Pin_Tokyo'].forEach((n) => {
         const obj = gltf.scene.getObjectByName(n);
