@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ransomwares — Cybersécurité · B2</title>
+  <link rel="stylesheet" href="b2_article_3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header class="topbar">
+  <a href="b2.html">← Articles B2</a>
+  <span>B2 · Article 3</span>
+  <a href="../index.html">Cyberfolio</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Malware · Extorsion</div>
+    <h1>Ransom&shy;wares</h1>
+    <p class="sub">Comprendre la menace, et savoir s'en protéger.</p>
+  </div>
+  <div class="lock" id="lock">
+    <h4 id="lt">⚠ Système sous contrôle</h4>
+    <div class="timer" id="tm">71:59:59</div>
+    <ul id="fl"></ul>
+    <button class="lbtn" id="lb">▶ Lancer l'attaque (simulation)</button>
+    <p id="lp">Voyons ce qui arrive à tes fichiers… et ce qui les sauve.</p>
+  </div>
+</section>
+
+<main>
+  <section>
+    <p class="lead">Un <em>ransomware</em> (rançongiciel en français) est un logiciel malveillant qui bloque l'accès à tes données ou à ton ordinateur, puis exige une rançon, généralement en cryptomonnaie, pour les débloquer. Le mot vient de <em>ransom</em> (rançon) et de <em>software</em> (logiciel).</p>
+    <p>Concrètement, tu te retrouves devant un message : tes fichiers sont chiffrés, et tu dois payer dans un délai donné pour obtenir la clé de déchiffrement. Documents, photos, bases de données, et parfois même les sauvegardes connectées au réseau : tout peut être touché en quelques minutes. Sans la clé, il est pratiquement impossible de récupérer ses fichiers.</p>
+    <div class="cards">
+      <div class="card"><h3>Le chiffrement</h3><p>Chaque fichier devient illisible, avec une clé que seul l'attaquant possède.</p></div>
+      <div class="card"><h3>La double extorsion</h3><p>Avant de chiffrer, les criminels volent les données et menacent de les publier ou de les revendre.</p></div>
+      <div class="card"><h3>Le « RaaS »</h3><p>Ransomware-as-a-service : des développeurs louent leur outil à des affiliés contre un pourcentage de la rançon.</p></div>
+    </div>
+    <div class="note"><b>Une industrie :</b> le RaaS permet à des criminels peu techniques de passer à l'action, ce qui explique la multiplication des attaques.</div>
+  </section>
+
+  <section>
+    <h2>Comment ils entrent</h2>
+    <div class="cards">
+      <div class="card"><h3>Le phishing</h3><p>Un e-mail avec une pièce jointe ou un lien piégé : la porte d'entrée numéro un.</p></div>
+      <div class="card"><h3>Un accès distant faible</h3><p>Identifiants volés ou faibles sur un VPN ou un bureau à distance, sans double authentification.</p></div>
+      <div class="card"><h3>Une faille non corrigée</h3><p>Un logiciel ou un équipement exposé sur internet qui n'a pas été mis à jour.</p></div>
+      <div class="card"><h3>Un prestataire</h3><p>L'attaque passe par un partenaire déjà connecté à ton réseau.</p></div>
+    </div>
+    <p style="margin-top:22px">Souvent, les attaquants restent plusieurs jours dans le réseau pour l'explorer, voler des données et désactiver les défenses. Puis ils déclenchent le chiffrement, de préférence un week-end ou un jour férié.</p>
+    <div class="note"><b>Qui est visé ?</b> Tout le monde : PME, hôpitaux, collectivités, écoles, universités, et même les particuliers. Ces organisations dépendent de leurs données pour fonctionner et sont souvent moins bien protégées. L'ANSSI classe les rançongiciels parmi les principales menaces pour les organisations françaises.</div>
+    <div class="note"><b>Faut-il payer ?</b> Les autorités, dont l'ANSSI, le déconseillent : rien ne garantit que la clé soit fournie ou fonctionne, le paiement finance les criminels, et tu peux être ciblé à nouveau.</div>
+  </section>
+
+  <section>
+    <h2>Ma meilleure défense : le 3-2-1</h2>
+    <p>La règle des sauvegardes en trois chiffres. Et une sauvegarde jamais testée est une sauvegarde dont on ignore si elle fonctionne.</p>
+    <div class="big">
+      <div><strong>3</strong><span>copies de tes données</span></div>
+      <div><strong>2</strong><span>supports différents</span></div>
+      <div><strong>1</strong><span>copie hors ligne, déconnectée</span></div>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Mises à jour</h3><p>Installe vite les correctifs : ils ferment les failles les plus exploitées.</p></div>
+      <div class="card"><h3>Double authentification</h3><p>Surtout sur les accès distants et la messagerie : un mot de passe volé ne suffit plus.</p></div>
+      <div class="card"><h3>Droits limités</h3><p>L'administrateur pour ceux qui en ont besoin, pour qu'un poste infecté ne contamine pas tout.</p></div>
+      <div class="card"><h3>Vigilance</h3><p>Reconnaître un phishing et savoir à qui signaler un doute. À la maison : disque externe débranché, logiciels officiels.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>À toi de jouer : l'attaque a lieu</h2>
+    <p>Clique sur les actions <b>dans le bon ordre</b>. Attention, deux d'entre elles sont des pièges.</p>
+    <div class="quiz"><div class="q-count" id="oc"></div><div class="ord" id="ord"></div><div class="fb" id="ofb"></div></div>
+    <div class="note"><b>Les bons gestes :</b> déconnecter la machine du réseau, prévenir l'informatique, garder les preuves, porter plainte et prévenir la CNIL sous 72 h si des données personnelles sont concernées, puis restaurer. Le projet <a href="https://www.nomoreransom.org" target="_blank" rel="noopener">No More Ransom</a> propose des outils gratuits de déchiffrement pour certains ransomwares, et <a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener">cybermalveillance.gouv.fr</a> t'accompagne.</div>
+  </section>
+
+  <section>
+    <h2>Des histoires bien réelles</h2>
+    <ul class="tl">
+      <li><b>1989</b><em>Le premier</em><p>Joseph Popp envoie des disquettes « d'information sur le SIDA » à des participants d'une conférence de l'OMS. Elles chiffrent les noms de fichiers et réclament 189 dollars à envoyer à une boîte postale au Panama.</p></li>
+      <li><b>Mai 2017</b><em>WannaCry</em><p>Plus de 200 000 ordinateurs touchés dans une centaine de pays. Le système de santé britannique est paralysé, Renault aussi est touché. Le chercheur Marcus Hutchins l'arrête presque par hasard en enregistrant un nom de domaine : un « interrupteur d'arrêt ».</p></li>
+      <li><b>Juin 2017</b><em>NotPetya</em><p>Maersk réinstalle des milliers de serveurs et d'ordinateurs (environ 300 millions de dollars). Saint-Gobain évalue ses pertes à environ 250 millions d'euros.</p></li>
+      <li><b>Mai 2021</b><em>Colonial Pipeline</em><p>L'oléoduc qui alimente une grande partie de la côte est américaine s'arrête, après une intrusion par un mot de passe compromis sur un VPN sans double authentification. Environ 4,4 millions de dollars payés, en partie récupérés par le FBI.</p></li>
+      <li><b>Août 2022</b><em>En France</em><p>L'hôpital de Corbeil-Essonnes est paralysé : urgences perturbées, patients transférés. Les pirates réclament 10 millions de dollars avant de publier des données de patients.</p></li>
+      <li><b>2024</b><em>LockBit</em><p>Une opération internationale prend le contrôle de l'infrastructure de LockBit, l'un des groupes les plus actifs. D'autres prennent le relais.</p></li>
+      <li><b>Automne 2025</b><em>Jaguar Land Rover</em><p>Les usines du constructeur britannique sont à l'arrêt pendant plusieurs semaines, avec leurs sous-traitants.</p></li>
+    </ul>
+  </section>
+
+  <div class="retenir"><b>À retenir</b>Le ransomware n'est pas une fatalité. Des sauvegardes testées, des mises à jour, la double authentification et un peu de vigilance évitent la majorité des catastrophes.</div>
+</main>
+
+<footer>Cybersécurité · B2 — Article 3 : Ransomwares · <a href="b2.html">Retour aux articles B2</a></footer>
+
+<script>
+const F=['rapport_2026.docx','photos_vacances.zip','compta.xlsx','memoire_final.pdf'];
+const fl=document.getElementById('fl'),lock=document.getElementById('lock'),lb=document.getElementById('lb'),lt=document.getElementById('lt'),lp=document.getElementById('lp');
+let st=0,left=72*3600-1,tid;
+function files(m){fl.innerHTML=F.map(f=>'<li><span>'+f+'</span>'+(m?'<s>.locked</s>':'<u>✔ ok</u>')+'</li>').join('')}
+files(0);
+function tick(){left--;const h=Math.floor(left/3600),m=Math.floor(left%3600/60),s=left%60;document.getElementById('tm').textContent=[h,m,s].map(n=>String(n).padStart(2,'0')).join(':')}
+lb.onclick=()=>{
+  if(st===0){st=1;files(1);lt.textContent='⚠ Vos fichiers sont chiffrés';lb.textContent='↺ Restaurer depuis la sauvegarde 3-2-1';
+    lp.textContent='Rançon exigée avant la fin du compte à rebours. Aucune garantie de recevoir la clé.';tid=setInterval(tick,1000)}
+  else if(st===1){st=2;clearInterval(tid);files(0);lock.classList.add('ok');lt.textContent='✔ Fichiers restaurés';lb.textContent='Rejouer';
+    lp.textContent='Avec une copie hors ligne, pas besoin de payer. Voilà pourquoi la sauvegarde est la meilleure défense.'}
+  else{st=0;left=72*3600-1;document.getElementById('tm').textContent='71:59:59';lock.classList.remove('ok');lt.textContent='⚠ Système sous contrôle';lb.textContent='▶ Lancer l\'attaque (simulation)';lp.textContent='Voyons ce qui arrive à tes fichiers… et ce qui les sauve.';files(0)}
+};
+
+const S=[
+ {t:'Déconnecter la machine du réseau (câble, Wi-Fi)',n:1},
+ {t:'Prévenir le service informatique ou un prestataire',n:2},
+ {t:'Conserver les preuves, ne rien effacer',n:3},
+ {t:'Déposer plainte et prévenir la CNIL sous 72 h (données personnelles)',n:4},
+ {t:'Restaurer depuis une sauvegarde saine',n:5},
+ {t:'Payer la rançon vite pour tout récupérer',n:0,f:'Piège : aucune garantie, tu finances les criminels et tu peux être ciblé à nouveau.'},
+ {t:'Tout reformater tout de suite',n:0,f:'Piège : tu détruirais les preuves dont l\'enquête a besoin.'}
+].sort(()=>Math.random()-.5);
+let nx=1;const ord=document.getElementById('ord'),ofb=document.getElementById('ofb'),oc=document.getElementById('oc');
+function draw(){oc.textContent='Prochaine action : étape '+Math.min(nx,5)+' sur 5';
+  ord.innerHTML=S.map((s,k)=>'<button class="opt" data-k="'+k+'"><b>'+(s.d||'?')+'</b>'+s.t+'</button>').join('');
+  ord.querySelectorAll('.opt').forEach(b=>{const s=S[+b.dataset.k];if(s.d){b.classList.add('good');b.disabled=true}
+    b.onclick=()=>{if(s.n===nx){s.d=nx;nx++;draw();ofb.textContent=nx>5?'Bravo, tu as géré la crise dans le bon ordre. Et la rançon n\'a pas été payée.':''; if(nx>5)oc.textContent='Terminé'}
+      else{b.classList.add('shake');ofb.textContent=s.n===0?s.f:'Pas encore : ce n\'est pas la prochaine étape.';setTimeout(()=>b.classList.remove('shake'),400)}}})}
+draw();
+</script>
+</body>
+</html>

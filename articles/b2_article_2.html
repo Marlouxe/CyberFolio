@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quishing — Cybersécurité · B2</title>
+  <link rel="stylesheet" href="b2_article_2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header class="topbar">
+  <a href="b2.html">← Articles B2</a>
+  <span>B2 · Article 2</span>
+  <a href="../index.html">Cyberfolio</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Phishing · Smartphone</div>
+    <h1>Quishing</h1>
+    <p class="sub">Quand un simple QR code devient un piège.</p>
+  </div>
+  <div class="qrwrap" id="qrwrap">
+    <div class="qr" id="qr" aria-label="Illustration : un QR code"></div>
+    <div class="urlpill" id="url">Où mène ce carré ? Impossible à lire…</div>
+    <button class="reveal" id="reveal">Voir ce qu'il cache</button>
+  </div>
+</section>
+
+<main>
+  <section>
+    <p class="lead">Le mot « quishing » est la contraction de <em>QR code</em> et de <em>phishing</em> (hameçonnage). Un cybercriminel cache un lien malveillant derrière un QR code et espère que tu le scannes avec ton téléphone. Tu arrives alors sur un faux site qui imite une banque, une administration ou un service de paiement, et on te demande tes identifiants ou ta carte bancaire.</p>
+    <p>Un QR code n'est pas dangereux en soi. Inventé en 1994 par l'entreprise japonaise Denso Wave pour suivre des pièces dans les usines automobiles, c'est un code-barres en deux dimensions qui contient du texte, le plus souvent une adresse web. Le problème : personne ne sait lire ce contenu à l'œil nu. Impossible de deviner si un carré noir et blanc mène vers un site légitime ou vers une arnaque.</p>
+    <div class="note"><b>Pourquoi ça marche :</b> avec la crise sanitaire (menus de restaurant, justificatifs, paiements sans contact), nous avons pris l'habitude de scanner sans réfléchir. Les criminels l'ont bien compris.</div>
+  </section>
+
+  <section>
+    <h2>Pourquoi les escrocs adorent ça</h2>
+    <div class="cards">
+      <div class="card"><h3>C'est une image</h3><p>Les filtres anti-spam analysent surtout le texte et les liens des e-mails, pas les images.</p></div>
+      <div class="card"><h3>Ton téléphone perso</h3><p>Tu scannes avec un smartphone souvent moins protégé qu'un ordinateur professionnel.</p></div>
+      <div class="card"><h3>Un lien caché</h3><p>Impossible de survoler le lien pour vérifier l'adresse avant de l'ouvrir.</p></div>
+      <div class="card"><h3>Une adresse modifiable</h3><p>Un QR code dynamique peut mener vers une page inoffensive, puis vers un faux site.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Où se cache le piège ?</h2>
+    <div class="cards">
+      <div class="card"><h3>L'horodateur</h3><p>Un autocollant collé sur le vrai QR code : tu crois payer ton stationnement, tu donnes ta carte.</p></div>
+      <div class="card"><h3>La fausse amende</h3><p>Un faux avis de contravention sous l'essuie-glace ou dans la boîte aux lettres.</p></div>
+      <div class="card"><h3>Le mail du « patron »</h3><p>Un message qui demande de scanner un code pour « réactiver » ton accès professionnel.</p></div>
+      <div class="card"><h3>Le faux acheteur</h3><p>Sur les petites annonces, un QR code « pour recevoir ton paiement » qui sert à en faire un.</p></div>
+      <div class="card"><h3>Les bornes de recharge</h3><p>De faux codes collés sur des bornes de voitures électriques, des flyers ou des menus.</p></div>
+    </div>
+    <div class="note"><b>Bonne nouvelle :</b> scanner un QR code ne pirate pas à lui seul un téléphone. Le danger commence quand tu ouvres le lien, que tu saisis des informations ou que tu installes quelque chose. Il y a donc toujours une occasion de t'arrêter. L'escroc, lui, crée de l'urgence : « stationnement expiré », « colis bloqué », « compte suspendu ».</div>
+  </section>
+
+  <section>
+    <h2>Mes réflexes avant de scanner</h2>
+    <ol class="steps">
+      <li><b>Je n'attends pas ce code ?</b> Je ne le scanne pas. Un code reçu par courrier, par e-mail ou trouvé dans la rue se traite comme un lien suspect.</li>
+      <li><b>Je lis l'adresse.</b> L'appareil photo l'affiche avant ouverture : nom de domaine bizarre, fautes, lien raccourci ou adresse sans rapport avec l'organisme annoncé = alerte.</li>
+      <li><b>Je vérifie le support.</b> Autocollant qui dépasse, qui se décolle ou qui en recouvre un autre : je ne scanne pas.</li>
+      <li><b>Je passe par la porte officielle.</b> Pour une banque, les impôts ou l'assurance maladie, je tape moi-même l'adresse ou j'ouvre l'application habituelle.</li>
+      <li><b>Je ne saisis rien d'inattendu.</b> Pas de mot de passe ni de carte bancaire sur une page arrivée par surprise. En entreprise, je signale un mail avec seulement un QR code au service informatique.</li>
+    </ol>
+    <div class="note"><b>Trop tard ?</b> Change vite le mot de passe concerné, fais opposition à ta carte auprès de ta banque, surveille tes comptes, puis signale l'arnaque. Pour une fraude à la carte, la plateforme Perceval existe ; <a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener">cybermalveillance.gouv.fr</a> t'accompagne ; dépose plainte si tu as subi un préjudice.</div>
+  </section>
+
+  <section>
+    <h2>À toi de jouer : je scanne ou je passe ?</h2>
+    <p>Cinq situations. Regarde le lien affiché par le téléphone et décide.</p>
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+  </section>
+
+  <section>
+    <h2>Des histoires bien réelles</h2>
+    <ul class="tl">
+      <li><b>1994</b><em>Invention</em><p>Denso Wave crée le QR code pour suivre des pièces dans les usines automobiles japonaises.</p></li>
+      <li><b>2020</b><em>Explosion</em><p>Menus de restaurant, justificatifs, paiements : scanner devient un réflexe quotidien.</p></li>
+      <li><b>Janvier 2022</b><em>Alerte</em><p>Le FBI publie une alerte : des criminels falsifient des QR codes pour détourner des paiements et voler des identifiants.</p></li>
+      <li><b>Février 2022</b><em>Super Bowl</em><p>Une pub Coinbase n'affiche qu'un QR code qui rebondit à l'écran, comme l'ancien logo d'un lecteur DVD. Des millions de gens scannent, le site sature. La pub est légitime, mais elle prouve qu'on scanne sans savoir où ça mène.</p></li>
+      <li><b>2022</b><em>Texas</em><p>Austin, San Antonio et d'autres villes préviennent leurs habitants : de faux QR codes ont été collés sur des parcmètres.</p></li>
+      <li><b>Depuis 2023</b><em>En France</em><p>Alertes relayées par des communes et la presse sur de faux codes sur horodateurs et de faux avis de contravention ; les éditeurs de sécurité observent une forte hausse du quishing par e-mail.</p></li>
+    </ul>
+  </section>
+
+  <div class="retenir"><b>À retenir</b>Le QR code n'est pas un ennemi, c'est un outil pratique. Traite-le comme n'importe quel lien : d'où vient-il, pourquoi me demande-t-on de le scanner, et en ai-je vraiment besoin ?</div>
+</main>
+
+<footer>Cybersécurité · B2 — Article 2 : Quishing · <a href="b2.html">Retour aux articles B2</a></footer>
+
+<script>
+const qr=document.getElementById('qr');let h='';
+function fp(r,c){const y=r<5?r:r-8,x=c<5?c:c-8;return y===0||y===4||x===0||x===4||(y===2&&x===2)}
+for(let r=0;r<13;r++)for(let c=0;c<13;c++){
+  const corner=(r<5&&c<5)||(r<5&&c>7)||(r>7&&c<5);
+  const on=corner?fp(r,c):((r*7+c*13+r*c)%3!==0);
+  h+='<i class="'+(on?'':'o')+'"></i>';}
+qr.innerHTML=h;
+document.getElementById('reveal').onclick=()=>{
+  const w=document.getElementById('qrwrap'),u=document.getElementById('url'),on=w.classList.toggle('on');
+  u.textContent=on?'⚠ https://payer-stationnement.top/ticket':'Où mène ce carré ? Impossible à lire…';};
+
+const Q=[
+ {s:"Un autocollant dépasse sur un horodateur, par-dessus un autre code. Il propose de payer ton stationnement.",u:"payer-stationnement.top/ticket",a:1,
+  f:"Un autocollant posé sur un autre code est le piège classique, et l'adresse n'a rien d'officiel. Utilise l'appli ou l'horodateur lui-même."},
+ {s:"Dans un restaurant, un QR code imprimé sur la table mène à la carte du jour.",u:"carte.bistrot-du-port.fr/menu",a:0,
+  f:"Support imprimé en dur, adresse cohérente avec le restaurant, rien de sensible demandé : tu peux scanner. Reste attentif si on te demande ta carte."},
+ {s:"Un avis de contravention est glissé sous ton essuie-glace avec un QR code pour payer.",u:"amendes-paiement-gouv.com/regler",a:1,
+  f:"Ce n'est pas le site officiel. Les vraies amendes se paient sur amendes.gouv.fr, que tu tapes toi-même."},
+ {s:"Un mail de ton « service RH » ne contient qu'un QR code : « Scannez pour réactiver votre double authentification ».",u:"m365-secure-login.co/verify",a:1,
+  f:"Un mail réduit à un QR code est un classique du quishing en entreprise. Signale-le au service informatique."},
+ {s:"Sur une petite annonce, l'acheteur t'envoie un QR code « pour recevoir ton paiement ».",u:"paiement-securise-recu.xyz",a:1,
+  f:"Recevoir de l'argent n'exige jamais de scanner quoi que ce soit ni de donner ton code de carte. C'est une arnaque."}
+];
+let i=0,sc=0;const box=document.getElementById('quiz');
+function show(){
+  if(i>=Q.length){box.innerHTML='<p class="q-text">Score : '+sc+' / '+Q.length+'</p><p class="fb">'+(sc>=4?'Œil de lynx. Retiens : lire l\'adresse avant d\'ouvrir.':'Relis les réflexes ci-dessus : en cas de doute, on ne scanne pas.')+'</p><button class="next" id="again">Rejouer</button>';
+    document.getElementById('again').onclick=()=>{i=0;sc=0;show()};return}
+  const c=Q[i];
+  box.innerHTML='<div class="q-count">Situation '+(i+1)+' sur '+Q.length+'</div><div class="q-text">'+c.s+'</div><div class="phone"><small>Lien affiché par ton téléphone</small><code>'+c.u+'</code></div><div class="duo"><button class="opt" data-k="0">Je scanne</button><button class="opt" data-k="1">Je passe</button></div><div class="fb" id="fb"></div>';
+  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const k=+b.dataset.k;if(k===c.a)sc++;
+    box.querySelectorAll('.opt').forEach((x,n)=>{x.disabled=true;if(n===c.a)x.classList.add('good');else if(n===k)x.classList.add('bad')});
+    document.getElementById('fb').innerHTML=(k===c.a?'Bien vu. ':'Pas tout à fait. ')+c.f+'<br><button class="next" id="nx">'+(i<Q.length-1?'Situation suivante':'Voir mon score')+'</button>';
+    document.getElementById('nx').onclick=()=>{i++;show()};
+  });
+}
+show();
+</script>
+</body>
+</html>
