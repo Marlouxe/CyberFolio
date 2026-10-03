@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepfakes — Cybersécurité · B2</title>
+  <link rel="stylesheet" href="b2_article_1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header class="topbar">
+  <a href="b2.html">← Articles B2</a>
+  <span>B2 · Article 1</span>
+  <a href="../index.html">Cyberfolio</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Intelligence artificielle · Arnaques</div>
+    <h1>Deepfakes</h1>
+    <p class="sub">Quand on ne peut plus croire ce que l'on voit et entend.</p>
+  </div>
+  <div>
+    <div class="frame" id="frame" aria-label="Illustration : image d'une vidéo truquée">
+      <span class="rec">● REC</span>
+      <div class="cap">« Soldats, déposez les armes. »</div>
+      <div class="tag">Généré par IA, jamais prononcé</div>
+    </div>
+    <button class="unmask" id="unmask">Démasquer cette vidéo</button>
+  </div>
+</section>
+
+<main>
+  <section>
+    <p class="lead">Le mot « deepfake » vient de <em>deep learning</em> (apprentissage profond) et de <em>fake</em> (faux). Il désigne une vidéo, un audio ou une image créés ou modifiés par une IA pour faire dire ou faire faire à quelqu'un ce qu'il n'a jamais dit ni fait.</p>
+    <p>Le principe repose sur des réseaux de neurones : des programmes qui apprennent en observant des milliers d'exemples. On leur donne des photos, des vidéos ou des enregistrements d'une personne, et ils apprennent à reproduire son visage, ses expressions et sa voix. Ensuite, on peut plaquer ce visage sur un autre corps ou faire prononcer n'importe quelle phrase à cette voix synthétique.</p>
+    <div class="cards">
+      <div class="card"><h3>Face swap</h3><p>Remplace le visage d'une personne par celui d'une autre dans une vidéo.</p></div>
+      <div class="card"><h3>Clonage vocal</h3><p>Reproduit une voix à partir de quelques secondes d'enregistrement.</p></div>
+      <div class="card"><h3>Synchronisation labiale</h3><p>Fait dire un nouveau texte à une personne filmée.</p></div>
+      <div class="card"><h3>Génération complète</h3><p>Crée de toutes pièces une personne ou une scène qui n'existent pas.</p></div>
+    </div>
+    <div class="note"><b>Ce qui a changé :</b> fabriquer un deepfake demandait des compétences et du matériel coûteux. Aujourd'hui, des applications grand public le font en quelques minutes, parfois gratuitement. Quelques secondes d'une voix publiée sur les réseaux peuvent suffire à la cloner.</div>
+  </section>
+
+  <section>
+    <h2>Ce que font les escrocs avec</h2>
+    <div class="cards">
+      <div class="card"><h3>Le faux président</h3><p>Un escroc imite un dirigeant pour pousser un employé à faire un virement urgent.</p></div>
+      <div class="card"><h3>Le faux proche</h3><p>Une voix clonée appelle un parent : accident, ennuis d'argent.</p></div>
+      <div class="card"><h3>La désinformation</h3><p>Fausses déclarations de responsables politiques.</p></div>
+      <div class="card"><h3>Le chantage</h3><p>Images truquées de personnes réelles, harcèlement.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Peut-on les repérer ?</h2>
+    <p>Parfois. Dans une vidéo : contours du visage flous ou tremblants, clignements trop rares ou trop réguliers, dents et cheveux mal définis, lumière qui ne correspond pas au décor, lèvres légèrement décalées du son. Pour la voix : ton monocorde, respiration absente, silences étranges.</p>
+    <div class="note"><b>Mais soyons honnêtes :</b> ces indices disparaissent à mesure que la technologie progresse. Même des experts se trompent, et les détecteurs automatiques ne sont pas fiables à 100 %. Le bon réflexe n'est pas de jouer au détective, mais de changer de méthode : ne plus juger un message sur son apparence, et le vérifier par un autre canal.</div>
+    <p>Ces arnaques marchent parce qu'elles exploitent la confiance et l'émotion plutôt que la technique. Les escrocs ajoutent presque toujours de l'urgence, de la peur ou de la confidentialité (« ne dis rien à personne ») pour t'empêcher de réfléchir.</p>
+  </section>
+
+  <section>
+    <h2>À toi de jouer : que fais-tu ?</h2>
+    <p>Quatre situations, un seul bon réflexe à chaque fois.</p>
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+  </section>
+
+  <section>
+    <h2>Des histoires bien réelles</h2>
+    <ul class="tl">
+      <li><b>2018</b><em>Pédagogie</em><p>Jordan Peele et BuzzFeed font « parler » Barack Obama pour alerter sur le danger des deepfakes.</p></li>
+      <li><b>2019</b><em>Clonage vocal</em><p>Le dirigeant d'une entreprise d'énergie britannique croit parler au patron de sa maison mère allemande et vire environ 220 000 € à des escrocs. Un des premiers cas connus de fraude par voix clonée.</p></li>
+      <li><b>2021</b><em>Divertissement</em><p>De faux « Tom Cruise » font des millions de vues sur TikTok : un imitateur au visage retouché par un artiste spécialisé.</p></li>
+      <li><b>2022</b><em>Désinformation</em><p>Une fausse vidéo de Volodymyr Zelensky appelant ses soldats à déposer les armes circule après le piratage d'un site d'information. Grossière, elle est vite démentie.</p></li>
+      <li><b>2023</b><em>Virale</em><p>Le pape François en doudoune blanche, une image générée par IA, trompe des millions d'internautes.</p></li>
+      <li><b>2024</b><em>Visioconférence</em><p>Chez Arup à Hong Kong, un employé assiste à une visio avec son directeur financier et ses collègues, tous des deepfakes. Il vire environ 25 millions de dollars. Janvier 2024 : une fausse voix de Joe Biden appelle des électeurs du New Hampshire à ne pas voter ; de fausses images de Taylor Swift sont vues des dizaines de millions de fois.</p></li>
+      <li><b>2025</b><em>En France</em><p>Le « faux Brad Pitt » : une femme, convaincue pendant plus d'un an d'entretenir une relation avec l'acteur, verse environ 830 000 €. Elle a témoigné publiquement pour prévenir d'autres victimes.</p></li>
+    </ul>
+    <p>Tout n'est pas sombre : le deepfake sert aussi au cinéma, à la publicité et à l'éducation.</p>
+  </section>
+
+  <section>
+    <h2>Ce que dit la loi, et où demander de l'aide</h2>
+    <p>En France, créer et diffuser un montage réalisé avec l'IA sans le consentement de la personne représentée est puni d'un an de prison et de 15 000 € d'amende, avec des peines plus lourdes en ligne. Tu peux signaler un contenu sur <a href="https://www.pharos.interieur.gouv.fr" target="_blank" rel="noopener">Pharos</a> et chercher de l'aide sur <a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener">cybermalveillance.gouv.fr</a>.</p>
+  </section>
+
+  <div class="retenir"><b>À retenir</b>Une image, une vidéo ou une voix ne suffisent plus à prouver quoi que ce soit. Prends le temps de douter, vérifie par un autre canal, et ne te laisse jamais presser.</div>
+</main>
+
+<footer>Cybersécurité · B2 — Article 1 : Deepfakes · <a href="b2.html">Retour aux articles B2</a></footer>
+
+<script>
+document.getElementById('unmask').onclick=()=>document.getElementById('frame').classList.toggle('off');
+
+const Q=[
+ {q:"Ta mère t'appelle, la voix paniquée : elle a eu un accident et a besoin de 800 € tout de suite. « Ne dis rien à papa. »",
+  o:["Je fais le virement, c'est urgent.","Je raccroche et je la rappelle sur son numéro habituel.","Je lui pose une question sur sa voix pour vérifier."],a:1,
+  f:"L'urgence et le secret sont les marqueurs de l'arnaque. Raccroche et rappelle le numéro que tu connais déjà."},
+ {q:"En visio, ton directeur financier te demande un virement inhabituel et confidentiel. Tu le vois et l'entends clairement.",
+  o:["Je le fais, je le vois de mes yeux.","Je demande une validation écrite à un second responsable avant tout virement.","Je vérifie qu'il cligne bien des yeux."],a:1,
+  f:"Chez Arup, la visio entière était truquée. En entreprise, la double validation vaut mieux que ton œil."},
+ {q:"Une vidéo choquante d'un responsable politique fait le tour de ton fil. Tes amis la partagent.",
+  o:["Je la partage pour alerter.","Je cherche la source d'origine avant de faire quoi que ce soit.","Je regarde si l'image est floue."],a:1,
+  f:"Cherche la source d'origine. Un faux partagé, même pour « alerter », reste un faux qui circule."},
+ {q:"Un « proche » t'écrit avec un message vocal très réaliste. Comment éviter le piège en famille ?",
+  o:["Convenir d'un mot de code connu seulement des proches.","Se fier à la voix : on connaît les siens.","Ne plus jamais décrocher."],a:0,
+  f:"Un mot de code partagé en famille ne se clone pas, contrairement à une voix."}
+];
+let i=0,s=0;const box=document.getElementById('quiz');
+function show(){
+  if(i>=Q.length){box.innerHTML='<p class="q-text">Score : '+s+' / '+Q.length+'</p><p class="fb">'+(s>=3?'Bons réflexes. Retiens la méthode : vérifier par un autre canal.':'Relis les réflexes ci-dessus : un bon réflexe vaut mieux qu\'un bon œil.')+'</p><button class="next" id="again">Rejouer</button>';
+    document.getElementById('again').onclick=()=>{i=0;s=0;show()};return}
+  const c=Q[i];
+  box.innerHTML='<div class="q-count">Situation '+(i+1)+' sur '+Q.length+'</div><div class="q-text">'+c.q+'</div>'+
+   c.o.map((t,k)=>'<button class="opt" data-k="'+k+'">'+t+'</button>').join('')+'<div class="fb" id="fb"></div>';
+  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const k=+b.dataset.k;if(k===c.a)s++;
+    box.querySelectorAll('.opt').forEach((x,n)=>{x.disabled=true;if(n===c.a)x.classList.add('good');else if(n===k)x.classList.add('bad')});
+    document.getElementById('fb').innerHTML=(k===c.a?'Bien vu. ':'Pas tout à fait. ')+c.f+'<br><button class="next" id="nx">'+(i<Q.length-1?'Situation suivante':'Voir mon score')+'</button>';
+    document.getElementById('nx').onclick=()=>{i++;show()};
+  });
+}
+show();
+</script>
+</body>
+</html>
