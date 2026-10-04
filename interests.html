@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marilou – Mes univers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="interests.css">
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">Marilou</a>
+    <a class="nav-logo" href="#">🌿 Marilou</a>
     <div class="nav-right">
       <a href="#sport" class="nav-link">Sport</a>
       <a href="#amis" class="nav-link">Voyages</a>
@@ -22,15 +22,31 @@
   </nav>
 
   <!-- HERO -->
-  <div class="page-hero">
-    <p class="eyebrow">Ma vie en dehors du terminal</p>
-    <h1>Mes univers</h1>
-    <p>La cybersécurité est ma passion professionnelle, mais j'ai aussi une vie faite de sport, de voyages entre amis, de laine et de découvertes.</p>
-  </div>
+  <header class="page-hero">
+    <div class="hero-inner">
+      <p class="eyebrow">🌿 Ma vie en dehors du terminal</p>
+      <h1>Mes univers</h1>
+      <p class="lead">La cybersécurité est ma passion professionnelle, mais j'ai aussi une vie faite de sport, de voyages entre amis, de laine et de découvertes. Chaque sommet commence par un premier pas.</p>
+      <div class="hero-chips">
+        <a href="#sport">🤾 Sport</a>
+        <a href="#amis">🏔️ Voyages entre amis</a>
+        <a href="creations.html" class="hot">🧶 Mes créations</a>
+      </div>
+    </div>
+    <svg class="hero-mountains" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true"><path fill="#3f6d4a" opacity=".55" d="M0 110 L160 50 L300 100 L470 20 L640 105 L800 45 L960 100 L1130 30 L1300 95 L1440 60 V160 H0Z"/><path fill="#f6f2e4" d="M0 135 L200 85 L360 125 L560 70 L760 130 L980 80 L1180 128 L1320 95 L1440 120 V160 H0Z"/></svg>
+  </header>
+
+  <!-- BANDEAU CRÉATIONS -->
+  <a class="teaser-banner" href="creations.html">
+    <span class="tb-emoji">🧶🧣🪡</span>
+    <span class="tb-text"><strong>Découvre mes créations faites main</strong><em>Crochet, tricot et couture (en cours d'apprentissage)</em></span>
+    <span class="tb-arrow">Voir →</span>
+  </a>
 
   <!-- SPORT -->
   <section id="sport">
     <div class="section-header reveal">
+      <p class="kicker">01 · Énergie</p>
       <h2>Le sport, mon équilibre</h2>
       <p>Du terrain de hand à la salle : l'esprit d'équipe et la discipline.</p>
     </div>
@@ -53,18 +69,21 @@
       </div>
     </div>
 
-    <div class="info-card reveal">
-      <span class="ic-emoji">🏋️</span>
-      <div>
-        <h3>La salle, 4 à 5 fois par semaine</h3>
+    <div class="gym-card reveal">
+      <div class="gym-num"><strong>4–5</strong><span>séances<br>par semaine</span></div>
+      <div class="gym-text">
+        <h3>🏋️ La salle</h3>
         <p>C'est ma routine aujourd'hui. Y aller même les jours où j'ai la flemme, c'est un super entraînement à la discipline et à la régularité, deux qualités qui servent autant en cybersécurité que dans le sport.</p>
       </div>
     </div>
   </section>
 
+  <div class="quote-band"><p>La motivation te fait commencer, <em>la discipline te fait continuer.</em></p></div>
+
   <!-- VOYAGER ENTRE AMIS -->
   <section id="amis">
     <div class="section-header reveal">
+      <p class="kicker">02 · Aventure</p>
       <h2>Voyager entre amis</h2>
       <p>J'adore partir avec mes copains. Ici : les Pyrénées.</p>
     </div>
@@ -83,9 +102,12 @@
     </div>
   </section>
 
+  <div class="quote-band"><p>Les plus beaux sommets se gravissent <em>à plusieurs.</em></p></div>
+
   <!-- CENTRES D'INTÉRÊTS -->
   <section id="interets">
     <div class="section-header reveal">
+      <p class="kicker">03 · Passions</p>
       <h2>Ce qui me fait vibrer</h2>
       <p>Mes passions au quotidien</p>
     </div>

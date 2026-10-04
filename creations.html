@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marilou – Mes créations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="interests.css">
 </head>
-<body>
+<body class="creations">
 
   <nav>
-    <a class="nav-logo" href="#">Marilou</a>
+    <a class="nav-logo" href="#">🌿 Marilou</a>
     <div class="nav-right">
       <a href="#crochet" class="nav-link">Crochet</a>
       <a href="#tricot" class="nav-link">Tricot</a>
@@ -20,14 +20,23 @@
     </div>
   </nav>
 
-  <div class="page-hero">
-    <p class="eyebrow">Fait main</p>
-    <h1>Mes créations</h1>
-    <p>Trois façons de créer avec mes mains : le crochet, le tricot et la couture, que j'apprends en ce moment.</p>
-  </div>
+  <header class="page-hero">
+    <div class="hero-inner">
+      <p class="eyebrow">✨ Fait main</p>
+      <h1>Mes créations</h1>
+      <p class="lead">Trois façons de créer avec mes mains : le crochet, le tricot et la couture, que j'apprends en ce moment. Chaque pièce raconte un petit moment de calme.</p>
+      <div class="hero-chips">
+        <a href="#crochet">🧶 Crochet</a>
+        <a href="#tricot">🧣 Tricot</a>
+        <a href="#couture">🪡 Couture</a>
+      </div>
+    </div>
+    <svg class="hero-mountains" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true"><path fill="#3f6d4a" opacity=".55" d="M0 110 L160 50 L300 100 L470 20 L640 105 L800 45 L960 100 L1130 30 L1300 95 L1440 60 V160 H0Z"/><path fill="#f6f2e4" d="M0 135 L200 85 L360 125 L560 70 L760 130 L980 80 L1180 128 L1320 95 L1440 120 V160 H0Z"/></svg>
+  </header>
 
   <section id="crochet">
     <div class="section-header reveal">
+      <p class="kicker">01 · Mon point fort</p>
       <h2>🧶 Crochet</h2>
       <p>Chaque pièce est faite à la main.</p>
     </div>
@@ -42,6 +51,7 @@
 
   <section id="tricot" class="alt">
     <div class="section-header reveal">
+      <p class="kicker">02 · Douceur</p>
       <h2>🧣 Tricot</h2>
       <p>Des mailles, de la patience et de belles couleurs.</p>
     </div>
@@ -54,6 +64,7 @@
 
   <section id="couture">
     <div class="section-header reveal">
+      <p class="kicker">03 · Nouveau défi</p>
       <h2>🪡 Couture <span class="badge-wip">En cours d'apprentissage</span></h2>
       <p>Mes premiers essais : je découvre la machine, les patrons et les finitions.</p>
     </div>
