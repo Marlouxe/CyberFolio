@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marilou – Mes créations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="interests.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">Marilou</a>
+    <div class="nav-right">
+      <a href="#crochet" class="nav-link">Crochet</a>
+      <a href="#tricot" class="nav-link">Tricot</a>
+      <a href="#couture" class="nav-link">Couture</a>
+      <a href="interests.html" class="back-btn">← Mes univers</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="eyebrow">Fait main</p>
+    <h1>Mes créations</h1>
+    <p>Trois façons de créer avec mes mains : le crochet, le tricot et la couture, que j'apprends en ce moment.</p>
+  </div>
+
+  <section id="crochet">
+    <div class="section-header reveal">
+      <h2>🧶 Crochet</h2>
+      <p>Chaque pièce est faite à la main.</p>
+    </div>
+    <div class="brick-wall reveal">
+      <figure class="tile c5 r4" data-ph="🧶"><img src="images/img1.jpg" alt="Création crochet 1" loading="lazy"></figure>
+      <figure class="tile c4 r2" data-ph="🧶"><img src="images/img2.jpg" alt="Création crochet 2" loading="lazy"></figure>
+      <figure class="tile c3 r4" data-ph="🧶"><img src="images/img3.jpg" alt="Création crochet 3" loading="lazy"></figure>
+      <figure class="tile c4 r2" data-ph="🧶"><img src="images/img4.jpg" alt="Création crochet 4" loading="lazy"></figure>
+      <figure class="tile c5 r2" data-ph="🧶"><img src="images/img5.jpg" alt="Création crochet 5" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section id="tricot" class="alt">
+    <div class="section-header reveal">
+      <h2>🧣 Tricot</h2>
+      <p>Des mailles, de la patience et de belles couleurs.</p>
+    </div>
+    <div class="brick-wall reveal">
+      <figure class="tile c5 r3" data-ph="🧣"><img src="images/creations/tricot1.jpg" alt="Création tricot 1" loading="lazy"></figure>
+      <figure class="tile c4 r3" data-ph="🧣"><img src="images/creations/tricot2.jpg" alt="Création tricot 2" loading="lazy"></figure>
+      <figure class="tile c3 r3" data-ph="🧣"><img src="images/creations/tricot3.jpg" alt="Création tricot 3" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section id="couture">
+    <div class="section-header reveal">
+      <h2>🪡 Couture <span class="badge-wip">En cours d'apprentissage</span></h2>
+      <p>Mes premiers essais : je découvre la machine, les patrons et les finitions.</p>
+    </div>
+    <div class="brick-wall reveal">
+      <figure class="tile c4 r3" data-ph="🪡"><img src="images/creations/couture1.jpg" alt="Essai couture 1" loading="lazy"></figure>
+      <figure class="tile c4 r3" data-ph="🪡"><img src="images/creations/couture2.jpg" alt="Essai couture 2" loading="lazy"></figure>
+      <figure class="tile c4 r3" data-ph="🪡"><img src="images/creations/couture3.jpg" alt="Essai couture 3" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <div class="back-section">
+    <p>Envie d'en savoir plus sur moi ?</p>
+    <div class="btn-row">
+      <a href="interests.html" class="btn-back-cyber alt">Mes univers</a>
+      <a href="index.html" class="btn-back-cyber">Retour au cyberfolio</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Marilou Sionneau</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
+    <img id="lightbox-img" src="" alt="Photo agrandie">
+  </div>
+
+  <script src="interests.js"></script>
+</body>
+</html>

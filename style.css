@@ -744,3 +744,5 @@ footer {
 .social-card span { font-size: .76rem; color: var(--accent); }
 .social-card em { font-style: normal; font-size: .66rem; color: var(--muted); margin-top: .3rem; }
 .social-card:hover, .social-card:focus-visible { border-color: var(--accent); box-shadow: var(--glow); transform: translateY(-3px); }
+
+.cta-buttons { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }

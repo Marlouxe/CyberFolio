@@ -13,60 +13,73 @@
   <!-- NAV -->
   <nav>
     <a class="nav-logo" href="#">Marilou</a>
-    <a href="index.html" class="back-btn">← Retour au cyberfolio</a>
+    <div class="nav-right">
+      <a href="#sport" class="nav-link">Sport</a>
+      <a href="#amis" class="nav-link">Voyages</a>
+      <a href="creations.html" class="nav-link">Créations</a>
+      <a href="index.html" class="back-btn">← Cyberfolio</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <div class="page-hero">
     <p class="eyebrow">Ma vie en dehors du terminal</p>
-    <h1>Mes univers & créations</h1>
-    <p>La cybersécurité est ma passion professionnelle, mais j'ai aussi une vie faite de laine, de voyages et de découvertes.</p>
+    <h1>Mes univers</h1>
+    <p>La cybersécurité est ma passion professionnelle, mais j'ai aussi une vie faite de sport, de voyages entre amis, de laine et de découvertes.</p>
   </div>
 
-  <!-- GALERIE CROCHET -->
-  <section id="crochet">
+  <!-- SPORT -->
+  <section id="sport">
     <div class="section-header reveal">
-      <h2>Mes créations au crochet</h2>
-      <p>Chaque pièce est faite à la main.</p>
+      <h2>Le sport, mon équilibre</h2>
+      <p>Du terrain de hand à la salle : l'esprit d'équipe et la discipline.</p>
     </div>
 
-    <div class="gallery-masonry reveal">
-
-      <div class="gallery-item" onclick="openLightbox('images/img1.jpg')">
-        <img src="images/img1.jpg" alt="Création crochet 1"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="img-placeholder" style="display:none">🧶</div>
-        <div class="gallery-overlay"><span class="gallery-label">Création n°1</span></div>
+    <div class="split reveal">
+      <div class="split-text">
+        <h3>🤾 Le handball</h3>
+        <p>J'ai joué au hand pendant de nombreuses années quand j'étais plus jeune. C'est là que j'ai appris à travailler en équipe : savoir compter sur les autres, communiquer vite sur le terrain, se serrer les coudes dans les moments difficiles et gagner (ou perdre) ensemble.</p>
+        <div class="pills">
+          <span class="pill">🤝 Esprit d'équipe</span>
+          <span class="pill">💬 Communication</span>
+          <span class="pill">🎯 Esprit de compétition</span>
+          <span class="pill">⚡ Réactivité</span>
+        </div>
       </div>
-
-      <div class="gallery-item" onclick="openLightbox('images/img2.jpg')">
-        <img src="images/img2.jpg" alt="Création crochet 2"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="img-placeholder" style="display:none">🧶</div>
-        <div class="gallery-overlay"><span class="gallery-label">Création n°2</span></div>
+      <div class="brick-wall small">
+      <figure class="tile c6 r4" data-ph="🤾"><img src="images/sport/handball1.jpg" alt="Handball 1" loading="lazy"></figure>
+      <figure class="tile c6 r2" data-ph="🤾"><img src="images/sport/handball2.jpg" alt="Handball 2" loading="lazy"></figure>
+      <figure class="tile c6 r2" data-ph="🤾"><img src="images/sport/handball3.jpg" alt="Handball 3" loading="lazy"></figure>
       </div>
+    </div>
 
-      <div class="gallery-item" onclick="openLightbox('images/img3.jpg')">
-        <img src="images/img3.jpg" alt="Création crochet 3"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="img-placeholder" style="display:none">🧶</div>
-        <div class="gallery-overlay"><span class="gallery-label">Création n°3</span></div>
+    <div class="info-card reveal">
+      <span class="ic-emoji">🏋️</span>
+      <div>
+        <h3>La salle, 4 à 5 fois par semaine</h3>
+        <p>C'est ma routine aujourd'hui. Y aller même les jours où j'ai la flemme, c'est un super entraînement à la discipline et à la régularité, deux qualités qui servent autant en cybersécurité que dans le sport.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="gallery-item" onclick="openLightbox('images/img4.jpg')">
-        <img src="images/img4.jpg" alt="Création crochet 4"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="img-placeholder" style="display:none">🧶</div>
-        <div class="gallery-overlay"><span class="gallery-label">Création n°4</span></div>
-      </div>
+  <!-- VOYAGER ENTRE AMIS -->
+  <section id="amis">
+    <div class="section-header reveal">
+      <h2>Voyager entre amis</h2>
+      <p>J'adore partir avec mes copains. Ici : les Pyrénées.</p>
+    </div>
+    <p class="section-text reveal">Voyager seule, c'est bien. Voyager avec des amis, c'est encore mieux : les fous rires, les galères partagées, les randos où on se motive les uns les autres et les soirées qui s'éternisent. Les Pyrénées en sont le meilleur souvenir.</p>
 
-      <div class="gallery-item" onclick="openLightbox('images/img5.jpg')">
-        <img src="images/img5.jpg" alt="Création crochet 5"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="img-placeholder" style="display:none">🧶</div>
-        <div class="gallery-overlay"><span class="gallery-label">Création n°5</span></div>
-      </div>
-
+    <div class="brick-wall reveal">
+      <figure class="tile c5 r4" data-ph="🏔️"><img src="images/pyrenees/pyrenees1.jpg" alt="Pyrénées entre amis 1" loading="lazy"></figure>
+      <figure class="tile c4 r2" data-ph="🏔️"><img src="images/pyrenees/pyrenees2.jpg" alt="Pyrénées entre amis 2" loading="lazy"></figure>
+      <figure class="tile c3 r4" data-ph="🏔️"><img src="images/pyrenees/pyrenees3.jpg" alt="Pyrénées entre amis 3" loading="lazy"></figure>
+      <figure class="tile c4 r2" data-ph="🏔️"><img src="images/pyrenees/pyrenees4.jpg" alt="Pyrénées entre amis 4" loading="lazy"></figure>
+      <figure class="tile c3 r4" data-ph="🏔️"><img src="images/pyrenees/pyrenees5.jpg" alt="Pyrénées entre amis 5" loading="lazy"></figure>
+      <figure class="tile c5 r2" data-ph="🏔️"><img src="images/pyrenees/pyrenees6.jpg" alt="Pyrénées entre amis 6" loading="lazy"></figure>
+      <figure class="tile c5 r2" data-ph="🏔️"><img src="images/pyrenees/pyrenees7.jpg" alt="Pyrénées entre amis 7" loading="lazy"></figure>
+      <figure class="tile c4 r2" data-ph="🏔️"><img src="images/pyrenees/pyrenees8.jpg" alt="Pyrénées entre amis 8" loading="lazy"></figure>
+      <figure class="tile c4 r2" data-ph="🏔️"><img src="images/pyrenees/pyrenees9.jpg" alt="Pyrénées entre amis 9" loading="lazy"></figure>
     </div>
   </section>
 
@@ -85,8 +98,14 @@
       </div>
       <div class="interest-card reveal">
         <span class="ic-emoji">🧶</span>
-        <h3>Crochet & tricot</h3>
-        <p>Créer quelque chose de concret avec ses mains, choisir les couleurs et les points — un vrai moment de calme après une journée de cours intense.</p>
+        <h3>Crochet, tricot &amp; couture</h3>
+        <p>Créer quelque chose de concret avec ses mains — un vrai moment de calme après une journée de cours intense.</p>
+        <a class="card-link" href="creations.html">Voir mes créations →</a>
+      </div>
+      <div class="interest-card reveal">
+        <span class="ic-emoji">🤾</span>
+        <h3>Sport</h3>
+        <p>Handball pendant des années, salle 4 à 5 fois par semaine aujourd'hui : l'équipe et la discipline.</p>
       </div>
       <div class="interest-card reveal">
         <span class="ic-emoji">✈️</span>
@@ -108,8 +127,11 @@
 
   <!-- RETOUR -->
   <div class="back-section">
-    <p>Intéressé·e par mon profil professionnel ?</p>
-    <a href="index.html" class="btn-back-cyber">Retour au cyberfolio</a>
+    <p>Envie de voir ce que je fabrique de mes mains, ou mon profil pro ?</p>
+    <div class="btn-row">
+      <a href="creations.html" class="btn-back-cyber alt">Mes créations</a>
+      <a href="index.html" class="btn-back-cyber">Retour au cyberfolio</a>
+    </div>
   </div>
 
   <footer>
@@ -118,11 +140,10 @@
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
     <img id="lightbox-img" src="" alt="Photo agrandie">
   </div>
 
   <script src="interests.js"></script>
-
 </body>
 </html>
