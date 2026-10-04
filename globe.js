@@ -96,6 +96,8 @@ const PINS = {
       scene.add(gltf.scene);
       gltf.scene.position.y -= 1;
       globeNode = gltf.scene.getObjectByName('Globe');
+      baseQuat.copy(globeNode.quaternion);
+      applyRotation();
       ['Pin_Seattle', 'Pin_NewYork', 'Pin_Tokyo'].forEach((n) => {
         const obj = gltf.scene.getObjectByName(n);
         if (obj) pinNodes[n] = obj;
@@ -120,19 +122,28 @@ const PINS = {
   // ─────────── ROTATION LIBRE (type trackball) ───────────
   // Le globe tourne autour des axes de l'ÉCRAN : glisser à gauche/droite/haut/bas/diagonale
   // le fait suivre le doigt ou la souris dans toutes les directions.
+  // Deux angles seulement : yaw (autour de l'axe nord-sud du globe) et pitch (bascule avant/arrière).
+  // Pas de roulis possible : le nord reste toujours en haut, quoi qu'on fasse avec la souris.
   const AXIS_X = new THREE.Vector3(1, 0, 0);
   const AXIS_Y = new THREE.Vector3(0, 1, 0);
-  const dq = new THREE.Quaternion();
+  const MAX_PITCH = THREE.MathUtils.degToRad(80);
+  const qYaw = new THREE.Quaternion(), qPitch = new THREE.Quaternion();
+  const baseQuat = new THREE.Quaternion();
+  let yaw = 0, pitch = THREE.MathUtils.degToRad(15); // légère inclinaison de départ
+
+  function applyRotation() {
+    qYaw.setFromAxisAngle(AXIS_Y, yaw);
+    qPitch.setFromAxisAngle(AXIS_X, pitch);
+    globeNode.quaternion.copy(qPitch).multiply(qYaw).multiply(baseQuat);
+  }
 
   function rotateGlobe(dxPx, dyPx) {
     if (!globeNode) return;
     // 1 pixel déplacé = 1 pixel de surface sous le curseur
     const pxPerUnit = viewH / (2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)));
-    const ax = dxPx / pxPerUnit, ay = dyPx / pxPerUnit;
-    dq.setFromAxisAngle(AXIS_Y, ax);
-    globeNode.quaternion.premultiply(dq);
-    dq.setFromAxisAngle(AXIS_X, ay);
-    globeNode.quaternion.premultiply(dq);
+    yaw += dxPx / pxPerUnit;
+    pitch = Math.max(-MAX_PITCH, Math.min(MAX_PITCH, pitch + dyPx / pxPerUnit));
+    applyRotation();
   }
 
   let dragging = false, moved = 0, lastX = 0, lastY = 0, velX = 0, velY = 0;
@@ -175,8 +186,8 @@ const PINS = {
           rotateGlobe(velX, velY);
           velX *= 0.95; velY *= 0.95;
         } else if (!hovering && performance.now() > pinnedUntil) {  // rotation lente au repos
-          dq.setFromAxisAngle(AXIS_Y, 0.0025);
-          globeNode.quaternion.premultiply(dq);
+          yaw += 0.0025;
+          applyRotation();
         }
       }
       if (!dragging && (pointerDirty || Math.abs(velX) > 0.02 || Math.abs(velY) > 0.02)) {
