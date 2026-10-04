@@ -40,13 +40,15 @@ const PINS = {
   const wrap = canvas.parentElement;
   const card = document.getElementById('globeCard');
 
-  let fallbackTimer = setTimeout(showFallback, 6000); // never leave a blank box
+  const PIN_RADIUS_PX = 38;      // zone de survol autour d'une épingle (en pixels écran)
+  const COUNTRY_RADIUS_PX = 22;  // tolérance autour d'un pays vert (en pixels écran)
 
+  let fallbackTimer = setTimeout(showFallback, 6000);
   function showFallback() {
     if (wrap.querySelector('.globe-fallback')) return;
     const msg = document.createElement('div');
     msg.className = 'globe-fallback';
-    msg.textContent = "🌍 Neuf pays visités · objectif : Seattle, New York ou Tokyo";
+    msg.textContent = '🌍 Neuf pays visités · objectif : Seattle, New York ou Tokyo';
     wrap.appendChild(msg);
   }
   function clearFallback() {
@@ -55,20 +57,15 @@ const PINS = {
     if (el) el.remove();
   }
 
-  // ── renderer / scene / camera ──
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  } catch (e) {
-    showFallback();
-    return;
-  }
+  } catch (e) { showFallback(); return; }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
-  camera.position.set(0, 0, 4.4);
-
+  camera.position.set(0, 0, 4);
   scene.add(new THREE.AmbientLight(0xffffff, 1.1));
   const key = new THREE.DirectionalLight(0xffffff, 0.9);
   key.position.set(3, 2, 4);
@@ -76,13 +73,17 @@ const PINS = {
 
   let globeNode = null;
   const pinNodes = {};
-  let maskCanvas = null, maskCtx = null;
+  let maskData = null, maskW = 0, maskH = 0;
+  let viewW = 300, viewH = 300;
 
   function resize() {
     const rect = wrap.getBoundingClientRect();
-    const w = rect.width || 300, h = rect.height || 300;
-    renderer.setSize(w, h, false);
-    camera.aspect = w / h;
+    viewW = rect.width || 300; viewH = rect.height || 300;
+    renderer.setSize(viewW, viewH, false);
+    camera.aspect = viewW / viewH;
+    // le globe doit toujours tenir en entier dans la zone (petit côté)
+    const fit = camera.aspect >= 1 ? 1 : camera.aspect;
+    camera.position.z = 4 / fit * (fit < 1 ? 0.85 : 1);
     camera.updateProjectionMatrix();
   }
   if (window.ResizeObserver) new ResizeObserver(resize).observe(wrap);
@@ -93,99 +94,167 @@ const PINS = {
     (gltf) => {
       clearFallback();
       scene.add(gltf.scene);
-      gltf.scene.position.y -= 1; // the model's "Globe" node ships offset +1 on Y vs the origin the camera looks at — recenter it
+      gltf.scene.position.y -= 1;
       globeNode = gltf.scene.getObjectByName('Globe');
       ['Pin_Seattle', 'Pin_NewYork', 'Pin_Tokyo'].forEach((n) => {
         const obj = gltf.scene.getObjectByName(n);
         if (obj) pinNodes[n] = obj;
       });
 
-      // grab the baked texture so we can sample it on hover (is this pixel a visited/green country?)
-      const mat = globeNode && globeNode.material;
-      const tex = mat && mat.map;
+      const tex = globeNode && globeNode.material && globeNode.material.map;
       if (tex && tex.image) {
-        maskCanvas = document.createElement('canvas');
-        maskCanvas.width = tex.image.width;
-        maskCanvas.height = tex.image.height;
-        maskCtx = maskCanvas.getContext('2d');
-        maskCtx.drawImage(tex.image, 0, 0);
+        const c = document.createElement('canvas');
+        maskW = c.width = tex.image.width;
+        maskH = c.height = tex.image.height;
+        const ctx = c.getContext('2d', { willReadFrequently: true });
+        ctx.drawImage(tex.image, 0, 0);
+        maskData = ctx.getImageData(0, 0, maskW, maskH).data; // lu une seule fois
       }
-
       resize();
       tick();
     },
     undefined,
-    () => showFallback() // model failed to load (blocked CDN, network issue, etc.)
+    () => showFallback()
   );
 
-  let dragging = false, lastX = 0, autoRotate = true;
-  canvas.addEventListener('mousedown', (e) => { dragging = true; lastX = e.clientX; });
-  window.addEventListener('mouseup', () => (dragging = false));
-  window.addEventListener('mousemove', (e) => {
-    if (dragging && globeNode) {
-      globeNode.rotation.y += (e.clientX - lastX) * 0.008;
-      lastX = e.clientX;
-    }
+  // ─────────── ROTATION LIBRE (type trackball) ───────────
+  // Le globe tourne autour des axes de l'ÉCRAN : glisser à gauche/droite/haut/bas/diagonale
+  // le fait suivre le doigt ou la souris dans toutes les directions.
+  const AXIS_X = new THREE.Vector3(1, 0, 0);
+  const AXIS_Y = new THREE.Vector3(0, 1, 0);
+  const dq = new THREE.Quaternion();
+
+  function rotateGlobe(dxPx, dyPx) {
+    if (!globeNode) return;
+    // 1 pixel déplacé = 1 pixel de surface sous le curseur
+    const pxPerUnit = viewH / (2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)));
+    const ax = dxPx / pxPerUnit, ay = dyPx / pxPerUnit;
+    dq.setFromAxisAngle(AXIS_Y, ax);
+    globeNode.quaternion.premultiply(dq);
+    dq.setFromAxisAngle(AXIS_X, ay);
+    globeNode.quaternion.premultiply(dq);
+  }
+
+  let dragging = false, moved = 0, lastX = 0, lastY = 0, velX = 0, velY = 0;
+  let hovering = false, pointerX = 0, pointerY = 0, pointerDirty = false, pinnedUntil = 0;
+
+  canvas.addEventListener('pointerdown', (e) => {
+    dragging = true; moved = 0;
+    lastX = e.clientX; lastY = e.clientY; velX = velY = 0;
+    canvas.setPointerCapture(e.pointerId);
+    canvas.classList.add('grabbing');
+    hideCard();
   });
-  canvas.addEventListener('mouseenter', () => (autoRotate = false));
-  canvas.addEventListener('mouseleave', () => { autoRotate = true; hideCard(); });
+  canvas.addEventListener('pointermove', (e) => {
+    pointerX = e.clientX; pointerY = e.clientY; pointerDirty = true;
+    if (!dragging) return;
+    const dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    moved += Math.abs(dx) + Math.abs(dy);
+    velX = dx; velY = dy;
+    rotateGlobe(dx, dy);
+  });
+  function endDrag(e) {
+    if (!dragging) return;
+    dragging = false;
+    canvas.classList.remove('grabbing');
+    if (moved < 6 && e.type === 'pointerup') {      // simple clic / tap : affiche (et garde) la fiche
+      pointerX = e.clientX; pointerY = e.clientY;
+      updateHover(true);
+    }
+  }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('pointerenter', (e) => { hovering = true; });
+  canvas.addEventListener('pointerleave', () => { hovering = false; if (!dragging) hideCard(); });
 
   function tick() {
-    if (autoRotate && !dragging && globeNode) globeNode.rotation.y += 0.0025;
+    if (globeNode) {
+      if (!dragging) {
+        if (Math.abs(velX) > 0.02 || Math.abs(velY) > 0.02) {   // inertie après un lancer
+          rotateGlobe(velX, velY);
+          velX *= 0.95; velY *= 0.95;
+        } else if (!hovering && performance.now() > pinnedUntil) {  // rotation lente au repos
+          dq.setFromAxisAngle(AXIS_Y, 0.0025);
+          globeNode.quaternion.premultiply(dq);
+        }
+      }
+      if (!dragging && (pointerDirty || Math.abs(velX) > 0.02 || Math.abs(velY) > 0.02)) {
+        pointerDirty = false;
+        if (hovering) updateHover(false);
+      }
+    }
     renderer.render(scene, camera);
     requestAnimationFrame(tick);
   }
 
-  // ── hover raycasting ──
+  // ─────────── DÉTECTION DES ÉPINGLES ET DES PAYS ───────────
   const raycaster = new THREE.Raycaster();
-  const mouseNDC = new THREE.Vector2();
-  let lastClientX = 0, lastClientY = 0;
+  const ndc = new THREE.Vector2();
+  const tmpV = new THREE.Vector3();
+  const centre = new THREE.Vector3();
 
-  canvas.addEventListener('mousemove', (e) => {
-    lastClientX = e.clientX; lastClientY = e.clientY;
-    const rect = canvas.getBoundingClientRect();
-    mouseNDC.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    mouseNDC.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-
-    if (!globeNode) return;
-    raycaster.setFromCamera(mouseNDC, camera);
-
-    const pinList = Object.values(pinNodes);
-    const pinHits = raycaster.intersectObjects(pinList, true);
-    if (pinHits.length) {
-      let obj = pinHits[0].object;
-      while (obj && !PINS[obj.name]) obj = obj.parent;
-      if (obj) { showPinCard(PINS[obj.name]); return; }
-    }
-
-    const hits = raycaster.intersectObject(globeNode, true);
-    if (hits.length && hits[0].uv && maskCtx) {
-      const uv = hits[0].uv;
-      const country = matchCountry(uv);
-      if (country) { showCountryCard(country); return; }
-    }
-    hideCard();
-  });
-
-  function isGreen(u, v) {
-    const x = Math.min(maskCanvas.width - 1, Math.max(0, Math.floor(u * maskCanvas.width)));
-    const y = Math.min(maskCanvas.height - 1, Math.max(0, Math.floor((1 - v) * maskCanvas.height)));
-    const [r, g, b] = maskCtx.getImageData(x, y, 1, 1).data;
-    return g > r + 15 && g > 150; // our apple-green is clearly G-dominant vs the orange land / white ocean
+  function toNDC(clientX, clientY) {
+    const r = canvas.getBoundingClientRect();
+    ndc.set(((clientX - r.left) / r.width) * 2 - 1, -((clientY - r.top) / r.height) * 2 + 1);
   }
 
-  function matchCountry(uv) {
-    if (!isGreen(uv.x, uv.y)) return null;
-    const lon = uv.x * 360 - 180;
-    const lat = uv.y * 180 - 90;
+  function findPin(clientX, clientY) {
+    // distance écran entre le curseur et la tête de chaque épingle (visible, côté caméra)
+    const r = canvas.getBoundingClientRect();
+    globeNode.getWorldPosition(centre);
+    let best = null, bestD = PIN_RADIUS_PX;
+    for (const name of Object.keys(pinNodes)) {
+      pinNodes[name].getWorldPosition(tmpV);
+      const normal = tmpV.clone().sub(centre).normalize();
+      const toCam = camera.position.clone().sub(tmpV).normalize();
+      if (normal.dot(toCam) < 0.1) continue;                 // face cachée du globe
+      tmpV.add(normal.multiplyScalar(0.12)).project(camera);   // tête de l'épingle
+      const sx = r.left + (tmpV.x + 1) / 2 * r.width;
+      const sy = r.top + (1 - tmpV.y) / 2 * r.height;
+      const d = Math.hypot(sx - clientX, sy - clientY);
+      if (d < bestD) { bestD = d; best = name; }
+    }
+    return best;
+  }
 
-    // small island regions first (tight bounding boxes beat nearest-centroid)
-    for (const c of COUNTRIES) {
-      if (c.bbox && lat >= c.bbox.latMin && lat <= c.bbox.latMax && lon >= c.bbox.lonMin && lon <= c.bbox.lonMax) {
-        return c;
+  function isGreenAt(u, v) {
+    const x = Math.min(maskW - 1, Math.max(0, Math.floor(u * maskW)));
+    const y = Math.min(maskH - 1, Math.max(0, Math.floor(v * maskH)));   // v : 0 = haut de l'image
+    const i = (y * maskW + x) * 4;
+    const r = maskData[i], g = maskData[i + 1];
+    return g > r + 15 && g > 150;
+  }
+
+  function countryAtRay(clientX, clientY) {
+    toNDC(clientX, clientY);
+    raycaster.setFromCamera(ndc, camera);
+    const hit = raycaster.intersectObject(globeNode, false)[0];
+    if (!hit || !hit.uv || !maskData) return null;
+    if (!isGreenAt(hit.uv.x, hit.uv.y)) return null;
+    return matchCountry(hit.uv.x, hit.uv.y);
+  }
+
+  function findCountry(clientX, clientY) {
+    // on teste le point exact, puis des anneaux autour : un pays « attire » le curseur
+    const found = countryAtRay(clientX, clientY);
+    if (found) return found;
+    for (const radius of [COUNTRY_RADIUS_PX * 0.5, COUNTRY_RADIUS_PX]) {
+      for (let a = 0; a < 8; a++) {
+        const ang = (a / 8) * Math.PI * 2;
+        const c = countryAtRay(clientX + Math.cos(ang) * radius, clientY + Math.sin(ang) * radius);
+        if (c) return c;
       }
     }
-    // otherwise nearest centroid among the non-bbox countries
+    return null;
+  }
+
+  function matchCountry(u, v) {
+    const lon = u * 360 - 180;
+    const lat = 90 - v * 180;
+    for (const c of COUNTRIES) {
+      if (c.bbox && lat >= c.bbox.latMin && lat <= c.bbox.latMax && lon >= c.bbox.lonMin && lon <= c.bbox.lonMax) return c;
+    }
     let best = null, bestD = Infinity;
     for (const c of COUNTRIES) {
       if (c.bbox) continue;
@@ -195,14 +264,27 @@ const PINS = {
     return best;
   }
 
+  function updateHover(fromTap) {
+    if (!globeNode) return;
+    const pin = findPin(pointerX, pointerY);
+    if (pin) { showPinCard(PINS[pin]); if (fromTap) pinnedUntil = performance.now() + 4000; return; }
+    const country = findCountry(pointerX, pointerY);
+    if (country) { showCountryCard(country); if (fromTap) pinnedUntil = performance.now() + 4000; return; }
+    hideCard();
+  }
+
+  // ─────────── FICHE D'INFO ───────────
   function positionCard() {
-    const rect = wrap.getBoundingClientRect();
-    card.style.left = (lastClientX - rect.left) + 'px';
-    card.style.top = (lastClientY - rect.top) + 'px';
+    const r = wrap.getBoundingClientRect();
+    const x = pointerX - r.left, y = pointerY - r.top;
+    const w = card.offsetWidth || 160, h = card.offsetHeight || 120;
+    const left = Math.min(r.width - w / 2 - 8, Math.max(w / 2 + 8, x));
+    const above = y - h - 24 > 8;                       // si pas la place au-dessus, on affiche en dessous
+    card.style.left = left + 'px';
+    card.style.top = (above ? y - 16 : y + 24 + h) + 'px';
   }
 
   function showCountryCard(c) {
-    positionCard();
     card.classList.remove('text-only');
     const media = card.querySelector('.card-media');
     media.innerHTML = '';
@@ -223,21 +305,20 @@ const PINS = {
     card.querySelector('.name').textContent = c.label;
     const tagline = card.querySelector('.tag-line');
     tagline.textContent = c.date;
-    tagline.style.display = 'block';
     tagline.style.color = '';
     card.classList.add('show');
+    positionCard();
   }
 
   function showPinCard(pin) {
-    positionCard();
     card.classList.add('text-only');
     card.querySelector('.card-media').innerHTML = '';
     card.querySelector('.name').textContent = pin.label;
     const tagline = card.querySelector('.tag-line');
     tagline.textContent = pin.text;
-    tagline.style.display = 'block';
     tagline.style.color = 'var(--muted)';
     card.classList.add('show');
+    positionCard();
   }
 
   function hideCard() { card.classList.remove('show'); }
