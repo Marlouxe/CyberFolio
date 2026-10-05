@@ -1,4 +1,4 @@
-/* b2_article_1.css — Deepfakes · Style : image qui se dédouble (décalage cyan / magenta) */
+/* b2_article_1.css : Deepfakes · Style : image qui se dédouble (décalage cyan / magenta) */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#14111C;--ink2:#1E1A2B;--line:#322B47;--txt:#EDE9F5;--mut:#A59FB8;--cy:#4DE3E8;--mg:#FF4F93;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Source Serif 4',Georgia,serif;--w:760px}

@@ -1,4 +1,4 @@
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --ocean-deep:   #0A1628;
@@ -308,7 +308,7 @@
     .tip-card p { font-size: 14px; color: var(--foam-soft); line-height: 1.6; }
     .tip-card p strong { color: #fff; }
 
-    /* ── HOW IT WORKS — vertical flow ── */
+    /* ── HOW IT WORKS : vertical flow ── */
     .how-block {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -390,7 +390,7 @@
       color: #EF9A9A;
     }
 
-    /* ── 7 SIGNS — interactive ── */
+    /* ── 7 SIGNS : interactive ── */
     .signs-block {
       background: var(--ocean-mid);
       border-radius: var(--radius-lg);
@@ -709,5 +709,3 @@
       .hstat-pill { width: 100%; }
       .topbar { padding: 10px 16px; }
     }
-
-    

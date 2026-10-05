@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    article_4.css
    Style : Interface OS rétro-moderne / boîte de dialogue
-   Cybersécurité pour tous — Article 4
+   Cybersécurité pour tous : Article 4
    ───────────────────────────────────────── */
 
 /* ── Reset & base ────────────────────────── */
@@ -58,7 +58,7 @@ body {
   line-height: 1.7;
 }
 
-/* ── TOPBAR — identique série ────────────── */
+/* ── TOPBAR : identique série ────────────── */
 .topbar {
   display: flex;
   justify-content: space-between;

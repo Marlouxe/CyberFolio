@@ -1,4 +1,4 @@
-/* b2_article_3 — Ransomwares · Style : écran de rançon, alerte rouge / ambre / vert "restauré" */
+/* b2_article_3 : Ransomwares · Style : écran de rançon, alerte rouge / ambre / vert "restauré" */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#12080B;--ink2:#1F0E13;--line:#4A1F2A;--txt:#F3EFFA;--mut:#D3AEB5;--a:#FFB020;--b:#FF3B4E;--c:#3DFFA2;
 --disp:'Archivo Black',sans-serif;--body:'Source Serif 4',Georgia,serif;--mono:'IBM Plex Mono',monospace;--w:760px}

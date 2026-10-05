@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 // ─── DATA: fill in your own photos under images/travel/ ──────────
 // Countries: shown when hovering a green (visited) area on the globe.
 const COUNTRIES = [
-  { key: 'germany',   label: 'Allemagne',  lat: 51.2, lon: 10.4,  date: "Enfance — quelques souvenirs seulement", photos: ['images/travel/allemagne.jpg'] },
+  { key: 'germany',   label: 'Allemagne',  lat: 51.2, lon: 10.4,  date: "Enfance : quelques souvenirs seulement", photos: ['images/travel/allemagne.jpg'] },
   { key: 'spain',     label: 'Espagne',    lat: 40.0, lon: -4.0,  date: 'Été 2026',      photos: ['images/travel/espagne.jpg'] },
   { key: 'france',    label: 'France',     lat: 46.6, lon: 2.2,   date: "J'y vis 🇫🇷",  photos: ['images/travel/village.jpg', 'images/travel/paris.jpg'] },
   { key: 'corsica',   label: 'Corse',      lat: 42.1, lon: 9.1,   date: 'Été 2022',      photos: ['images/travel/corse.jpg'],
@@ -26,7 +26,7 @@ const PINS = {
   },
   Pin_NewYork: {
     label: 'New York',
-    text: "New York, c'est l'énergie brute, le rythme qui ne s'arrête jamais, et une concentration incroyable d'entreprises tech et financières à sécuriser. Un vrai défi de s'adapter à une ville pareille — exactement le genre de challenge qui me donne envie d'avancer.",
+    text: "New York, c'est l'énergie brute, le rythme qui ne s'arrête jamais, et une concentration incroyable d'entreprises tech et financières à sécuriser. Un vrai défi de s'adapter à une ville pareille : exactement le genre de challenge qui me donne envie d'avancer.",
   },
   Pin_Tokyo: {
     label: 'Tokyo',

@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    article_1.css
    Style magazine / affiche colorée
-   Cybersécurité pour tous — Article 1
+   Cybersécurité pour tous : Article 1
    ───────────────────────────────────────── */
 
 /* ── Reset & base ────────────────────────── */
@@ -397,7 +397,7 @@ body {
   position: relative;
 }
 .compare-why li::before {
-  content: '–';
+  content: '•';
   position: absolute; left: 0;
   opacity: 0.5;
 }
