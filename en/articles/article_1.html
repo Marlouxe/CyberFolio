@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passwords · Cybersecurity for everyone</title>
+  <link rel="stylesheet" href="../../articles/article_1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="topbar-serie">Cybersecurity for everyone</span>
+    <div class="topbar-nav-btns">
+      <a href="articles.html" class="topbar-btn">← Articles</a>
+      <a href="../index.html" class="topbar-btn topbar-btn--home">Cyberfolio</a>
+    </div>
+    <span class="topbar-num">Article 1 / 4</span>
+  </header>
+
+  <!--  HERO  -->
+  <section class="hero">
+    <div class="hero-bg-text">?</div>
+    <div class="hero-inner">
+      <div class="hero-kicker">
+        <span class="kicker-dot"></span>
+        Passwords
+      </div>
+      <h1 class="hero-title">
+        Why <span class="hero-highlight">"123456"</span><br />
+        is a very<br />
+        bad idea
+      </h1>
+      <p class="hero-desc">
+        Every year, millions of accounts get hacked because of a single problem: 
+        weak passwords. This guide explains everything, without jargon and without the headache.
+      </p>
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-num">80%</span>
+          <span class="hstat-label">of breaches involve a weak or stolen password</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-num">#1</span>
+          <span class="hstat-label">most used password in the world for years</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <span class="hstat-num">3s</span>
+          <span class="hstat-label">are enough to crack "123456" with automated software</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+
+    <!-- ░░ INTRO ░░ -->
+    <section class="block intro-block">
+      <div class="intro-text">
+        <h2 class="section-title">Let's start with a simple observation</h2>
+        <p>You may think it only happens to other people. But if your password looks like <strong>"mypassword"</strong>, <strong>"qwerty"</strong>, or your first name followed by your birth year... you're an easy target. Not because hackers are targeting you personally, but because automated programs test millions of combinations per second, around the clock, on every accessible account.</p>
+        <p>It's not a matter of bad luck. It's a matter of habits. And good habits can be learned in 5 minutes.</p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-icon">!</div>
+        <p class="intro-card-text">A single weak password can compromise <strong>all your accounts</strong> if you reuse it everywhere.</p>
+      </div>
+    </section>
+
+    <!-- ░░ HOW ATTACKS WORK ░░ -->
+    <section class="block attack-block">
+      <div class="attack-header">
+        <h2 class="section-title white">How does a password attack work?</h2>
+        <p class="attack-sub">No need to be a computer genius. Here's how it really works.</p>
+      </div>
+      <div class="attack-steps">
+        <div class="astep">
+          <div class="astep-num">01</div>
+          <div class="astep-body">
+            <h3>Brute force attack</h3>
+            <p>A program tries every possible combination, thousands per second. A 6-digit password is cracked in a few seconds. 8 mixed characters: a few hours. 14 characters? Billions of years.</p>
+          </div>
+        </div>
+        <div class="astep">
+          <div class="astep-num">02</div>
+          <div class="astep-body">
+            <h3>Dictionary attack</h3>
+            <p>The "dictionary" is a list of millions of known passwords, collected from previous data leaks. "Sunshine2024", "Football75"... anything that looks like a real word is in there.</p>
+          </div>
+        </div>
+        <div class="astep">
+          <div class="astep-num">03</div>
+          <div class="astep-body">
+            <h3>Massive data leaks</h3>
+            <p>When a site gets hacked, its users' passwords end up for sale on the dark web. If you reuse your password everywhere, a single leak is enough to compromise all your accounts in a chain reaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ GOOD VS BAD ░░ -->
+    <section class="block compare-block">
+      <h2 class="section-title">Weak or strong: spot the difference</h2>
+      <div class="compare-grid">
+        <div class="compare-card bad">
+          <div class="compare-badge">✕ Dangerous</div>
+          <div class="compare-examples">
+            <div class="compare-ex"><span class="pass-text">123456</span><span class="crack-time">< 1 second</span></div>
+            <div class="compare-ex"><span class="pass-text">mypassword</span><span class="crack-time">< 1 second</span></div>
+            <div class="compare-ex"><span class="pass-text">Thomas75</span><span class="crack-time">~3 minutes</span></div>
+            <div class="compare-ex"><span class="pass-text">Sunshine2024!</span><span class="crack-time">~2 hours</span></div>
+          </div>
+          <ul class="compare-why">
+            <li>Based on dictionary words</li>
+            <li>Easy-to-guess personal info</li>
+            <li>Too short (under 10 characters)</li>
+            <li>Predictable pattern (word + number + !)</li>
+          </ul>
+        </div>
+        <div class="compare-card good">
+          <div class="compare-badge">✓ Strong</div>
+          <div class="compare-examples">
+            <div class="compare-ex"><span class="pass-text">!Tk9#mPz@3xQ</span><span class="crack-time good-time">~34,000 years</span></div>
+            <div class="compare-ex"><span class="pass-text">IlepoFe!7Kw3</span><span class="crack-time good-time">~8,000 years</span></div>
+            <div class="compare-ex"><span class="pass-text">zR7$vQn#2mX!pL</span><span class="crack-time good-time">> 1 billion years</span></div>
+            <div class="compare-ex"><span class="pass-text">kB3@wL9!xM2#qP</span><span class="crack-time good-time">> 1 billion years</span></div>
+          </div>
+          <ul class="compare-why">
+            <li>12 characters minimum</li>
+            <li>Mix of all character types</li>
+            <li>No personal info</li>
+            <li>Randomly generated or built from a phrase</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip-phrase">
+        <div class="tip-phrase-label">💡 The passphrase trick</div>
+        <p>Take an easy-to-remember sentence and keep the first letter of each word, adding symbols:</p>
+        <div class="phrase-demo">
+          <div class="phrase-step">
+            <span class="phrase-step-num">1</span>
+            <span>"<em>I love eating pizza on Friday evenings!</em>"</span>
+          </div>
+          <div class="phrase-arrow">→</div>
+          <div class="phrase-step">
+            <span class="phrase-step-num">2</span>
+            <span>First letter of each word</span>
+          </div>
+          <div class="phrase-arrow">→</div>
+          <div class="phrase-result">IlepoFe!</div>
+        </div>
+        <p class="tip-sub">Easy for you to remember. Nearly impossible for a program to guess.</p>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <!-- ░░   TEST INTERACTIF          ░░ -->
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="block tester-block">
+      <div class="tester-header">
+        <div class="tester-icon">🔍</div>
+        <div>
+          <h2 class="tester-title">Test your password</h2>
+          <p class="tester-sub">Enter any password below to see if it holds up. <em>Nothing is sent anywhere: everything happens in your browser.</em></p>
+        </div>
+      </div>
+
+      <div class="tester-input-wrap">
+        <input type="password" id="pwInput" class="pw-input" placeholder="Type a password here..." autocomplete="off" spellcheck="false" />
+        <button class="pw-toggle" id="pwToggle" aria-label="Show/hide">
+          <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Barre de force -->
+      <div class="strength-bar-wrap">
+        <div class="strength-bar-track">
+          <div class="strength-bar-fill" id="strengthBar"></div>
+        </div>
+        <span class="strength-label" id="strengthLabel">Waiting...</span>
+      </div>
+
+      <!-- Critères -->
+      <div class="criteria-grid">
+        <div class="criterion" id="c-length">
+          <div class="criterion-icon" id="ci-length">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Sufficient length</span>
+            <span class="criterion-desc">At least 12 characters</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-upper">
+          <div class="criterion-icon" id="ci-upper">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Uppercase letter(s)</span>
+            <span class="criterion-desc">At least 1 uppercase letter</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-lower">
+          <div class="criterion-icon" id="ci-lower">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Lowercase letter(s)</span>
+            <span class="criterion-desc">At least 1 lowercase letter</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-number">
+          <div class="criterion-icon" id="ci-number">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Number(s)</span>
+            <span class="criterion-desc">At least 1 digit (0 to 9)</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-special">
+          <div class="criterion-icon" id="ci-special">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Special character</span>
+            <span class="criterion-desc">!, @, #, $, %, &amp;, *...</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-unique">
+          <div class="criterion-icon" id="ci-unique">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">No obvious repetition</span>
+            <span class="criterion-desc">No character repeated 3+ times</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-nocommon">
+          <div class="criterion-icon" id="ci-nocommon">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Not a common word</span>
+            <span class="criterion-desc">Avoids simple words or known sequences</span>
+          </div>
+        </div>
+        <div class="criterion" id="c-long">
+          <div class="criterion-icon" id="ci-long">○</div>
+          <div class="criterion-body">
+            <span class="criterion-name">Excellent length</span>
+            <span class="criterion-desc">16 characters or more</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Résultat -->
+      <div class="tester-result" id="testerResult" style="display:none;">
+        <div class="result-icon" id="resultIcon"></div>
+        <div class="result-body">
+          <div class="result-verdict" id="resultVerdict"></div>
+          <div class="result-advice" id="resultAdvice"></div>
+        </div>
+      </div>
+
+      <!-- Estimated crack time -->
+      <div class="crack-time-block" id="crackTimeBlock" style="display:none;">
+        <span class="crack-time-label">Estimated time to crack it:</span>
+        <span class="crack-time-value" id="crackTimeValue"></span>
+      </div>
+
+    </section>
+
+
+    <!-- ░░ RÈGLES ░░ -->
+    <section class="block rules-block">
+      <h2 class="section-title white">The 4 golden rules of a good password</h2>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-number">01</div>
+          <h3>Long</h3>
+          <p>At least 12 characters, ideally 16 or more. Each extra character exponentially multiplies the cracking time. Length is your best defense.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">02</div>
+          <h3>Mixed</h3>
+          <p>Uppercase, lowercase, numbers and symbols (!@#$%...). A password combining all 4 types is much harder to crack than any combination using only 2.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">03</div>
+          <h3>Unique</h3>
+          <p>A different password for every site and app. If one is compromised in a data leak, the others stay protected. One password for everything = a ticking time bomb.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">04</div>
+          <h3>Anonymous</h3>
+          <p>Zero personal information: no name, first name, birth date, city, nickname, favorite football team. This info is often available on your social media and easy to guess.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ GESTIONNAIRES ░░ -->
+    <section class="block managers-block">
+      <h2 class="section-title">The solution: password managers</h2>
+      <p class="managers-intro">Remembering dozens of long, complex passwords is humanly impossible. That's why password managers exist: apps that remember everything for you, encrypt your data and fill it in automatically. You only have <strong>one master password</strong> left to remember.</p>
+
+      <div class="mgr-grid">
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">Bitwarden</span>
+            <span class="mgr-tag free">Free</span>
+          </div>
+          <p class="mgr-desc">Open source and publicly audited. The most transparent on the market. Ideal to get started, with a very complete free version. Available on all devices.</p>
+          <div class="mgr-pros">
+            <span>✓ Open source</span>
+            <span>✓ Cross-platform</span>
+            <span>✓ Free version</span>
+          </div>
+        </div>
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">1Password</span>
+            <span class="mgr-tag paid">Paid</span>
+          </div>
+          <p class="mgr-desc">Considered one of the most secure. Very polished interface, ideal for families (password sharing between members). Around €3/month.</p>
+          <div class="mgr-pros">
+            <span>✓ Polished interface</span>
+            <span>✓ Family sharing</span>
+            <span>✓ Very secure</span>
+          </div>
+        </div>
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">Dashlane</span>
+            <span class="mgr-tag both">Free + Pro</span>
+          </div>
+          <p class="mgr-desc">Functional free version to get started. The paid version includes a dark web monitor that alerts you if your data has leaked somewhere.</p>
+          <div class="mgr-pros">
+            <span>✓ Dark web monitor</span>
+            <span>✓ Easy to use</span>
+            <span>✓ Free version</span>
+          </div>
+        </div>
+        <div class="mgr-card">
+          <div class="mgr-top">
+            <span class="mgr-name">KeePass</span>
+            <span class="mgr-tag free">Free</span>
+          </div>
+          <p class="mgr-desc">Your passwords are stored locally on your device, not in a cloud. Ideal if you don't trust any online service. More technical but very robust.</p>
+          <div class="mgr-pros">
+            <span>✓ 100% local</span>
+            <span>✓ No cloud</span>
+            <span>✓ Free and open source</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="navigator-tip">
+        <span class="navigator-tip-icon">🌐</span>
+        <p><strong>Browsers also offer a built-in manager</strong> (Chrome, Firefox, Safari). It's better than nothing, but a dedicated manager is still safer: it works across all browsers and apps, not just on the web.</p>
+      </div>
+    </section>
+
+    <!-- ░░ 2FA ░░ -->
+    <section class="block twofa-block">
+      <div class="twofa-left">
+        <div class="twofa-icon-big">🔐</div>
+        <h2 class="section-title white">Two-factor authentication (2FA)</h2>
+        <p class="twofa-desc">Even with a perfect password, always enable two-factor authentication. It's an extra layer of security: even if your password is stolen, nobody can access your account without the second factor.</p>
+        <p class="twofa-desc">Enable it first on: your email, your social media, your online banking, and any site where important information is stored.</p>
+      </div>
+      <div class="twofa-right">
+        <div class="twofa-flow">
+          <div class="twofa-step">
+            <div class="twofa-step-circle">1</div>
+            <div class="twofa-step-text">
+              <strong>You enter your password</strong>
+              <span>As usual</span>
+            </div>
+          </div>
+          <div class="twofa-arrow">↓</div>
+          <div class="twofa-step">
+            <div class="twofa-step-circle">2</div>
+            <div class="twofa-step-text">
+              <strong>A second code is requested</strong>
+              <span>By SMS, app (Authy, Google Authenticator) or physical key</span>
+            </div>
+          </div>
+          <div class="twofa-arrow">↓</div>
+          <div class="twofa-step twofa-step-success">
+            <div class="twofa-step-circle success">✓</div>
+            <div class="twofa-step-text">
+              <strong>Access granted!</strong>
+              <span>Even if your password is stolen, the attacker is blocked at this step</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ DONT DO ░░ -->
+    <section class="block donts-block">
+      <h2 class="section-title">Mistakes to never make again</h2>
+      <div class="donts-list">
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Using the same password everywhere</strong>
+            <p>If a single site is hacked, all your accounts are exposed. It's the most important rule to follow.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Storing your passwords in a text file, an email or a sticky note</strong>
+            <p>These aren't secure. Use a dedicated password manager.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Choosing personal information as a password</strong>
+            <p>Your name, birth date, city, sports team... all of that is easy to guess, especially if you're active on social media.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Giving your password by phone or email</strong>
+            <p>No legitimate service will ever ask for your password. If someone does, it's a scam attempt.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Staying logged in on a public or shared computer</strong>
+            <p>Always log out after use in a library, an internet café, or at someone else's place.</p>
+          </div>
+        </div>
+        <div class="dont-item">
+          <div class="dont-x">✕</div>
+          <div class="dont-content">
+            <strong>Ignoring data breach alerts</strong>
+            <p>If a service warns you of a breach, immediately change your password on that site AND on all the others where you use it (yet another good reason to have unique passwords).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ CHECKLIST ACTION ░░ -->
+    <section class="block checklist-block">
+      <h2 class="section-title white">Your action plan for today</h2>
+      <p class="checklist-intro">Got 30 minutes? That's all it takes to go from "vulnerable" to "well protected".</p>
+      <div class="checklist">
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Download Bitwarden</strong> (free): install the extension on your browser and the app on your phone</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Create a strong master password</strong>: use the passphrase technique to build one you'll never forget</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Change the passwords of your 3 most important accounts</strong>: email, bank, main social network</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Enable two-factor authentication</strong> on your email first: it's often the recovery key to all your other accounts</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="check-text"><strong>Check whether your data has leaked</strong> on <em>haveibeenpwned.com</em>: enter your email and the site tells you if you've been compromised</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- ░░ FOOTER BANNER ░░ -->
+    <section class="block final-block">
+      <div class="final-star">★</div>
+      <div class="final-text">
+        <h3>Key takeaway in one sentence</h3>
+        <p>A password manager + two-factor authentication = the winning combination to protect all your accounts. Take 30 minutes now, sleep soundly forever.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span>Cybersecurity for everyone · Article 1/4: Passwords</span>
+    <span>Next article, phishing: spotting email scams →</span>
+  </footer>
+
+  <script>
+    // ── Password tester logic ──────────────────────────────────────
+    const COMMON = ['123456','password','motdepasse','azerty','qwerty','abc123','111111','iloveyou','admin','letmein','welcome','monkey','dragon','master','sunshine','princess','football','superman','batman','shadow','baseball','michael','solo','passw0rd','pass','login','hello','test','bonjour'];
+
+    function estimateCrackTime(pw) {
+      const chars = {lower:26, upper:26, digit:10, special:32};
+      let pool = 0;
+      if (/[a-z]/.test(pw)) pool += chars.lower;
+      if (/[A-Z]/.test(pw)) pool += chars.upper;
+      if (/[0-9]/.test(pw)) pool += chars.digit;
+      if (/[^a-zA-Z0-9]/.test(pw)) pool += chars.special;
+      if (pool === 0) return '< 1 second';
+      const combinations = Math.pow(pool, pw.length);
+      const guessPerSec = 1e10;
+      const seconds = combinations / guessPerSec;
+      if (seconds < 1) return '< 1 second';
+      if (seconds < 60) return `~${Math.round(seconds)} seconds`;
+      if (seconds < 3600) return `~${Math.round(seconds/60)} minutes`;
+      if (seconds < 86400) return `~${Math.round(seconds/3600)} hours`;
+      if (seconds < 86400*365) return `~${Math.round(seconds/86400)} days`;
+      if (seconds < 86400*365*1000) return `~${Math.round(seconds/(86400*365))} years`;
+      if (seconds < 86400*365*1e9) return `~${Math.round(seconds/(86400*365*1000))} thousand years`;
+      return '> 1 billion years 🔒';
+    }
+
+    function checkPassword(pw) {
+      if (!pw) return;
+      const checks = {
+        length:   pw.length >= 12,
+        upper:    /[A-Z]/.test(pw),
+        lower:    /[a-z]/.test(pw),
+        number:   /[0-9]/.test(pw),
+        special:  /[^a-zA-Z0-9]/.test(pw),
+        unique:   !(/(.)\1{2,}/.test(pw)),
+        nocommon: !COMMON.some(c => pw.toLowerCase().includes(c)),
+        long:     pw.length >= 16
+      };
+
+      const keys = Object.keys(checks);
+      keys.forEach(k => {
+        const icon = document.getElementById('ci-' + k);
+        const card = document.getElementById('c-' + k);
+        if (checks[k]) {
+          icon.textContent = '✓';
+          card.classList.add('pass');
+          card.classList.remove('fail');
+        } else {
+          icon.textContent = pw.length > 0 ? '✕' : '○';
+          card.classList.remove('pass');
+          if (pw.length > 0) card.classList.add('fail');
+          else card.classList.remove('fail');
+        }
+      });
+
+      const score = keys.filter(k => checks[k]).length;
+      const pct = Math.round((score / keys.length) * 100);
+
+      const bar = document.getElementById('strengthBar');
+      const label = document.getElementById('strengthLabel');
+      bar.style.width = pct + '%';
+      bar.className = 'strength-bar-fill';
+
+      let verdict = '', advice = '', barClass = '';
+      if (pw.length === 0) {
+        bar.style.width = '0%';
+        label.textContent = 'Waiting...';
+        document.getElementById('testerResult').style.display = 'none';
+        document.getElementById('crackTimeBlock').style.display = 'none';
+        return;
+      } else if (score <= 2) {
+        barClass = 'bar-weak'; verdict = '🚨 Very weak'; advice = 'This password would be cracked in a few seconds. Make it longer and add uppercase letters, numbers and symbols.';
+        label.textContent = 'Very weak';
+      } else if (score <= 4) {
+        barClass = 'bar-medium'; verdict = '⚠️ Medium'; advice = 'A few good practices are still missing. Add the missing character types and aim for at least 12 characters.';
+        label.textContent = 'Medium';
+      } else if (score <= 6) {
+        barClass = 'bar-good'; verdict = '👍 Good'; advice = 'Your password is solid. To go even further, use 16 characters or more.';
+        label.textContent = 'Good';
+      } else {
+        barClass = 'bar-strong'; verdict = '✅ Excellent!'; advice = 'Congratulations! This password is very hard to crack. Remember to store it in a password manager.';
+        label.textContent = 'Excellent!';
+      }
+
+      bar.classList.add(barClass);
+      document.getElementById('resultVerdict').textContent = verdict;
+      document.getElementById('resultAdvice').textContent = advice;
+      document.getElementById('testerResult').style.display = 'flex';
+
+      document.getElementById('crackTimeValue').textContent = estimateCrackTime(pw);
+      document.getElementById('crackTimeBlock').style.display = 'flex';
+    }
+
+    document.getElementById('pwInput').addEventListener('input', function() {
+      checkPassword(this.value);
+    });
+
+    let shown = false;
+    document.getElementById('pwToggle').addEventListener('click', function() {
+      const inp = document.getElementById('pwInput');
+      shown = !shown;
+      inp.type = shown ? 'text' : 'password';
+      this.classList.toggle('active', shown);
+    });
+
+    // Checklist
+    document.querySelectorAll('.check-item input').forEach(cb => {
+      cb.addEventListener('change', function() {
+        this.closest('.check-item').classList.toggle('checked', this.checked);
+      });
+    });
+  </script>
+</body>
+</html>

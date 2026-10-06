@@ -744,3 +744,8 @@ footer {
 .social-card span { font-size: .76rem; color: var(--accent); }
 .social-card em { font-style: normal; font-size: .66rem; color: var(--muted); margin-top: .3rem; }
 .social-card:hover, .social-card:focus-visible { border-color: var(--accent); box-shadow: var(--glow); transform: translateY(-3px); }
+
+
+/* ─── SÉLECTEUR DE LANGUE ─────────────────────── */
+.lang-btn { text-decoration: none; }
+.lang-btn svg { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.18); }

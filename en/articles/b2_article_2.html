@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quishing · Cybersecurity · B2</title>
+  <link rel="stylesheet" href="../../articles/b2_article_2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header class="topbar">
+  <a href="b2.html">← B2 Articles</a>
+  <span>B2 · Article 2</span>
+  <a href="../index.html">Cyberfolio</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Phishing · Smartphone</div>
+    <h1>Quishing</h1>
+    <p class="sub">When a simple QR code becomes a trap.</p>
+  </div>
+  <div class="qrwrap" id="qrwrap">
+    <div class="qr" id="qr" aria-label="Illustration: a QR code"></div>
+    <div class="urlpill" id="url">Where does this square lead? Impossible to read…</div>
+    <button class="reveal" id="reveal">See what it hides</button>
+  </div>
+</section>
+
+<main>
+  <section>
+    <p class="lead">The word "quishing" is a blend of <em>QR code</em> and <em>phishing</em>. A cybercriminal hides a malicious link behind a QR code and hopes you'll scan it with your phone. You then land on a fake site imitating a bank, a government agency or a payment service, and you're asked for your credentials or your bank card.</p>
+    <p>A QR code isn't dangerous in itself. Invented in 1994 by the Japanese company Denso Wave to track parts in car factories, it's a two-dimensional barcode containing text, most often a web address. The problem: nobody can read that content with the naked eye. There's no way to guess whether a black and white square leads to a legitimate site or to a scam.</p>
+    <div class="note"><b>Why it works:</b> with the health crisis (restaurant menus, certificates, contactless payments), we got used to scanning without thinking. Criminals understood that very well.</div>
+  </section>
+
+  <section>
+    <h2>Why scammers love it</h2>
+    <div class="cards">
+      <div class="card"><h3>It's an image</h3><p>Spam filters mostly analyze the text and links of emails, not images.</p></div>
+      <div class="card"><h3>Your personal phone</h3><p>You scan with a smartphone that is often less protected than a work computer.</p></div>
+      <div class="card"><h3>A hidden link</h3><p>You can't hover over the link to check the address before opening it.</p></div>
+      <div class="card"><h3>An editable address</h3><p>A dynamic QR code can lead to a harmless page, then to a fake site.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where is the trap hiding?</h2>
+    <div class="cards">
+      <div class="card"><h3>The parking meter</h3><p>A sticker placed over the real QR code: you think you're paying for parking, you're handing over your card.</p></div>
+      <div class="card"><h3>The fake fine</h3><p>A fake ticket under the windshield wiper or in your mailbox.</p></div>
+      <div class="card"><h3>The "boss" email</h3><p>A message asking you to scan a code to "reactivate" your work access.</p></div>
+      <div class="card"><h3>The fake buyer</h3><p>On classified ads, a QR code "to receive your payment" that actually makes you send one.</p></div>
+      <div class="card"><h3>Charging stations</h3><p>Fake codes stuck on electric car chargers, flyers or menus.</p></div>
+    </div>
+    <div class="note"><b>Good news:</b> scanning a QR code doesn't hack a phone by itself. The danger starts when you open the link, enter information or install something. So there's always a chance to stop. The scammer, for their part, creates urgency: "parking expired", "parcel blocked", "account suspended".</div>
+  </section>
+
+  <section>
+    <h2>My reflexes before scanning</h2>
+    <ol class="steps">
+      <li><b>Wasn't I expecting this code?</b> I don't scan it. A code received by mail, by email or found in the street is treated like a suspicious link.</li>
+      <li><b>I read the address.</b> The camera displays it before opening: weird domain name, typos, shortened link or an address unrelated to the stated organization = alarm.</li>
+      <li><b>I check the surface.</b> Sticker sticking out, peeling off or covering another one: I don't scan.</li>
+      <li><b>I use the official door.</b> For a bank, taxes or health insurance, I type the address myself or open my usual app.</li>
+      <li><b>I enter nothing unexpected.</b> No password or bank card on a page that showed up by surprise. At work, I report an email containing only a QR code to the IT department.</li>
+    </ol>
+    <div class="note"><b>Too late?</b> Quickly change the affected password, block your card with your bank, monitor your accounts, then report the scam. For card fraud, the Perceval platform exists in France; <a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener">cybermalveillance.gouv.fr</a> can support you; file a complaint if you've suffered harm.</div>
+  </section>
+
+  <section>
+    <h2>Your turn: do I scan or skip?</h2>
+    <p>Five situations. Look at the link displayed by the phone and decide.</p>
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+  </section>
+
+  <section>
+    <h2>Very real stories</h2>
+    <ul class="tl">
+      <li><b>1994</b><em>Invention</em><p>Denso Wave creates the QR code to track parts in Japanese car factories.</p></li>
+      <li><b>2020</b><em>Boom</em><p>Restaurant menus, certificates, payments: scanning becomes a daily reflex.</p></li>
+      <li><b>January 2022</b><em>Alert</em><p>The FBI issues a warning: criminals are tampering with QR codes to divert payments and steal credentials.</p></li>
+      <li><b>February 2022</b><em>Super Bowl</em><p>A Coinbase ad shows only a QR code bouncing around the screen, like the old DVD player logo. Millions of people scan it and the site crashes. The ad is legitimate, but it proves we scan without knowing where it leads.</p></li>
+      <li><b>2022</b><em>Texas</em><p>Austin, San Antonio and other cities warn their residents: fake QR codes have been stuck on parking meters.</p></li>
+      <li><b>Since 2023</b><em>In France</em><p>Warnings relayed by municipalities and the press about fake codes on parking meters and fake fine notices; security vendors are seeing a sharp rise in quishing by email.</p></li>
+    </ul>
+  </section>
+
+  <div class="retenir"><b>Key takeaway</b>The QR code isn't an enemy, it's a handy tool. Treat it like any link: where does it come from, why am I being asked to scan it, and do I really need it?</div>
+</main>
+
+<footer>Cybersecurity · B2 · Article 2: Quishing · <a href="b2.html">Back to the B2 articles</a></footer>
+
+<script>
+const qr=document.getElementById('qr');let h='';
+function fp(r,c){const y=r<5?r:r-8,x=c<5?c:c-8;return y===0||y===4||x===0||x===4||(y===2&&x===2)}
+for(let r=0;r<13;r++)for(let c=0;c<13;c++){
+  const corner=(r<5&&c<5)||(r<5&&c>7)||(r>7&&c<5);
+  const on=corner?fp(r,c):((r*7+c*13+r*c)%3!==0);
+  h+='<i class="'+(on?'':'o')+'"></i>';}
+qr.innerHTML=h;
+document.getElementById('reveal').onclick=()=>{
+  const w=document.getElementById('qrwrap'),u=document.getElementById('url'),on=w.classList.toggle('on');
+  u.textContent=on?'⚠ https://payer-stationnement.top/ticket':'Where does this square lead? Impossible to read…';};
+
+const Q=[
+ {s:"A sticker sticks out on a parking meter, over another code. It offers to let you pay for parking.",u:"payer-stationnement.top/ticket",a:1,
+  f:"A sticker placed over another code is the classic trap, and the address is nothing official. Use the app or the meter itself."},
+ {s:"In a restaurant, a QR code printed on the table leads to today's menu.",u:"carte.bistrot-du-port.fr/menu",a:0,
+  f:"Hard-printed surface, address consistent with the restaurant, nothing sensitive requested: you can scan. Stay alert if you're asked for your card."},
+ {s:"A parking ticket is slipped under your windshield wiper with a QR code to pay.",u:"amendes-paiement-gouv.com/regler",a:1,
+  f:"That's not the official site. Real fines are paid on amendes.gouv.fr, which you type yourself."},
+ {s:"An email from your “HR department” contains only a QR code: “Scan to reactivate your two-factor authentication”.",u:"m365-secure-login.co/verify",a:1,
+  f:"An email reduced to a QR code is a quishing classic in companies. Report it to the IT department."},
+ {s:"On a classified ad, the buyer sends you a QR code “to receive your payment”.",u:"paiement-securise-recu.xyz",a:1,
+  f:"Receiving money never requires scanning anything or giving your card code. It's a scam."}
+];
+let i=0,sc=0;const box=document.getElementById('quiz');
+function show(){
+  if(i>=Q.length){box.innerHTML='<p class="q-text">Score: '+sc+' / '+Q.length+'</p><p class="fb">'+(sc>=4?'Eagle eye. Remember: read the address before opening.':'Reread the reflexes above: when in doubt, do not scan.')+'</p><button class="next" id="again">Play again</button>';
+    document.getElementById('again').onclick=()=>{i=0;sc=0;show()};return}
+  const c=Q[i];
+  box.innerHTML='<div class="q-count">Situation '+(i+1)+' of '+Q.length+'</div><div class="q-text">'+c.s+'</div><div class="phone"><small>Link displayed by your phone</small><code>'+c.u+'</code></div><div class="duo"><button class="opt" data-k="0">I scan</button><button class="opt" data-k="1">I skip</button></div><div class="fb" id="fb"></div>';
+  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const k=+b.dataset.k;if(k===c.a)sc++;
+    box.querySelectorAll('.opt').forEach((x,n)=>{x.disabled=true;if(n===c.a)x.classList.add('good');else if(n===k)x.classList.add('bad')});
+    document.getElementById('fb').innerHTML=(k===c.a?'Well spotted. ':'Not quite. ')+c.f+'<br><button class="next" id="nx">'+(i<Q.length-1?'Next situation':'See my score')+'</button>';
+    document.getElementById('nx').onclick=()=>{i++;show()};
+  });
+}
+show();
+</script>
+</body>
+</html>

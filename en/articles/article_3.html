@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Public Wi-Fi · Cybersecurity for everyone</title>
+  <link rel="stylesheet" href="../../articles/article_3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <span class="topbar-serie">Cybersecurity for everyone</span>
+    <div class="topbar-nav-btns">
+      <a href="articles.html" class="topbar-btn">← Articles</a>
+      <a href="../index.html" class="topbar-btn topbar-btn--home">Cyberfolio</a>
+    </div>
+    <span class="topbar-num">Article 3 / 4</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span class="tag-bracket">[</span>
+        <span>Public Wi-Fi</span>
+        <span class="tag-bracket">]</span>
+      </div>
+      <h1 class="hero-title">
+        Convenient,<br/>
+        <span class="hero-title-but">but dangerous?</span>
+      </h1>
+      <p class="hero-kicker">What you're really risking at the airport or the café</p>
+      <div class="hero-terminal">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-filename">network_scan.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">$</span> scan --network "Free_Airport_WiFi"</div>
+          <div class="t-line t-warn"><span class="t-prompt">!</span> Open network detected, encryption: none</div>
+          <div class="t-line t-warn"><span class="t-prompt">!</span> Connected users: 47</div>
+          <div class="t-line t-danger"><span class="t-prompt">⚠</span> Interceptable HTTP traffic: YES</div>
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor">_</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stat-bar">
+      <div class="hero-stat">
+        <span class="hstat-num">47</span>
+        <span class="hstat-label">users on the same network as you</span>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat">
+        <span class="hstat-num">HTTP</span>
+        <span class="hstat-label">data readable in clear text without HTTPS</span>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat">
+        <span class="hstat-num">0€</span>
+        <span class="hstat-label">cost of the hardware for a fake access point</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+
+    <!-- INTRO CALLOUT -->
+    <section class="block intro-block">
+      <div class="callout-icon">💬</div>
+      <blockquote class="callout-text">
+        A public Wi-Fi network is like a conversation held out loud in a crowded place. Everything you send can potentially be overheard by someone else on the same network.
+      </blockquote>
+    </section>
+
+    <!-- LES VRAIS RISQUES -->
+    <section class="block risks-block">
+      <div class="section-label">// real risks</div>
+      <h2 class="section-title">The real risks, without exaggerating</h2>
+      <p class="section-intro">Let's be clear: not everyone who connects to a public Wi-Fi will get hacked. Attacks require equipment, skills and above all motivation. But some scenarios do exist, and it's better to know them.</p>
+
+      <div class="risks-grid">
+
+        <div class="risk-card">
+          <div class="risk-header">
+            <div class="risk-icon">01</div>
+            <div class="risk-tag">man-in-the-middle</div>
+          </div>
+          <h3 class="risk-name">Passive eavesdropping</h3>
+          <p class="risk-desc">On an unsecured network, an attacker can position themselves between you and the network to intercept the data you send. If you visit a site over HTTP (without the "S" of HTTPS), the data travels in clear text and can be read.</p>
+          <div class="risk-tip">
+            <span class="risk-tip-icon">✓</span>
+            Check the padlock in the address bar: HTTPS encrypts your data.
+          </div>
+        </div>
+
+        <div class="risk-card risk-card--highlight">
+          <div class="risk-header">
+            <div class="risk-icon">02</div>
+            <div class="risk-tag risk-tag--danger">Evil Twin</div>
+          </div>
+          <h3 class="risk-name">Fake access point</h3>
+          <p class="risk-desc">An attacker can create a Wi-Fi network with a misleading name, like "Free_Airport_WiFi" or "Free_Cafe". You connect thinking it's the official network. They see all your traffic.</p>
+          <div class="risk-tip risk-tip--danger">
+            <span class="risk-tip-icon">!</span>
+            Always check the exact network name with a staff member before connecting.
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-header">
+            <div class="risk-icon">03</div>
+            <div class="risk-tag">malware</div>
+          </div>
+          <h3 class="risk-name">Malware injection</h3>
+          <p class="risk-desc">In some cases, an attacker can take advantage of the shared connection to try to install malware on your device, especially if your operating system is out of date.</p>
+          <div class="risk-tip">
+            <span class="risk-tip-icon">✓</span>
+            Keep your operating system and apps up to date.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DO / DON'T -->
+    <section class="block do-dont-block">
+      <div class="section-label">// recommended behavior</div>
+      <h2 class="section-title">What you do (and shouldn't)</h2>
+
+      <div class="do-dont-grid">
+        <div class="dont-col">
+          <div class="col-header col-header--dont">
+            <span class="col-header-icon">✕</span>
+            <span>Avoid</span>
+          </div>
+          <ul class="action-list action-list--dont">
+            <li>Accessing your online banking or making online payments</li>
+            <li>Logging into your work email or sensitive work tools</li>
+            <li>Entering important passwords (especially without the HTTPS padlock)</li>
+            <li>Accessing confidential documents</li>
+            <li>Letting your device connect automatically to known networks</li>
+          </ul>
+        </div>
+        <div class="do-col">
+          <div class="col-header col-header--do">
+            <span class="col-header-icon">✓</span>
+            <span>No major risk</span>
+          </div>
+          <ul class="action-list action-list--do">
+            <li>Browsing HTTPS sites to read the news or do research</li>
+            <li>Watching streaming videos (Netflix, YouTube…)</li>
+            <li>Using apps that encrypt data end to end (WhatsApp, Signal…)</li>
+            <li>Reading news sites without logging into an account</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VPN BLOCK -->
+    <section class="block vpn-block">
+      <div class="vpn-left">
+        <div class="section-label light">// maximum protection</div>
+        <h2 class="section-title white">The best protection: the VPN</h2>
+        <p class="vpn-desc">A VPN (Virtual Private Network) creates an encrypted tunnel between your device and a remote server: even if someone intercepts your data, they only see an unreadable stream.</p>
+        <div class="vpn-analogy">
+          <span class="vpn-analogy-icon">"</span>
+          <p>Using a VPN on public Wi-Fi is like whispering in a crowded room: even if someone is listening, they won't understand a thing.</p>
+        </div>
+      </div>
+      <div class="vpn-right">
+        <div class="vpn-list-label">Reliable &amp; affordable VPNs</div>
+        <div class="vpn-cards">
+          <div class="vpn-card">
+            <div class="vpn-card-top">
+              <span class="vpn-name">ProtonVPN</span>
+              <span class="vpn-badge vpn-badge--free">Free tier</span>
+            </div>
+            <p class="vpn-card-desc">Free version available, very privacy-friendly. Ideal to get started.</p>
+          </div>
+          <div class="vpn-card">
+            <div class="vpn-card-top">
+              <span class="vpn-name">Mullvad</span>
+              <span class="vpn-badge vpn-badge--paid">Paid</span>
+            </div>
+            <p class="vpn-card-desc">Anonymous, excellent for confidentiality. Accepts cash payments.</p>
+          </div>
+          <div class="vpn-card">
+            <div class="vpn-card-top">
+              <span class="vpn-name">NordVPN / ExpressVPN</span>
+              <span class="vpn-badge vpn-badge--paid">Paid</span>
+            </div>
+            <p class="vpn-card-desc">Mainstream, easy to use, available on all devices.</p>
+          </div>
+        </div>
+        <div class="vpn-warning">
+          <span class="vpn-warning-icon">⚠</span>
+          <p>Beware of little-known free VPNs: some resell your data or are spying tools themselves.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BONNES PRATIQUES -->
+    <section class="block tips-block">
+      <div class="section-label">// security checklist</div>
+      <h2 class="section-title">Other simple good practices</h2>
+
+      <div class="tips-grid">
+        <div class="tip-item">
+          <div class="tip-num">01</div>
+          <div class="tip-content">
+            <h3>Turn off Wi-Fi when you're not using it</h3>
+            <p>This prevents automatic connections to unknown networks.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">02</div>
+          <div class="tip-content">
+            <h3>Use your mobile data (4G/5G)</h3>
+            <p>For sensitive operations, it's far more secure than public Wi-Fi.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">03</div>
+          <div class="tip-content">
+            <h3>Enable your device's firewall</h3>
+            <p>And keep your system up to date: it's your first line of defense.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-num">04</div>
+          <div class="tip-content">
+            <h3>Turn off file sharing</h3>
+            <p>And remote access when you're on a public network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELETRAVAIL -->
+    <section class="block remote-block">
+      <div class="remote-icon">⚠</div>
+      <div class="remote-content">
+        <div class="section-label">// special case</div>
+        <h2 class="section-title">Working remotely from a café</h2>
+        <p>If you work remotely from a café or a coworking space, the risks get higher: your company's data travels over the network. In that case, using a VPN provided by your employer is strongly recommended, even mandatory in many companies.</p>
+      </div>
+    </section>
+
+    <!-- RECAP FINAL -->
+    <section class="block recap-block">
+      <div class="recap-terminal">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-filename">recommendations.txt</span>
+        </div>
+        <div class="terminal-body recap-body">
+          <div class="recap-line"><span class="t-prompt">$</span> cat recommendations.txt</div>
+          <div class="recap-line recap-line--title">// Key takeaways</div>
+          <div class="recap-line"><span class="rec-check">✓</span> Public Wi-Fi isn't to be avoided, but to be used with discernment</div>
+          <div class="recap-line"><span class="rec-check">✓</span> For sensitive operations, prefer your mobile network</div>
+          <div class="recap-line"><span class="rec-check">✓</span> A VPN on public Wi-Fi = maximum protection</div>
+          <div class="recap-line"><span class="rec-check">✓</span> Always check you have the right network before connecting</div>
+          <div class="recap-line"><span class="rec-check">✓</span> HTTPS = padlock in the address bar = encrypted data</div>
+          <div class="recap-line mt"><span class="t-prompt">$</span> <span class="t-cursor">_</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="disclaimer">
+    <span class="disclaimer-icon">[i]</span>
+    The figures shown on this page (number of connected users, signal indicators, terminal simulation) are fictional and purely illustrative. They only serve to reinforce the visual atmosphere of the article. The editorial content, however, is real.
+  </div>
+
+  <footer class="page-footer">
+    <span>Cybersecurity for everyone · Article 3/4: Public Wi-Fi</span>
+    <span>Next article: Securing your devices day to day →</span>
+  </footer>
+
+</body>
+</html>

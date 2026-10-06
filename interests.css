@@ -30,6 +30,9 @@ nav {
 .nav-right { display: flex; align-items: center; gap: 1.3rem; }
 .nav-link { color: #cfe0c8; text-decoration: none; font-size: .82rem; transition: color .2s; }
 .nav-link:hover, .nav-link:focus-visible { color: var(--sun); }
+.lang-link { display: grid; place-items: center; padding: 4px; border-radius: 6px; border: 1px solid rgba(255,255,255,.25); transition: border-color .2s, transform .2s; }
+.lang-link svg { display: block; border-radius: 2px; }
+.lang-link:hover, .lang-link:focus-visible { border-color: var(--sun); transform: translateY(-2px); }
 .back-btn {
   background: var(--sun); color: var(--forest); font-weight: 700;
   padding: .5rem 1.1rem; border-radius: 99px; font-size: .78rem; text-decoration: none;

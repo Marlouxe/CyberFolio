@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Articles · Marilou Sionneau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../articles/articles.css" />
+</head>
+<body>
+ 
+  <div class="grid-bg"></div>
+ 
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="../index.html">MS<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#about">Profile</a></li>
+      <li><a href="#" class="active">Articles</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeToggle" title="Switch theme" aria-label="Toggle theme">☀️</button>
+      <a class="btn-back" href="../index.html">← Back</a>
+    </div>
+  </nav>
+ 
+  <!-- PAGE -->
+  <div class="page">
+ 
+    <!-- Header -->
+    <div class="page-header">
+      <div class="section-tag">// articles</div>
+      <h1 class="page-title">My<br><span>Articles</span></h1>
+      <p class="page-desc">
+        My articles, sorted by year of study at Guardia Cybersecurity School. Written by <a href="../index.html">Marilou Sionneau</a>.
+      </p>
+    </div>
+ 
+    <!-- Year selector -->
+    <div class="year-grid">
+ 
+      <a href="b1.html" class="year-tile">
+        <div class="year-tile-icon">🔑</div>
+        <h3>Year B1</h3>
+        <p>A series of 4 articles to understand the basics of cybersecurity: passwords, phishing, public Wi-Fi and updates.</p>
+        <span class="year-tile-count">4 articles available</span>
+        <span class="year-tile-cta">Discover →</span>
+      </a>
+ 
+      <a href="b2.html" class="year-tile">
+        <div class="year-tile-icon">🚀</div>
+        <h3>Year B2</h3>
+        <p>My second year at Guardia, with more technical topics: deepfakes, quishing, ransomware, then pentest, SOC, DevSecOps... The series fills up over the year.</p>
+        <span class="year-tile-count">3 articles available</span>
+        <span class="year-tile-cta">Discover →</span>
+      </a>
+ 
+    </div>
+  </div>
+ 
+  <footer>
+    <p>© 2025-2026 Marilou Sionneau · Guardia Cybersecurity School</p>
+  </footer>
+ 
+  <script>
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+ 
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', next);
+    });
+  </script>
+</body>
+</html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Les mises à jour · Cybersécurité pour tous</title>
-  <link rel="stylesheet" href="article_4.css" />
+  <title>Updates · Cybersecurity for everyone</title>
+  <link rel="stylesheet" href="../../articles/article_4.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- TOPBAR : identique série -->
   <header class="topbar">
-    <span class="topbar-serie">Cybersécurité pour tous</span>
+    <span class="topbar-serie">Cybersecurity for everyone</span>
     <div class="topbar-nav-btns">
       <a href="articles.html" class="topbar-btn">← Articles</a>
       <a href="../index.html" class="topbar-btn topbar-btn--home">Cyberfolio</a>
@@ -29,10 +29,10 @@
         <div class="hero-kicker">
           <span class="kicker-tag">Article 4 / 4</span>
           <span class="kicker-dot">•</span>
-          <span>Mises à jour</span>
+          <span>Updates</span>
         </div>
-        <h1 class="hero-title">Les mises à jour :<br/><em>cette notification<br/>qu'on ignore toujours</em></h1>
-        <p class="hero-sub">Pourquoi mettre à jour, c'est se protéger</p>
+        <h1 class="hero-title">Updates:<br/><em>that notification<br/>we always ignore</em></h1>
+        <p class="hero-sub">Why updating means protecting yourself</p>
       </div>
       <div class="hero-right">
         <!-- Fausse boîte de dialogue OS -->
@@ -43,26 +43,26 @@
               <span class="dialog-btn dialog-btn--min"></span>
               <span class="dialog-btn dialog-btn--max"></span>
             </div>
-            <span class="dialog-title">Mises à jour disponibles</span>
+            <span class="dialog-title">Updates available</span>
           </div>
           <div class="dialog-body">
             <div class="dialog-icon">🛡️</div>
             <div class="dialog-content">
-              <p class="dialog-heading">3 mises à jour critiques</p>
-              <p class="dialog-desc">Des correctifs de sécurité importants sont disponibles pour votre système.</p>
+              <p class="dialog-heading">3 critical updates</p>
+              <p class="dialog-desc">Important security fixes are available for your system.</p>
               <div class="dialog-progress">
                 <div class="dialog-progress-bar" id="progressBar"></div>
               </div>
-              <p class="dialog-prog-label" id="progLabel">Téléchargement en cours...</p>
+              <p class="dialog-prog-label" id="progLabel">Download in progress...</p>
             </div>
           </div>
           <div class="dialog-footer">
-            <button class="dialog-action-btn dialog-action-btn--later" onclick="this.style.opacity='0.4';this.style.pointerEvents='none'">Rappeler plus tard</button>
-            <button class="dialog-action-btn dialog-action-btn--install" id="installBtn">Installer maintenant</button>
+            <button class="dialog-action-btn dialog-action-btn--later" onclick="this.style.opacity='0.4';this.style.pointerEvents='none'">Remind me later</button>
+            <button class="dialog-action-btn dialog-action-btn--install" id="installBtn">Install now</button>
           </div>
           <div class="dialog-danger-note" id="dangerNote">
             <span class="danger-icon">⚠</span>
-            <span>Ce bouton est le plus dangereux de votre téléphone.</span>
+            <span>This button is the most dangerous one on your phone.</span>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@
     <div class="wannacry-inner">
       <div class="wannacry-num">200 000</div>
       <div class="wannacry-text">
-        <strong>WannaCry, 2017.</strong> Ordinateurs infectés dans 150 pays en quelques heures. La faille était corrigée depuis deux mois. Les victimes n'avaient pas installé la mise à jour.
+        <strong>WannaCry, 2017.</strong> Computers infected in 150 countries within hours. The flaw had been fixed two months earlier. The victims hadn't installed the update.
       </div>
     </div>
   </div>
@@ -83,33 +83,33 @@
 
     <!-- CE QUE CONTIENT UNE MAJ -->
     <section class="block">
-      <div class="section-label">// contenu d'une mise à jour</div>
-      <h2 class="section-title">Que contient vraiment une mise à jour ?</h2>
-      <p class="section-intro">Une mise à jour, c'est généralement un mélange de plusieurs éléments, dont le plus important est souvent le moins visible.</p>
+      <div class="section-label">// what's in an update</div>
+      <h2 class="section-title">What does an update really contain?</h2>
+      <p class="section-intro">An update is usually a mix of several things, and the most important one is often the least visible.</p>
 
       <div class="content-types">
         <div class="content-type content-type--primary">
           <div class="ctype-rank">01</div>
           <div class="ctype-body">
-            <div class="ctype-badge ctype-badge--critical">Critique</div>
-            <h3>Correctifs de sécurité <em>(patches)</em></h3>
-            <p>Les logiciels contiennent des millions de lignes de code. Des failles (appelées vulnérabilités) y sont découvertes régulièrement. Quand une faille est identifiée, les éditeurs publient un correctif. Si vous ne l'installez pas, la faille reste ouverte. Les hackers exploitent ces failles <em>connues</em> : c'est bien plus simple que d'en trouver de nouvelles.</p>
+            <div class="ctype-badge ctype-badge--critical">Critical</div>
+            <h3>Security fixes <em>(patches)</em></h3>
+            <p>Software contains millions of lines of code. Flaws (called vulnerabilities) are regularly discovered in it. When a flaw is identified, vendors publish a fix. If you don't install it, the flaw stays open. Hackers exploit these <em>known</em> flaws: it's much easier than finding new ones.</p>
           </div>
         </div>
         <div class="content-type">
           <div class="ctype-rank">02</div>
           <div class="ctype-body">
-            <div class="ctype-badge">Utile</div>
-            <h3>Performances &amp; stabilité</h3>
-            <p>Les mises à jour corrigent aussi des bugs, améliorent la rapidité du logiciel, et le rendent plus stable. Votre appareil tourne généralement <em>mieux</em> après une mise à jour.</p>
+            <div class="ctype-badge">Useful</div>
+            <h3>Performance &amp; stability</h3>
+            <p>Updates also fix bugs, make the software faster and more stable. Your device generally runs <em>better</em> after an update.</p>
           </div>
         </div>
         <div class="content-type">
           <div class="ctype-rank">03</div>
           <div class="ctype-body">
-            <div class="ctype-badge ctype-badge--minor">Secondaire</div>
-            <h3>Nouvelles fonctionnalités</h3>
-            <p>Oui, parfois aussi. Mais c'est souvent la partie la moins importante d'une mise à jour de sécurité.</p>
+            <div class="ctype-badge ctype-badge--minor">Minor</div>
+            <h3>New features</h3>
+            <p>Yes, sometimes too. But it's often the least important part of a security update.</p>
           </div>
         </div>
       </div>
@@ -117,16 +117,16 @@
 
     <!-- CYCLE DE VIE -->
     <section class="block cycle-block">
-      <div class="section-label">// chronologie d'une faille</div>
-      <h2 class="section-title">Le cycle de vie d'une faille de sécurité</h2>
-      <p class="section-intro">Comprendre ce cycle aide à saisir l'urgence des mises à jour.</p>
+      <div class="section-label">// timeline of a flaw</div>
+      <h2 class="section-title">The life cycle of a security flaw</h2>
+      <p class="section-intro">Understanding this cycle helps grasp the urgency of updates.</p>
 
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-dot tl-dot--neutral"></div>
           <div class="tl-body">
             <div class="tl-step">01</div>
-            <p>Une faille est <strong>découverte</strong> dans un logiciel (par un chercheur ou un hacker)</p>
+            <p>A flaw is <strong>discovered</strong> in a piece of software (by a researcher or a hacker)</p>
           </div>
         </div>
         <div class="tl-connector"></div>
@@ -134,7 +134,7 @@
           <div class="tl-dot tl-dot--neutral"></div>
           <div class="tl-body">
             <div class="tl-step">02</div>
-            <p>Si c'est un chercheur, il <strong>alerte discrètement</strong> l'éditeur du logiciel</p>
+            <p>If it's a researcher, they <strong>quietly alert</strong> the software vendor</p>
           </div>
         </div>
         <div class="tl-connector"></div>
@@ -142,7 +142,7 @@
           <div class="tl-dot tl-dot--safe"></div>
           <div class="tl-body">
             <div class="tl-step tl-step--safe">03</div>
-            <p>L'éditeur développe un correctif et <strong>publie une mise à jour</strong></p>
+            <p>The vendor develops a fix and <strong>releases an update</strong></p>
           </div>
         </div>
         <div class="tl-connector tl-connector--danger"></div>
@@ -150,7 +150,7 @@
           <div class="tl-dot tl-dot--warn"></div>
           <div class="tl-body">
             <div class="tl-step tl-step--warn">04</div>
-            <p>La faille devient <strong>publique</strong> et tous les hackers du monde le savent maintenant</p>
+            <p>The flaw becomes <strong>public</strong> and every hacker in the world now knows about it</p>
           </div>
         </div>
         <div class="tl-connector tl-connector--danger"></div>
@@ -158,7 +158,7 @@
           <div class="tl-dot tl-dot--danger"></div>
           <div class="tl-body">
             <div class="tl-step tl-step--danger">05</div>
-            <p>Les attaques ciblant cette faille <strong>explosent dans les heures ou jours qui suivent</strong></p>
+            <p>Attacks targeting this flaw <strong>explode in the following hours or days</strong></p>
           </div>
         </div>
         <div class="tl-connector tl-connector--danger"></div>
@@ -166,11 +166,11 @@
           <div class="tl-split">
             <div class="tl-split-card tl-split-card--safe">
               <span class="split-icon">✓</span>
-              <p><strong>Mis à jour</strong><br/>Protégés</p>
+              <p><strong>Updated</strong><br/>Protected</p>
             </div>
             <div class="tl-split-card tl-split-card--danger">
               <span class="split-icon">✕</span>
-              <p><strong>Pas mis à jour</strong><br/>Exposés</p>
+              <p><strong>Not updated</strong><br/>Exposed</p>
             </div>
           </div>
         </div>
@@ -178,55 +178,55 @@
 
       <div class="cycle-callout">
         <span class="cycle-callout-icon">⏱</span>
-        <p>La fenêtre entre la publication d'une mise à jour et une attaque exploitant la faille concernée est souvent de <strong>quelques heures à quelques jours</strong>. Plus vous attendez, plus vous êtes vulnérable.</p>
+        <p>The window between the release of an update and an attack exploiting the flaw is often <strong>a few hours to a few days</strong>. The longer you wait, the more vulnerable you are.</p>
       </div>
     </section>
 
     <!-- PRIORITÉS -->
     <section class="block prio-block">
-      <div class="section-label">// ordre de priorité</div>
-      <h2 class="section-title">Quoi mettre à jour en priorité ?</h2>
+      <div class="section-label">// order of priority</div>
+      <h2 class="section-title">What should you update first?</h2>
 
       <div class="prio-grid">
         <div class="prio-col prio-col--critical">
           <div class="prio-header">
             <span class="prio-fire">🔴</span>
-            <span class="prio-title">Priorité absolue</span>
+            <span class="prio-title">Top priority</span>
           </div>
           <ul class="prio-list">
             <li>
               <span class="prio-num">1</span>
               <div>
-                <strong>Système d'exploitation</strong>
-                <span>Windows, macOS, Android, iOS : c'est le fondement de tout</span>
+                <strong>Operating system</strong>
+                <span>Windows, macOS, Android, iOS: it's the foundation of everything</span>
               </div>
             </li>
             <li>
               <span class="prio-num">2</span>
               <div>
-                <strong>Navigateur web</strong>
-                <span>Chrome, Firefox, Safari, Edge : porte d'entrée principale vers Internet</span>
+                <strong>Web browser</strong>
+                <span>Chrome, Firefox, Safari, Edge: the main gateway to the Internet</span>
               </div>
             </li>
             <li>
               <span class="prio-num">3</span>
               <div>
-                <strong>Applications bancaires &amp; messagerie</strong>
-                <span>Données sensibles, cibles prioritaires</span>
+                <strong>Banking &amp; messaging apps</strong>
+                <span>Sensitive data, priority targets</span>
               </div>
             </li>
             <li>
               <span class="prio-num">4</span>
               <div>
                 <strong>Antivirus</strong>
-                <span>Ses définitions de virus doivent être à jour en permanence</span>
+                <span>Its virus definitions must be kept up to date at all times</span>
               </div>
             </li>
             <li>
               <span class="prio-num">5</span>
               <div>
-                <strong>Plugins &amp; extensions navigateur</strong>
-                <span>Adobe Reader, Java si vous les utilisez encore</span>
+                <strong>Browser plugins &amp; extensions</strong>
+                <span>Adobe Reader, Java if you still use them</span>
               </div>
             </li>
           </ul>
@@ -234,28 +234,28 @@
         <div class="prio-col prio-col--secondary">
           <div class="prio-header">
             <span class="prio-fire">🟡</span>
-            <span class="prio-title">À ne pas négliger</span>
+            <span class="prio-title">Don't neglect</span>
           </div>
           <ul class="prio-list">
             <li>
               <span class="prio-num prio-num--sec">•</span>
               <div>
-                <strong>Autres applications</strong>
-                <span>Toutes les apps installées sur ordi et téléphone</span>
+                <strong>Other applications</strong>
+                <span>All the apps installed on your computer and phone</span>
               </div>
             </li>
             <li>
               <span class="prio-num prio-num--sec">•</span>
               <div>
-                <strong>Firmware box &amp; routeur Wi-Fi</strong>
-                <span>Souvent oublié, pourtant très exposé</span>
+                <strong>Router &amp; Wi-Fi box firmware</strong>
+                <span>Often forgotten, yet very exposed</span>
               </div>
             </li>
             <li>
               <span class="prio-num prio-num--sec">•</span>
               <div>
-                <strong>Appareils connectés</strong>
-                <span>Box TV, caméras, imprimantes, objets IoT</span>
+                <strong>Connected devices</strong>
+                <span>TV boxes, cameras, printers, IoT devices</span>
               </div>
             </li>
           </ul>
@@ -265,26 +265,26 @@
 
     <!-- COMMENT S'Y PRENDRE -->
     <section class="block how-block">
-      <div class="section-label">// mise en pratique</div>
-      <h2 class="section-title">Comment s'y prendre sans que ce soit une corvée ?</h2>
+      <div class="section-label">// putting it into practice</div>
+      <h2 class="section-title">How to do it without it being a chore?</h2>
 
       <div class="how-cards">
         <div class="how-card how-card--featured">
           <div class="how-card-num">A</div>
           <div class="how-card-body">
-            <h3>Activez les mises à jour automatiques</h3>
+            <h3>Enable automatic updates</h3>
             <div class="os-steps">
               <div class="os-step">
                 <span class="os-icon">🪟</span>
-                <span><strong>Windows :</strong> Paramètres → Windows Update → Activez les mises à jour automatiques</span>
+                <span><strong>Windows:</strong> Settings → Windows Update → Turn on automatic updates</span>
               </div>
               <div class="os-step">
                 <span class="os-icon">🍎</span>
-                <span><strong>Mac :</strong> Préférences Système → Mise à jour de logiciels → Cochez "Maintenir mon Mac à jour"</span>
+                <span><strong>Mac:</strong> System Settings → Software Update → Check "Keep my Mac up to date"</span>
               </div>
               <div class="os-step">
                 <span class="os-icon">📱</span>
-                <span><strong>Smartphone :</strong> Les mises à jour automatiques sont généralement activées par défaut</span>
+                <span><strong>Smartphone:</strong> Automatic updates are usually enabled by default</span>
               </div>
             </div>
           </div>
@@ -292,15 +292,15 @@
         <div class="how-card">
           <div class="how-card-num">B</div>
           <div class="how-card-body">
-            <h3>Planifiez les redémarrages</h3>
-            <p>Beaucoup de systèmes permettent de programmer les redémarrages pendant la nuit, quand vous n'utilisez pas votre appareil. Configurez cette option pour ne jamais être interrompu.</p>
+            <h3>Schedule your restarts</h3>
+            <p>Many systems let you schedule restarts overnight, when you're not using your device. Set up this option so you're never interrupted.</p>
           </div>
         </div>
         <div class="how-card">
           <div class="how-card-num">C</div>
           <div class="how-card-body">
-            <h3>Faites-en un rituel hebdomadaire</h3>
-            <p>Si vous préférez contrôler vous-même, prenez l'habitude de vérifier les mises à jour une fois par semaine. Faites-en un rituel, comme vérifier ses e-mails le lundi matin.</p>
+            <h3>Make it a weekly ritual</h3>
+            <p>If you prefer to stay in control, get into the habit of checking for updates once a week. Make it a ritual, like checking your emails on Monday morning.</p>
           </div>
         </div>
       </div>
@@ -308,38 +308,38 @@
 
     <!-- IDÉES REÇUES -->
     <section class="block myths-block">
-      <div class="section-label">// démystification</div>
-      <h2 class="section-title">Les idées reçues à oublier</h2>
+      <div class="section-label">// myth busting</div>
+      <h2 class="section-title">Misconceptions to forget</h2>
 
       <div class="myths-list">
         <div class="myth-item">
           <div class="myth-claim">
             <span class="myth-x">✕</span>
-            <span>"Les mises à jour ralentissent mon appareil"</span>
+            <span>"Updates slow down my device"</span>
           </div>
           <div class="myth-truth">
             <span class="myth-check">✓</span>
-            <p>C'est parfois vrai dans les premières minutes après l'installation, le temps que l'appareil s'adapte. Sur le long terme, les mises à jour <strong>améliorent généralement les performances</strong>. Si votre appareil est lent après une mise à jour, cela passe habituellement après un redémarrage.</p>
+            <p>It's sometimes true in the first minutes after installation, while the device adjusts. In the long run, updates <strong>generally improve performance</strong>. If your device is slow after an update, it usually clears up after a restart.</p>
           </div>
         </div>
         <div class="myth-item">
           <div class="myth-claim">
             <span class="myth-x">✕</span>
-            <span>"Mon appareil est récent, il n'a pas besoin d'être mis à jour"</span>
+            <span>"My device is new, it doesn't need updating"</span>
           </div>
           <div class="myth-truth">
             <span class="myth-check">✓</span>
-            <p>L'âge de l'appareil n'a rien à voir. Une faille de sécurité peut concerner un logiciel sorti la semaine dernière. <strong>La mise à jour corrige le problème, quel que soit l'âge de votre appareil.</strong></p>
+            <p>The age of the device has nothing to do with it. A security flaw can affect software released last week. <strong>The update fixes the problem, whatever the age of your device.</strong></p>
           </div>
         </div>
         <div class="myth-item">
           <div class="myth-claim">
             <span class="myth-x">✕</span>
-            <span>"Je n'ai rien d'important, personne ne voudrait me pirater"</span>
+            <span>"I have nothing important, nobody would want to hack me"</span>
           </div>
           <div class="myth-truth">
             <span class="myth-check">✓</span>
-            <p>Les hackers ne cherchent pas nécessairement vos données. Ils peuvent vouloir utiliser votre appareil pour envoyer des spams, miner des cryptomonnaies à votre insu, ou lancer des attaques contre d'autres cibles. <strong>Votre appareil non mis à jour peut servir de relais sans que vous le sachiez.</strong></p>
+            <p>Hackers aren't necessarily after your data. They may want to use your device to send spam, mine cryptocurrency without your knowledge, or launch attacks against other targets. <strong>Your outdated device can be used as a relay without you knowing.</strong></p>
           </div>
         </div>
       </div>
@@ -350,17 +350,17 @@
       <div class="eol-inner">
         <div class="eol-icon">☠</div>
         <div class="eol-content">
-          <div class="section-label">// logiciels obsolètes</div>
-          <h2 class="section-title">Et les logiciels en fin de vie ?</h2>
-          <p>Un logiciel en "fin de vie" <em>(end of life)</em> ne reçoit plus de mises à jour de sécurité. C'est le cas de Windows XP, Windows 7, ou d'anciennes versions d'Android.</p>
-          <p>Utiliser un tel système, c'est conduire une voiture sans freins : les failles s'accumulent, aucun correctif ne viendra. Si vous êtes dans cette situation, il est fortement recommandé de <strong>migrer vers une version récente et supportée.</strong></p>
+          <div class="section-label">// obsolete software</div>
+          <h2 class="section-title">What about end-of-life software?</h2>
+          <p>Software at "end of life" no longer receives security updates. That's the case for Windows XP, Windows 7, or older versions of Android.</p>
+          <p>Using such a system is like driving a car without brakes: flaws pile up and no fix will ever come. If you're in this situation, it's strongly recommended to <strong>move to a recent, supported version.</strong></p>
           <div class="eol-examples">
             <span class="eol-tag eol-tag--dead">Windows XP</span>
             <span class="eol-tag eol-tag--dead">Windows 7</span>
             <span class="eol-tag eol-tag--dead">Android &lt; 10</span>
             <span class="eol-tag eol-tag--dead">iOS &lt; 16</span>
             <span class="eol-tag eol-tag--dead">macOS &lt; Ventura</span>
-            <span class="eol-tag eol-tag--warning">Plus de correctifs de sécurité →</span>
+            <span class="eol-tag eol-tag--warning">No more security fixes →</span>
           </div>
         </div>
       </div>
@@ -371,12 +371,12 @@
       <div class="recap-inner">
         <div class="recap-star">★</div>
         <div class="recap-text">
-          <h3>À retenir en une phrase</h3>
-          <p>Activez les mises à jour automatiques dès aujourd'hui : c'est la chose la plus simple et la plus efficace que vous puissiez faire pour votre sécurité numérique.</p>
+          <h3>Key takeaway in one sentence</h3>
+          <p>Turn on automatic updates today: it's the simplest and most effective thing you can do for your digital security.</p>
         </div>
         <div class="recap-action">
-          <span class="recap-action-label">Action immédiate</span>
-          <span class="recap-action-text">Paramètres → Mises à jour → Automatique ✓</span>
+          <span class="recap-action-label">Immediate action</span>
+          <span class="recap-action-text">Settings → Updates → Automatic ✓</span>
         </div>
       </div>
     </section>
@@ -385,16 +385,16 @@
 
   <div class="disclaimer">
     <span class="disclaimer-icon">[i]</span>
-    La boîte de dialogue de mise à jour présente dans le hero est fictive et purement illustrative. Elle sert uniquement à renforcer l'ambiance visuelle de l'article. Le contenu rédactionnel, lui, est réel.
+    The update dialog shown in the hero is fictional and purely illustrative. It only serves to reinforce the visual atmosphere of the article. The editorial content, however, is real.
   </div>
 
   <footer class="page-footer">
-    <span>Cybersécurité pour tous · Article 4/4 : Les mises à jour</span>
-    <span>Fin de la série · <a href="articles.html">Retour aux articles →</a></span>
+    <span>Cybersecurity for everyone · Article 4/4: Updates</span>
+    <span>End of the series · <a href="articles.html">Back to the articles →</a></span>
   </footer>
 
   <script>
-    // Animation barre de progression dans la dialog
+    // Progress bar animation in the dialog
     const bar = document.getElementById('progressBar');
     const label = document.getElementById('progLabel');
     const installBtn = document.getElementById('installBtn');
@@ -408,12 +408,12 @@
       if (progress >= 100) {
         progress = 100;
         bar.style.width = '100%';
-        label.textContent = 'Prêt à installer.';
+        label.textContent = 'Ready to install.';
         return;
       }
       bar.style.width = progress + '%';
       const mb = (progress * 0.48).toFixed(1);
-      label.textContent = `Téléchargement... ${mb} Mo / 48 Mo`;
+      label.textContent = `Downloading... ${mb} MB / 48 MB`;
       setTimeout(animateProgress, 80 + Math.random() * 60);
     }
     setTimeout(animateProgress, 800);
@@ -422,21 +422,21 @@
       progress = 0;
       bar.style.width = '0%';
       bar.style.background = 'var(--blue)';
-      label.textContent = 'Installation en cours...';
+      label.textContent = 'Installing...';
       paused = false;
       animateProgress();
-      this.textContent = 'Installation...';
+      this.textContent = 'Installing...';
       this.disabled = true;
       setTimeout(() => {
-        label.textContent = '✓ Système à jour. Redémarrage recommandé.';
+        label.textContent = '✓ System up to date. Restart recommended.';
         bar.style.background = 'var(--green-ok)';
         bar.style.width = '100%';
-        this.textContent = 'Redémarrer';
+        this.textContent = 'Restart';
         this.disabled = false;
       }, 4000);
     });
 
-    // Highlight "Rappeler plus tard" avec un tooltip de danger
+    // Highlight "Remind me later" with a danger tooltip
     document.querySelector('.dialog-action-btn--later').addEventListener('mouseenter', function() {
       dangerNote.style.opacity = '1';
     });

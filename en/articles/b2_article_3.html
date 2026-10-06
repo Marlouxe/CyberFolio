@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ransomware · Cybersecurity · B2</title>
+  <link rel="stylesheet" href="../../articles/b2_article_3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header class="topbar">
+  <a href="b2.html">← B2 Articles</a>
+  <span>B2 · Article 3</span>
+  <a href="../index.html">Cyberfolio</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Malware · Extortion</div>
+    <h1>Ransom&shy;ware</h1>
+    <p class="sub">Understanding the threat, and knowing how to protect yourself.</p>
+  </div>
+  <div class="lock" id="lock">
+    <h4 id="lt">⚠ System under control</h4>
+    <div class="timer" id="tm">71:59:59</div>
+    <ul id="fl"></ul>
+    <button class="lbtn" id="lb">▶ Launch the attack (simulation)</button>
+    <p id="lp">Let's see what happens to your files… and what saves them.</p>
+  </div>
+</section>
+
+<main>
+  <section>
+    <p class="lead">A <em>ransomware</em> is a piece of malicious software that blocks access to your data or your computer, then demands a ransom, usually in cryptocurrency, to unlock them. The word comes from <em>ransom</em> and <em>software</em>.</p>
+    <p>In practice, you're faced with a message: your files are encrypted, and you must pay within a set time to get the decryption key. Documents, photos, databases, and sometimes even backups connected to the network: everything can be hit within minutes. Without the key, it's practically impossible to recover your files.</p>
+    <div class="cards">
+      <div class="card"><h3>Encryption</h3><p>Every file becomes unreadable, with a key that only the attacker holds.</p></div>
+      <div class="card"><h3>Double extortion</h3><p>Before encrypting, criminals steal the data and threaten to publish or resell it.</p></div>
+      <div class="card"><h3>"RaaS"</h3><p>Ransomware-as-a-service: developers rent their tool to affiliates in exchange for a percentage of the ransom.</p></div>
+    </div>
+    <div class="note"><b>An industry:</b> RaaS lets less technical criminals take action, which explains the multiplication of attacks.</div>
+  </section>
+
+  <section>
+    <h2>How they get in</h2>
+    <div class="cards">
+      <div class="card"><h3>Phishing</h3><p>An email with a booby-trapped attachment or link: the number one entry point.</p></div>
+      <div class="card"><h3>Weak remote access</h3><p>Stolen or weak credentials on a VPN or remote desktop, without two-factor authentication.</p></div>
+      <div class="card"><h3>An unpatched flaw</h3><p>Software or equipment exposed on the internet that hasn't been updated.</p></div>
+      <div class="card"><h3>A service provider</h3><p>The attack goes through a partner already connected to your network.</p></div>
+    </div>
+    <p style="margin-top:22px">Often, attackers stay in the network for several days to explore it, steal data and disable defenses. Then they trigger the encryption, preferably on a weekend or a public holiday.</p>
+    <div class="note"><b>Who is targeted?</b> Everyone: small businesses, hospitals, local governments, schools, universities, and even individuals. These organizations depend on their data to operate and are often less well protected. ANSSI, the French national cybersecurity agency, ranks ransomware among the main threats to French organizations.</div>
+    <div class="note"><b>Should you pay?</b> Authorities, including ANSSI, advise against it: nothing guarantees that the key will be provided or will work, the payment funds criminals, and you can be targeted again.</div>
+  </section>
+
+  <section>
+    <h2>My best defense: the 3-2-1 rule</h2>
+    <p>The backup rule in three numbers. And a backup that has never been tested is a backup you don't know works.</p>
+    <div class="big">
+      <div><strong>3</strong><span>copies of your data</span></div>
+      <div><strong>2</strong><span>different media</span></div>
+      <div><strong>1</strong><span>offline, disconnected copy</span></div>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Updates</h3><p>Install patches quickly: they close the most exploited flaws.</p></div>
+      <div class="card"><h3>Two-factor authentication</h3><p>Especially on remote access and email: a stolen password is no longer enough.</p></div>
+      <div class="card"><h3>Limited rights</h3><p>Administrator rights only for those who need them, so an infected machine doesn't contaminate everything.</p></div>
+      <div class="card"><h3>Vigilance</h3><p>Recognize phishing and know who to report a doubt to. At home: unplugged external drive, official software.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Your turn: the attack is happening</h2>
+    <p>Click the actions <b>in the right order</b>. Careful, two of them are traps.</p>
+    <div class="quiz"><div class="q-count" id="oc"></div><div class="ord" id="ord"></div><div class="fb" id="ofb"></div></div>
+    <div class="note"><b>The right moves:</b> disconnect the machine from the network, alert IT, keep the evidence, file a complaint and notify the CNIL (the French data protection authority) within 72 h if personal data is involved, then restore. The <a href="https://www.nomoreransom.org" target="_blank" rel="noopener">No More Ransom</a> project offers free decryption tools for some ransomware, and <a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener">cybermalveillance.gouv.fr</a> can support you.</div>
+  </section>
+
+  <section>
+    <h2>Very real stories</h2>
+    <ul class="tl">
+      <li><b>1989</b><em>The first</em><p>Joseph Popp mails floppy disks of "AIDS information" to attendees of a WHO conference. They encrypt file names and demand 189 dollars to be sent to a post office box in Panama.</p></li>
+      <li><b>May 2017</b><em>WannaCry</em><p>More than 200,000 computers hit in about a hundred countries. The British health system is paralyzed, Renault is hit too. Researcher Marcus Hutchins stops it almost by accident by registering a domain name: a "kill switch".</p></li>
+      <li><b>June 2017</b><em>NotPetya</em><p>Maersk reinstalls thousands of servers and computers (about 300 million dollars). Saint-Gobain estimates its losses at around 250 million euros.</p></li>
+      <li><b>Mai 2021</b><em>Colonial Pipeline</em><p>The pipeline that supplies a large part of the US East Coast shuts down, after an intrusion through a compromised password on a VPN without two-factor authentication. About 4.4 million dollars paid, partly recovered by the FBI.</p></li>
+      <li><b>August 2022</b><em>In France</em><p>The Corbeil-Essonnes hospital is paralyzed: emergency services disrupted, patients transferred. The hackers demand 10 million dollars before publishing patient data.</p></li>
+      <li><b>2024</b><em>LockBit</em><p>An international operation takes control of the infrastructure of LockBit, one of the most active groups. Others take over.</p></li>
+      <li><b>Autumn 2025</b><em>Jaguar Land Rover</em><p>The British carmaker's factories are at a standstill for several weeks, along with their suppliers.</p></li>
+    </ul>
+  </section>
+
+  <div class="retenir"><b>Key takeaway</b>Ransomware isn't inevitable. Tested backups, updates, two-factor authentication and a little vigilance prevent most disasters.</div>
+</main>
+
+<footer>Cybersecurity · B2 · Article 3: Ransomware · <a href="b2.html">Back to the B2 articles</a></footer>
+
+<script>
+const F=['report_2026.docx','holiday_photos.zip','accounting.xlsx','final_thesis.pdf'];
+const fl=document.getElementById('fl'),lock=document.getElementById('lock'),lb=document.getElementById('lb'),lt=document.getElementById('lt'),lp=document.getElementById('lp');
+let st=0,left=72*3600-1,tid;
+function files(m){fl.innerHTML=F.map(f=>'<li><span>'+f+'</span>'+(m?'<s>.locked</s>':'<u>✔ ok</u>')+'</li>').join('')}
+files(0);
+function tick(){left--;const h=Math.floor(left/3600),m=Math.floor(left%3600/60),s=left%60;document.getElementById('tm').textContent=[h,m,s].map(n=>String(n).padStart(2,'0')).join(':')}
+lb.onclick=()=>{
+  if(st===0){st=1;files(1);lt.textContent='⚠ Your files are encrypted';lb.textContent='↺ Restore from the 3-2-1 backup';
+    lp.textContent='Ransom demanded before the countdown ends. No guarantee of receiving the key.';tid=setInterval(tick,1000)}
+  else if(st===1){st=2;clearInterval(tid);files(0);lock.classList.add('ok');lt.textContent='✔ Files restored';lb.textContent='Play again';
+    lp.textContent='With an offline copy, there is no need to pay. That is why backup is the best defense.'}
+  else{st=0;left=72*3600-1;document.getElementById('tm').textContent='71:59:59';lock.classList.remove('ok');lt.textContent='⚠ System under control';lb.textContent='▶ Launch the attack (simulation)';lp.textContent='Let\'s see what happens to your files… and what saves them.';files(0)}
+};
+
+const S=[
+ {t:'Disconnect the machine from the network (cable, Wi-Fi)',n:1},
+ {t:'Alert the IT department or a provider',n:2},
+ {t:'Keep the evidence, delete nothing',n:3},
+ {t:'File a complaint and notify the CNIL within 72 h (personal data)',n:4},
+ {t:'Restore from a clean backup',n:5},
+ {t:'Pay the ransom quickly to recover everything',n:0,f:'Trap: no guarantee, you fund the criminals and you can be targeted again.'},
+ {t:'Reformat everything right away',n:0,f:'Trap: you would destroy the evidence the investigation needs.'}
+].sort(()=>Math.random()-.5);
+let nx=1;const ord=document.getElementById('ord'),ofb=document.getElementById('ofb'),oc=document.getElementById('oc');
+function draw(){oc.textContent='Next action: step '+Math.min(nx,5)+' of 5';
+  ord.innerHTML=S.map((s,k)=>'<button class="opt" data-k="'+k+'"><b>'+(s.d||'?')+'</b>'+s.t+'</button>').join('');
+  ord.querySelectorAll('.opt').forEach(b=>{const s=S[+b.dataset.k];if(s.d){b.classList.add('good');b.disabled=true}
+    b.onclick=()=>{if(s.n===nx){s.d=nx;nx++;draw();ofb.textContent=nx>5?'Well done, you handled the crisis in the right order. And the ransom was not paid.':''; if(nx>5)oc.textContent='Done'}
+      else{b.classList.add('shake');ofb.textContent=s.n===0?s.f:'Not yet: this is not the next step.';setTimeout(()=>b.classList.remove('shake'),400)}}})}
+draw();
+</script>
+</body>
+</html>
